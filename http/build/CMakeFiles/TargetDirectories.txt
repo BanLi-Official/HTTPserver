@@ -1,0 +1,8 @@
+/mnt/hgfs/VMshared/code/c++/http/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/http/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/http/build/src/CMakeFiles/main.dir
+/mnt/hgfs/VMshared/code/c++/http/build/src/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/http/build/src/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/http/build/client/CMakeFiles/client.dir
+/mnt/hgfs/VMshared/code/c++/http/build/client/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/http/build/client/CMakeFiles/rebuild_cache.dir
