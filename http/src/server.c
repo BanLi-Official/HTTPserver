@@ -5,6 +5,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <errno.h>
+#include <sys/stat.h>
 
 int initListenFd(unsigned short port)
 {
@@ -115,6 +116,7 @@ int rescvHTTPRequest(int cfd, int epfd)
     if (len == -1 && errno == EAGAIN)
     {
         printf("data recv finish! data = %s\n",buf);
+        parseHTTPRequest("GET /user/floder 1.1",cfd);
 
     }
     else if( len== 0)
@@ -128,6 +130,57 @@ int rescvHTTPRequest(int cfd, int epfd)
         return -1;
     }
     return 1;
+}
+
+int parseHTTPRequest(const char *line, int cfd)
+{
+    char type[15];
+    char path[1024];
+    char *file;
+    int res=sscanf(line , "%[^ ] %[^ ] ",type,path);  //利用正则表达式将http表头的第一行取出来
+    printf("type = %s  ,path = %s \n",type,path);
+    if(strcasecmp(type,"get")==0) //判断表头的类型
+    {
+        //get类型 
+        //将地址转化为相对地址
+        if(strcmp(path,"/")==0)
+        {
+            file="./";
+        }
+        else
+        {
+            file=path+1;
+        }
+
+        //读取这个文件/夹
+        struct stat st;   /////////////
+        int res = stat(file,&st);
+        if (res == -1)
+        {
+            printf("404 file is not Found!\n");
+            return -1;
+        }
+        
+        if(S_ISDIR(st.st_mode))   /////////////////
+        {
+            //把文件夹的内容发送给客户端；
+            printf("this path is dir! path=%s\n",file);
+            
+        }
+        else
+        {
+            //把文件的内容发送给客户端；
+            printf("this path is file! path=%s\n",file);
+        }
+    }
+    else
+    {
+        //其他类型
+        printf("无法处理的http请求类型\n");
+        return -1;
+    }
+
+    return 0;
 }
 
 int epollRun(int lfd)
