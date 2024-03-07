@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <sys/epoll.h>
 #include <fcntl.h>
+#include <string.h>
+#include <errno.h>
 
 int initListenFd(unsigned short port)
 {
@@ -88,6 +90,45 @@ int connectClient(int lfd, int epfd)
     return 0;
 }
 
+int rescvHTTPRequest(int cfd, int epfd)
+{
+    if (cfd == -1 || epfd ==-1)
+    {
+        printf("rescvHTTPRequest error! cfd || epfd IS NULL\n");
+        return -1;
+    }
+
+    char buf[4096] = {0};
+    char temp[1024] = {0};
+    int len;
+    int total=0;
+    while ((len=recv(cfd,temp,sizeof temp ,0))>0) //边沿epoll导致需要将其不断循环读出来
+    {
+        memcpy(buf+total,temp,sizeof temp);
+        total += sizeof temp;
+        if(total>sizeof buf)
+        {
+            printf("rescvHTTPRequest error! out length of buf\n");
+            break;
+        }
+    }
+    if (len == -1 && errno == EAGAIN)
+    {
+        printf("data recv finish! data = %s\n",buf);
+
+    }
+    else if( len== 0)
+    {
+        printf("client offLine\n");
+        return -1;
+    }
+    else
+    {
+        printf("Unknown error\n");
+        return -1;
+    }
+    return 1;
+}
 
 int epollRun(int lfd)
 {
@@ -129,6 +170,7 @@ int epollRun(int lfd)
             else
             {
                 //客户端的数据交流
+                res=rescvHTTPRequest(events[i].data.fd , epfd);
             }
         }
     }
