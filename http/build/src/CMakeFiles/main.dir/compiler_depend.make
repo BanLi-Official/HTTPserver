@@ -65,6 +65,7 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/VMshared/code/c++/http/src/main.c \
 
 src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.c \
   /mnt/hgfs/VMshared/code/c++/http/src/server.h \
+  /usr/include/alloca.h \
   /usr/include/arpa/inet.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -72,19 +73,24 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/include/asm-generic/posix_types.h \
   /usr/include/asm-generic/socket.h \
   /usr/include/asm-generic/sockios.h \
+  /usr/include/assert.h \
+  /usr/include/dirent.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
   /usr/include/fcntl.h \
   /usr/include/features.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/linux/posix_types.h \
   /usr/include/linux/stddef.h \
   /usr/include/netinet/in.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
+  /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/x86_64-linux-gnu/asm/posix_types.h \
@@ -92,15 +98,26 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/include/x86_64-linux-gnu/asm/socket.h \
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/dirent.h \
+  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
@@ -111,6 +128,7 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
@@ -138,6 +156,9 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
@@ -145,6 +166,7 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/sendfile.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/stat.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -152,6 +174,8 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h
 
+
+/usr/include/x86_64-linux-gnu/sys/sendfile.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
@@ -163,11 +187,17 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
 
 /usr/include/x86_64-linux-gnu/bits/socket.h:
 
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+
 /usr/include/x86_64-linux-gnu/bits/epoll.h:
+
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
@@ -194,6 +224,10 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
 /usr/include/errno.h:
+
+/usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/asm-generic/sockios.h:
 
@@ -321,6 +355,8 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/include/dirent.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /mnt/hgfs/VMshared/code/c++/http/src/main.c:
@@ -334,6 +370,8 @@ src/CMakeFiles/main.dir/server.c.o: /mnt/hgfs/VMshared/code/c++/http/src/server.
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/linux/limits.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 

@@ -14,3 +14,15 @@ int rescvHTTPRequest(int cfd ,int epfd);
 
 //解析HTTP内容
 int parseHTTPRequest(const char * line ,int cfd);
+
+//发送文件
+int sendFile(int cfd ,const char *file);
+
+//发送http头
+int sendHeadResponse(int cfd, int state , const char *destribe , const char * ContentType , int length);
+
+//获取文件和Content-Type的对应关系
+const char* getFileType(const char* name);
+
+//发送文件夹
+int sendDir(int cfd,const char *Dir);
