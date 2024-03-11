@@ -12,7 +12,6 @@
 #include <dirent.h>
 #include <stdlib.h>
 
-
 int initListenFd(unsigned short port)
 {
     // 创建监听fd
@@ -120,9 +119,14 @@ int rescvHTTPRequest(int cfd, int epfd)
     }
     if (len == -1 && errno == EAGAIN)
     {
+        // 找到第一行的结尾
+        char *point = strstr(buf, "\r\n");
+        int index = point - buf; // 找到差的长度
+        // 在第一行结尾设置一个/0，因为只需要第一行
+        buf[index] = '\0';
         printf("data recv finish! data = %s\n", buf);
         // parseHTTPRequest("GET /user/floder 1.1",cfd);  //这里后期要修改为buf内容
-        parseHTTPRequest("GET /user/floder", cfd); // 这里后期要修改为buf内容
+        parseHTTPRequest(buf, cfd); // 这里后期要修改为buf内容
     }
     else if (len == 0)
     {
@@ -163,7 +167,7 @@ int parseHTTPRequest(const char *line, int cfd)
         if (res == -1)
         {
             printf("404 file is not Found!\n");
-            sendHeadResponse(cfd, 404, "Not Found!", getFileType(".HTML"), -1);
+            sendHeadResponse(cfd, 404, "Not Found!", getFileType(".html"), -1);
             sendFile(cfd, "404.html");
             return -1;
         }
@@ -173,12 +177,12 @@ int parseHTTPRequest(const char *line, int cfd)
             // 把文件夹的内容发送给客户端；
             printf("this path is dir! path=%s\n", file);
             sendHeadResponse(cfd, 200, "OK", getFileType(".html"), -1);
-            sendDir(cfd,file);
+            sendDir(cfd, file);
         }
         else
         {
             // 把文件的内容发送给客户端；
-            printf("this path is file! path=%s\n", file);
+            printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
             sendHeadResponse(cfd, 200, "OK", getFileType(file), st.st_size);
             sendFile(cfd, file);
         }
@@ -204,7 +208,7 @@ int sendFile(int cfd, const char *file)
     int fd = open(file, O_RDONLY);
     assert(fd > 0); // 加个断言，判断文件成功打开
 
-#if 1  
+#if 0
     //常规方法
     char buf[1024] = { 0 };
     int len=read(fd , buf ,sizeof buf);
@@ -228,8 +232,26 @@ int sendFile(int cfd, const char *file)
 
 #else
     // 简单的调函数sendFile（）；
-    int fileSize = lseek(fd, 0, SEEK_END);
-    sendfile(cfd, fd, 0, fileSize);
+    int fileSize = lseek(fd, 0, SEEK_END); // 此时文件的指针已经指向了末尾，所以需要将指针重新移动回到前面
+    lseek(fd, 0, SEEK_SET);
+    off_t offset = 0;
+    while (offset < fileSize)
+    {
+        int res = sendfile(cfd, fd, &offset, fileSize - offset); // 这个函数的发送缓冲区也只有200k不到，所以依然需要不断循环发送，发送完成之后会修改offset的值
+        if (res == -1 && errno ==EAGAIN)
+        {
+            //perror("file error:");
+        }
+        else if(res == -1)
+        {
+            perror("file error:");
+        }
+        else
+        {
+            printf("sendfile发送了一次... offset = %d\n", (int)offset);
+        }
+    }
+    
 #endif
     close(fd);
     return 0;
@@ -237,6 +259,7 @@ int sendFile(int cfd, const char *file)
 
 int sendHeadResponse(int cfd, int state, const char *destribe, const char *ContentType, int length)
 {
+    
     if (cfd == -1)
     {
         printf("sendHeadResponse ERROR ! cfd unknown\n");
@@ -248,6 +271,7 @@ int sendHeadResponse(int cfd, int state, const char *destribe, const char *Conte
     sprintf(head + strlen(head), "Content_Length:%d\r\n\r\n", length);
 
     send(cfd, head, strlen(head), 0);
+    printf("headResponse send end ,ContentType=%s\n",ContentType);
     return 0;
 }
 
@@ -335,15 +359,18 @@ const char *getFileType(const char *name)
         return "application/ogg";
     if (strcmp(dot, ".pac") == 0)
         return "application/x-ns-proxy-autoconfig";
+    if (strcmp(dot, ".mp4") ==0)
+        return "video/mpeg4";
 
     return "text/plain; charset=utf-8";
 }
 
-int compare(const struct dirent **a, const struct dirent **b) {
+int compare(const struct dirent **a, const struct dirent **b)
+{
     return strcoll(((struct dirent **)a)[0]->d_name, ((struct dirent **)b)[0]->d_name);
 }
 
-int sendDir(int cfd, const char *Dir)  //发送的是一个html文件的内容
+int sendDir(int cfd, const char *Dir) // 发送的是一个html文件的内容
 {
     if (cfd == -1)
     {
@@ -352,33 +379,33 @@ int sendDir(int cfd, const char *Dir)  //发送的是一个html文件的内容
     }
 
     char html[4096] = {0};
-    sprintf(html , "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>" ,Dir);
+    sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir);
 
     struct dirent **namelist;
-    int num = scandir(Dir,&namelist,NULL,compare);  //设置C编译器标准为GNU C11
+    int num = scandir(Dir, &namelist, NULL, compare); // 设置C编译器标准为GNU C11
 
-    for(int i=0;i<num;i++) //遍历所有内容
+    for (int i = 0; i < num; i++) // 遍历所有内容
     {
-        char *name = namelist[i]->d_name; //获取子文件名称
+        char *name = namelist[i]->d_name; // 获取子文件名称
         struct stat st;
-        char subDir[1024]={0};
-        sprintf(subDir,"%s/%s",Dir,name);  //补充文件地址，用于判断对应的子文件属性
-        int res = stat(subDir,&st);
-        if(S_ISDIR(st.st_mode))
+        char subDir[1024] = {0};
+        sprintf(subDir, "%s/%s", Dir, name); // 补充文件地址，用于判断对应的子文件属性
+        int res = stat(subDir, &st);
+        if (S_ISDIR(st.st_mode))
         {
-            //文件夹内容
-            sprintf(html+strlen(html),"<tr><td><a href=\"%s/\">%s</a></td><td>%ld</td></tr>",name,name,st.st_size);
+            // 文件夹内容
+            sprintf(html + strlen(html), "<tr><td><a href=\"%s/\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
         }
         else
         {
-            //文件内容
-            sprintf(html+strlen(html),"<tr><td><a href=\"%s\">%s</a></td><td>%ld</td></tr>",name,name,st.st_size);
+            // 文件内容
+            sprintf(html + strlen(html), "<tr><td><a href=\"%s\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
         }
         free(namelist[i]);
     }
-    //补充html文件剩下的内容
-    sprintf(html+strlen(html),"</table></body></html>");
-    send(cfd,html,strlen(html),0);
+    // 补充html文件剩下的内容
+    sprintf(html + strlen(html), "</table></body></html>");
+    send(cfd, html, strlen(html), 0);
     free(namelist);
     return 0;
 }
