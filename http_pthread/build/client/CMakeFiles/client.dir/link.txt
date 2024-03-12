@@ -1,0 +1,1 @@
+/usr/bin/gcc -g CMakeFiles/client.dir/client.c.o -o /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/output/client 

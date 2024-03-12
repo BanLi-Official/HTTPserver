@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/src/main.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/src/main.c",
+  "output": "src/CMakeFiles/main.dir/main.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/server.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/src/server.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/src/server.c",
+  "output": "src/CMakeFiles/main.dir/server.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/client",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/client.dir/client.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/client/client.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/client/client.c",
+  "output": "client/CMakeFiles/client.dir/client.c.o"
+}
+]

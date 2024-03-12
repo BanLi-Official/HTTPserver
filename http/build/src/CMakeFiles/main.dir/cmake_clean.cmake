@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/mnt/hgfs/VMshared/code/c++/http/output/main"
-  "/mnt/hgfs/VMshared/code/c++/http/output/main.pdb"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/main"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/main.pdb"
   "CMakeFiles/main.dir/main.c.o"
   "CMakeFiles/main.dir/main.c.o.d"
   "CMakeFiles/main.dir/server.c.o"

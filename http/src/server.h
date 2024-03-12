@@ -26,3 +26,9 @@ const char* getFileType(const char* name);
 
 //发送文件夹
 int sendDir(int cfd,const char *Dir);
+
+//将十六进制转化为十进制
+int hexToDec(char c);
+
+//将编码解码
+void DecodeMsg(char *from , char *to);

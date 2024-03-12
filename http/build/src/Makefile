@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/VMshared/code/c++/http
+CMAKE_SOURCE_DIR = /mnt/hgfs/VMshared/code/c++/HTTPReactor/http
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hgfs/VMshared/code/c++/http/build
+CMAKE_BINARY_DIR = /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/http/build/CMakeFiles /mnt/hgfs/VMshared/code/c++/http/build/src//CMakeFiles/progress.marks
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/http/build/CMakeFiles 0
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build/CMakeFiles /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build/src//CMakeFiles/progress.marks
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ main: src/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
 main.o: main.c.o
@@ -135,7 +135,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -143,7 +143,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.i
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -151,7 +151,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
 server.o: server.c.o
@@ -159,7 +159,7 @@ server.o: server.c.o
 
 # target to build an object file
 server.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.o
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.o
 .PHONY : server.c.o
 
 server.i: server.c.i
@@ -167,7 +167,7 @@ server.i: server.c.i
 
 # target to preprocess a source file
 server.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.i
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.i
 .PHONY : server.c.i
 
 server.s: server.c.s
@@ -175,7 +175,7 @@ server.s: server.c.s
 
 # target to generate assembly for a file
 server.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.s
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/server.c.s
 .PHONY : server.c.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/hgfs/VMshared/code/c++/http/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,1 +1,1 @@
-/usr/bin/gcc -g CMakeFiles/main.dir/main.c.o CMakeFiles/main.dir/server.c.o -o /mnt/hgfs/VMshared/code/c++/http/output/main 
+/usr/bin/cc CMakeFiles/main.dir/main.c.o CMakeFiles/main.dir/server.c.o -o /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/main 

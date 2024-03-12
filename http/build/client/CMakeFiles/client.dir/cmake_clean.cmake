@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/mnt/hgfs/VMshared/code/c++/http/output/client"
-  "/mnt/hgfs/VMshared/code/c++/http/output/client.pdb"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/client"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/client.pdb"
   "CMakeFiles/client.dir/client.c.o"
   "CMakeFiles/client.dir/client.c.o.d"
 )

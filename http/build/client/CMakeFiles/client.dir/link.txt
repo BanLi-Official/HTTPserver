@@ -1,1 +1,1 @@
-/usr/bin/gcc -g CMakeFiles/client.dir/client.c.o -o /mnt/hgfs/VMshared/code/c++/http/output/client 
+/usr/bin/cc CMakeFiles/client.dir/client.c.o -o /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/output/client 

@@ -1,6 +1,6 @@
 src/CMakeFiles/main.dir/main.c.o: \
- /mnt/hgfs/VMshared/code/c++/http/src/main.c /usr/include/stdc-predef.h \
- /usr/include/stdio.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/src/main.c \
+ /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -53,4 +53,4 @@ src/CMakeFiles/main.dir/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /mnt/hgfs/VMshared/code/c++/http/src/server.h
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http/src/server.h

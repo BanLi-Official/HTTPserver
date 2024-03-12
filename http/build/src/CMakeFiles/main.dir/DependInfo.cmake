@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/hgfs/VMshared/code/c++/http/src/main.c" "src/CMakeFiles/main.dir/main.c.o" "gcc" "src/CMakeFiles/main.dir/main.c.o.d"
-  "/mnt/hgfs/VMshared/code/c++/http/src/server.c" "src/CMakeFiles/main.dir/server.c.o" "gcc" "src/CMakeFiles/main.dir/server.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/src/main.c" "src/CMakeFiles/main.dir/main.c.o" "gcc" "src/CMakeFiles/main.dir/main.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http/src/server.c" "src/CMakeFiles/main.dir/server.c.o" "gcc" "src/CMakeFiles/main.dir/server.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

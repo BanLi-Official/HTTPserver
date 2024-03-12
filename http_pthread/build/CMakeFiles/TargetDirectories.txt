@@ -1,0 +1,8 @@
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/src/CMakeFiles/main.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/src/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/src/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/client/CMakeFiles/client.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/client/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_pthread/build/client/CMakeFiles/rebuild_cache.dir

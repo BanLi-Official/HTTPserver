@@ -11,6 +11,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 int initListenFd(unsigned short port)
 {
@@ -49,7 +50,7 @@ int initListenFd(unsigned short port)
         return -1;
     }
     // 返回
-    printf("initListenFd 初始化监听套接字成功\n");
+    //printf("initListenFd 初始化监听套接字成功\n");
     return lfd;
 }
 
@@ -91,7 +92,7 @@ int connectClient(int lfd, int epfd)
         return -1;
     }
 
-    printf("成功添加socket客户连接：%s , 端口为：%d\n", inet_ntoa(add.sin_addr), ntohs(add.sin_port));
+    //printf("成功添加socket客户连接：%s , 端口为：%d\n", inet_ntoa(add.sin_addr), ntohs(add.sin_port));
     return 0;
 }
 
@@ -124,13 +125,13 @@ int rescvHTTPRequest(int cfd, int epfd)
         int index = point - buf; // 找到差的长度
         // 在第一行结尾设置一个/0，因为只需要第一行
         buf[index] = '\0';
-        printf("data recv finish! data = %s\n", buf);
+        //printf("data recv finish! data = %s\n", buf);
         // parseHTTPRequest("GET /user/floder 1.1",cfd);  //这里后期要修改为buf内容
         parseHTTPRequest(buf, cfd); // 这里后期要修改为buf内容
     }
     else if (len == 0)
     {
-        printf("client offLine\n");
+        //printf("client offLine\n");
         return -1;
     }
     else
@@ -147,7 +148,9 @@ int parseHTTPRequest(const char *line, int cfd)
     char path[1024];
     char *file;
     int res = sscanf(line, "%[^ ] %[^ ] ", type, path); // 利用正则表达式将http表头的第一行取出来
-    printf("type = %s  ,path = %s \n", type, path);
+    //printf("type = %s  ,path = %s \n", type, path);
+    DecodeMsg(path,path);
+    //printf("type = %s  ,path = %s \n", type, path);
     if (strcasecmp(type, "get") == 0) // 判断表头的类型
     {
         // get类型
@@ -166,7 +169,7 @@ int parseHTTPRequest(const char *line, int cfd)
         int res = stat(file, &st);
         if (res == -1)
         {
-            printf("404 file is not Found!\n");
+            //printf("404 file is not Found!\n");
             sendHeadResponse(cfd, 404, "Not Found!", getFileType(".html"), -1);
             sendFile(cfd, "404.html");
             return -1;
@@ -175,14 +178,14 @@ int parseHTTPRequest(const char *line, int cfd)
         if (S_ISDIR(st.st_mode))
         {
             // 把文件夹的内容发送给客户端；
-            printf("this path is dir! path=%s\n", file);
+            //printf("this path is dir! path=%s\n", file);
             sendHeadResponse(cfd, 200, "OK", getFileType(".html"), -1);
             sendDir(cfd, file);
         }
         else
         {
             // 把文件的内容发送给客户端；
-            printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
+            //printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
             sendHeadResponse(cfd, 200, "OK", getFileType(file), st.st_size);
             sendFile(cfd, file);
         }
@@ -199,7 +202,7 @@ int parseHTTPRequest(const char *line, int cfd)
 
 int sendFile(int cfd, const char *file)
 {
-    printf("file send start\n");
+    //printf("file send start\n");
     if (cfd == -1)
     {
         printf("sendFile Error ! cfd unknown\n");
@@ -248,7 +251,7 @@ int sendFile(int cfd, const char *file)
         }
         else
         {
-            printf("sendfile发送了一次... offset = %d\n", (int)offset);
+            //printf("sendfile发送了一次... offset = %d\n", (int)offset);
         }
     }
     
@@ -271,7 +274,7 @@ int sendHeadResponse(int cfd, int state, const char *destribe, const char *Conte
     sprintf(head + strlen(head), "Content_Length:%d\r\n\r\n", length);
 
     send(cfd, head, strlen(head), 0);
-    printf("headResponse send end ,ContentType=%s\n",ContentType);
+    //printf("headResponse send end ,ContentType=%s\n",ContentType);
     return 0;
 }
 
@@ -302,7 +305,7 @@ int epollRun(int lfd)
     while (1)
     {
         // epoll检测
-        printf("epoll 开始等待！\n");
+        //printf("epoll 开始等待！\n");
         int num = epoll_wait(epfd, events, size, -1);
         for (int i = 0; i < num; i++)
         {
@@ -408,4 +411,33 @@ int sendDir(int cfd, const char *Dir) // 发送的是一个html文件的内容
     send(cfd, html, strlen(html), 0);
     free(namelist);
     return 0;
+}
+
+int hexToDec(char c)
+{
+    if(c >= '0' && c <= '9')
+        return c-'0';
+    if(c >= 'a' && c <= 'z')
+        return c-'a'+10;
+    if(c >= 'A' && c <= 'Z')
+        return c-'A'+10;
+    return 0;
+}
+
+void DecodeMsg(char *from, char *to)
+{
+    for(;from[0] != '\0';from++,to++)
+    {
+        //printf("from[0]=%c\n",from[0]);
+        if(from[0] == '%' && from[1]!='\0' && from[2]!='\0')
+        {
+            to[0]=hexToDec(from[1])*16+hexToDec(from[2]); //检测到%E2%A1这一类的编码则转为中文
+            from=from+2;
+        }
+        else
+        {
+            to[0]=from[0];
+        }
+    }
+    to[0]=from[0];
 }
