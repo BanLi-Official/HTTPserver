@@ -130,6 +130,102 @@ main/fast:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+Channel.o: Channel.c.o
+.PHONY : Channel.o
+
+# target to build an object file
+Channel.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.o
+.PHONY : Channel.c.o
+
+Channel.i: Channel.c.i
+.PHONY : Channel.i
+
+# target to preprocess a source file
+Channel.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.i
+.PHONY : Channel.c.i
+
+Channel.s: Channel.c.s
+.PHONY : Channel.s
+
+# target to generate assembly for a file
+Channel.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.s
+.PHONY : Channel.c.s
+
+ChannelMap.o: ChannelMap.c.o
+.PHONY : ChannelMap.o
+
+# target to build an object file
+ChannelMap.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.o
+.PHONY : ChannelMap.c.o
+
+ChannelMap.i: ChannelMap.c.i
+.PHONY : ChannelMap.i
+
+# target to preprocess a source file
+ChannelMap.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.i
+.PHONY : ChannelMap.c.i
+
+ChannelMap.s: ChannelMap.c.s
+.PHONY : ChannelMap.s
+
+# target to generate assembly for a file
+ChannelMap.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.s
+.PHONY : ChannelMap.c.s
+
+EpollDispatcher.o: EpollDispatcher.c.o
+.PHONY : EpollDispatcher.o
+
+# target to build an object file
+EpollDispatcher.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.o
+.PHONY : EpollDispatcher.c.o
+
+EpollDispatcher.i: EpollDispatcher.c.i
+.PHONY : EpollDispatcher.i
+
+# target to preprocess a source file
+EpollDispatcher.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.i
+.PHONY : EpollDispatcher.c.i
+
+EpollDispatcher.s: EpollDispatcher.c.s
+.PHONY : EpollDispatcher.s
+
+# target to generate assembly for a file
+EpollDispatcher.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.s
+.PHONY : EpollDispatcher.c.s
+
+EventLoop.o: EventLoop.c.o
+.PHONY : EventLoop.o
+
+# target to build an object file
+EventLoop.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.o
+.PHONY : EventLoop.c.o
+
+EventLoop.i: EventLoop.c.i
+.PHONY : EventLoop.i
+
+# target to preprocess a source file
+EventLoop.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.i
+.PHONY : EventLoop.c.i
+
+EventLoop.s: EventLoop.c.s
+.PHONY : EventLoop.s
+
+# target to generate assembly for a file
+EventLoop.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
+.PHONY : EventLoop.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -163,6 +259,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... Channel.o"
+	@echo "... Channel.i"
+	@echo "... Channel.s"
+	@echo "... ChannelMap.o"
+	@echo "... ChannelMap.i"
+	@echo "... ChannelMap.s"
+	@echo "... EpollDispatcher.o"
+	@echo "... EpollDispatcher.i"
+	@echo "... EpollDispatcher.s"
+	@echo "... EventLoop.o"
+	@echo "... EventLoop.i"
+	@echo "... EventLoop.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,5 +1,6 @@
-#include "ChannelMap.h"
+﻿#include "ChannelMap.h"
 #include <stdlib.h>
+#include <string.h>
 
 struct ChannelMap *ChannelMapInit(int size)
 {
@@ -47,7 +48,7 @@ bool reshapeChannelMap(struct ChannelMap *map, int newsize)
             return false;
         }
         map->list = newptr;
-        memset(&map->list[map->size],0,(tempsize-map->size)*sizeof(struct Channel *));
+        memset(&map->list[map->size],0,(tempsize-map->size)*sizeof(struct Channel *));  //&map->list[map->size]第n位的地址，后面赋值为0
         map->size = tempsize;
         
     }

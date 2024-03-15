@@ -8,6 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c" "src/CMakeFiles/main.dir/Channel.c.o" "gcc" "src/CMakeFiles/main.dir/Channel.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c" "src/CMakeFiles/main.dir/ChannelMap.c.o" "gcc" "src/CMakeFiles/main.dir/ChannelMap.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c" "src/CMakeFiles/main.dir/EpollDispatcher.c.o" "gcc" "src/CMakeFiles/main.dir/EpollDispatcher.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c" "src/CMakeFiles/main.dir/EventLoop.c.o" "gcc" "src/CMakeFiles/main.dir/EventLoop.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c" "src/CMakeFiles/main.dir/main.c.o" "gcc" "src/CMakeFiles/main.dir/main.c.o.d"
   )
 
