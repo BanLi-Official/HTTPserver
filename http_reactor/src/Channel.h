@@ -21,12 +21,14 @@ struct Channel  //封装fd与其回调函数到Channel中，
     handleFunc readCallBack;
     //写函数
     handleFunc writeCallBack;
+    //释放arg的内存
+    handleFunc destroyCallBack; 
     //读写函数的参数
     void * arg;
 };
 
 //初始化Channel函数
-struct Channel * channelInit(int fd , int event ,handleFunc readFunc ,handleFunc writeFunc ,void *arg);
+struct Channel * channelInit(int fd , int event ,handleFunc readFunc ,handleFunc writeFunc ,handleFunc destroyCallBack,void *arg);
 //设置写函数是否有效函数
 int setWriteable(struct Channel * channel , bool flag);
 //判断写函数是否有效函数

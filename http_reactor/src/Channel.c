@@ -1,7 +1,7 @@
 #include "Channel.h"
 #include <stdlib.h>
 
-struct Channel *channelInit(int fd, int event, handleFunc readFunc, handleFunc writeFunc, void *arg)
+struct Channel *channelInit(int fd, int event, handleFunc readFunc, handleFunc writeFunc,handleFunc destroyCallBack, void *arg)
 {
     struct Channel *channel = (struct Channel *)malloc(sizeof(struct Channel));
     channel->fd = fd;

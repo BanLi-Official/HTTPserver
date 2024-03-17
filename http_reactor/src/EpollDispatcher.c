@@ -2,6 +2,7 @@
 #include <sys/epoll.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 #define Max 500
 
@@ -61,20 +62,126 @@ static void *EpollInit()
 
 static int Epolladd(struct Channel *channel, struct EventLoop *eventloop)
 {
+    if (channel == NULL)
+    {
+        printf("Epolladd error ! channel == NULL\n");
+    }
+    //包装事件类型
+    struct epoll_event event ;
+    event.data.fd = channel->fd;
+    //设置检测读写事件
+    int ev=0;
+    if(channel->event & WriteAble)
+    {
+        ev |= EPOLLOUT;
+    }
+    if(channel->event & ReadAble)
+    {
+        ev |= EPOLLIN;
+    }
+    event.events=ev;
+
+    //将文件描述符挂载到红黑树上
+    int res=epoll_ctl(((struct EpolldispatchData *)eventloop->DispatcherData)->epfd , EPOLL_CTL_ADD , channel->fd , &event);
+    if(res == -1)
+    {
+        printf("Epolladd error ! epoll_ctl error\n");
+        return -1;
+    }
+    return 0;
+
+    
 }
 
 static int Epollremove(struct Channel *channel, struct EventLoop *eventloop)
 {
+    if (channel == NULL)
+    {
+        printf("Epollremove error ! channel == NULL\n");
+    }
+
+
+    int res = epoll_ctl(((struct EpolldispatchData *)eventloop->DispatcherData)->epfd , EPOLL_CTL_DEL ,channel->fd,NULL);
+    if(res == -1)
+    {
+        printf("Epollremove error ! epoll_ctl error\n");
+        return -1;
+    }
+
+    //清除channel中对应的data数据
+    channel->destroyCallBack(channel->arg);
+    return 0;
+     
+    
+
 }
 
 static int Epollmodify(struct Channel *channel, struct EventLoop *eventloop)
 {
+    if (channel == NULL)
+    {
+        printf("Epollremove error ! channel == NULL\n");
+    }
+    //包装事件类型
+    struct epoll_event event ;
+    event.data.fd = channel->fd;
+    //设置检测读写事件
+    int ev=0;
+    if(channel->event & WriteAble)
+    {
+        ev |= EPOLLOUT;
+    }
+    if(channel->event & ReadAble)
+    {
+        ev |= EPOLLIN;
+    }
+    event.events=ev;
+
+    int res = epoll_ctl(((struct EpolldispatchData *)eventloop->DispatcherData)->epfd,EPOLL_CTL_MOD,channel->fd,&event);
+    if(res == -1)
+    {
+        printf("Epollmodify error ! epoll_ctl error\n");
+        return -1;
+    }
+    return 0;
 }
 
 static int Epolldispatch(struct EventLoop *eventloop, int Timeout)
 {
+    struct EpolldispatchData *dispatcherData=(struct EpolldispatchData *)eventloop->DispatcherData;
+    int epfd=dispatcherData->epfd;
+    struct epoll_event *events=(struct epoll_event *)dispatcherData->events;
+    int num=epoll_wait(epfd,events,Max,Timeout * 1000);
+    for(int i=0;i<num;i++)
+    {
+        //处理每一个检测到的文件标识符
+        int fd =events[i].data.fd;
+        int event = events[i].events;
+        
+        if(event & EPOLLERR || event & EPOLLHUP)
+        {
+            //用户断开连接
+            //Epollremove(channel,eventloop);
+        }
+        if(event & EPOLLIN)
+        {
+            //读事件
+        }
+        if(event & EPOLLOUT)
+        {
+            //写事件
+        }
+
+    }
+    return 0;
 }
 
 static int Epollclear(struct EventLoop *eventloop)
 {
+    struct EpolldispatchData * epollData = eventloop->DispatcherData;
+    struct epoll_event *events = epollData->events;
+    free(events);  //先释放事件组 
+    close(epollData->epfd);   //关闭epoll
+    free(epollData); //释放data空间
+    return 0;
 }
