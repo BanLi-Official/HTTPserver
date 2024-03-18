@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/Channel.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c",
+  "output": "src/CMakeFiles/main.dir/Channel.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/ChannelMap.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c",
+  "output": "src/CMakeFiles/main.dir/ChannelMap.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/EpollDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c",
+  "output": "src/CMakeFiles/main.dir/EpollDispatcher.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/EventLoop.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c",
+  "output": "src/CMakeFiles/main.dir/EventLoop.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/PollDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c",
+  "output": "src/CMakeFiles/main.dir/PollDispatcher.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c",
+  "output": "src/CMakeFiles/main.dir/main.c.o"
+}
+]

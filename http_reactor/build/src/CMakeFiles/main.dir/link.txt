@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/main.dir/Channel.c.o CMakeFiles/main.dir/ChannelMap.c.o CMakeFiles/main.dir/EpollDispatcher.c.o CMakeFiles/main.dir/EventLoop.c.o CMakeFiles/main.dir/main.c.o -o /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main 
+/usr/bin/gcc -g CMakeFiles/main.dir/Channel.c.o CMakeFiles/main.dir/ChannelMap.c.o CMakeFiles/main.dir/EpollDispatcher.c.o CMakeFiles/main.dir/EventLoop.c.o CMakeFiles/main.dir/PollDispatcher.c.o CMakeFiles/main.dir/main.c.o -o /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main 

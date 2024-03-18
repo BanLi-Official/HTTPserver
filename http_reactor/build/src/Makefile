@@ -226,6 +226,30 @@ EventLoop.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
 .PHONY : EventLoop.c.s
 
+PollDispatcher.o: PollDispatcher.c.o
+.PHONY : PollDispatcher.o
+
+# target to build an object file
+PollDispatcher.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.o
+.PHONY : PollDispatcher.c.o
+
+PollDispatcher.i: PollDispatcher.c.i
+.PHONY : PollDispatcher.i
+
+# target to preprocess a source file
+PollDispatcher.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.i
+.PHONY : PollDispatcher.c.i
+
+PollDispatcher.s: PollDispatcher.c.s
+.PHONY : PollDispatcher.s
+
+# target to generate assembly for a file
+PollDispatcher.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.s
+.PHONY : PollDispatcher.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -271,6 +295,9 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... PollDispatcher.o"
+	@echo "... PollDispatcher.i"
+	@echo "... PollDispatcher.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

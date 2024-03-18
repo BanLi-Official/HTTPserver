@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/EpollDispatcher.c.o.d"
   "CMakeFiles/main.dir/EventLoop.c.o"
   "CMakeFiles/main.dir/EventLoop.c.o.d"
+  "CMakeFiles/main.dir/PollDispatcher.c.o"
+  "CMakeFiles/main.dir/PollDispatcher.c.o.d"
   "CMakeFiles/main.dir/main.c.o"
   "CMakeFiles/main.dir/main.c.o.d"
 )
