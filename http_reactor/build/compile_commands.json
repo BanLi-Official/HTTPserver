@@ -31,6 +31,12 @@
 },
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/SelectDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c",
+  "output": "src/CMakeFiles/main.dir/SelectDispatcher.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
   "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c",
   "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c",
   "output": "src/CMakeFiles/main.dir/main.c.o"

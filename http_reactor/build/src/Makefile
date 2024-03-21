@@ -250,6 +250,30 @@ PollDispatcher.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.s
 .PHONY : PollDispatcher.c.s
 
+SelectDispatcher.o: SelectDispatcher.c.o
+.PHONY : SelectDispatcher.o
+
+# target to build an object file
+SelectDispatcher.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.o
+.PHONY : SelectDispatcher.c.o
+
+SelectDispatcher.i: SelectDispatcher.c.i
+.PHONY : SelectDispatcher.i
+
+# target to preprocess a source file
+SelectDispatcher.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.i
+.PHONY : SelectDispatcher.c.i
+
+SelectDispatcher.s: SelectDispatcher.c.s
+.PHONY : SelectDispatcher.s
+
+# target to generate assembly for a file
+SelectDispatcher.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
+.PHONY : SelectDispatcher.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -298,6 +322,9 @@ help:
 	@echo "... PollDispatcher.o"
 	@echo "... PollDispatcher.i"
 	@echo "... PollDispatcher.s"
+	@echo "... SelectDispatcher.o"
+	@echo "... SelectDispatcher.i"
+	@echo "... SelectDispatcher.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
