@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "eventloop.h": "c"
+        "eventloop.h": "c",
+        "pthread.h": "c"
     }
 }
