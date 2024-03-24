@@ -2,6 +2,7 @@
 #include <sys/select.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 struct selectDispatcherData
 {
@@ -177,12 +178,13 @@ static int selectDispatch(struct EventLoop *eventloop, int Timeout)
     {
         if(FD_ISSET(i , readTemp)) //读数组当中有内容
         {
-
+            activateFD(eventloop,i,ReadAble);
         }
         if(FD_ISSET(i , writeTemp)) //写数组当中有内容
         {
-
+            activateFD(eventloop,i,WriteAble);
         }
+
     }
     return 1;
     

@@ -2,6 +2,7 @@
 #include <sys/poll.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 #define Max 500
 
@@ -149,14 +150,19 @@ static int PollDispatche(struct EventLoop *eventloop, int Timeout)
             if(fds[i].revents & POLLERR || fds[i].revents & POLLHUP)
             {
                 //客户端断开,remove
+                struct Channel * channel = eventloop->channelMap->list[fds[i].fd];
+                assert(channel->fd == fds[i].fd);
+                PollRemove(channel,eventloop);
             }
             if (fds[i].revents & POLLIN)
             {
                 //读事件
+                activateFD(eventloop,fds[i].fd,ReadAble);
             }
             if(fds[i].revents & POLLOUT)
             {
                 //写事件
+                activateFD(eventloop,fds[i].fd,WriteAble);
             } 
         }
         

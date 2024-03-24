@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <assert.h>
 
 #define Max 500
 
@@ -161,15 +162,19 @@ static int Epolldispatch(struct EventLoop *eventloop, int Timeout)
         if(event & EPOLLERR || event & EPOLLHUP)
         {
             //用户断开连接
-            //Epollremove(channel,eventloop);
+            struct Channel * channel = eventloop->channelMap->list[fd];
+            assert(channel->fd == fd);
+            Epollremove(channel,eventloop);
         }
         if(event & EPOLLIN)
         {
             //读事件
+            activateFD(eventloop,fd,ReadAble);
         }
         if(event & EPOLLOUT)
         {
             //写事件
+            activateFD(eventloop,fd,WriteAble);
         }
 
     }

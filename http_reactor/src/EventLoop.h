@@ -40,3 +40,6 @@ struct EventLoop
 
 struct EventLoop* EventLoopInit();  //EventLoop的初始化函数
 struct EventLoop* EventLoopInitEX(const char *name);   //eventloop带名称的初始化函数
+int EventLoopRun(struct EventLoop* loop); //eventloop开始运行
+int activateFD(struct EventLoop* loop , int fd , int event); //fd激活后启动对应的回调函数
+int EventLoopAddTask(struct EventLoop *loop , struct Channel *channel , int type);     //向eventloop中添加task任务
