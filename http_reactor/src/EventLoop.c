@@ -4,11 +4,31 @@
 #include <string.h>
 #include <assert.h>
 #include <stdio.h>
+#include <sys/socket.h>
+#include <unistd.h>
 
 struct EventLoop *EventLoopInit()
 {
     return EventLoopInitEX(NULL);
 }
+
+int readMsgLocal(void *arg)
+{
+    struct EventLoop *loop = (struct EventLoop *)arg; 
+    char buf[256];
+    read(loop->socketPairFds[1],buf,sizeof(buf));
+    return 0;
+
+}
+
+
+int writeMsgLocal(struct EventLoop * loop)
+{
+    char *msg = "wakeup!";
+    write(loop->socketPairFds[0],msg,strlen(msg));
+    return 0;
+}
+
 
 struct EventLoop *EventLoopInitEX(const char *name)
 {
@@ -28,6 +48,18 @@ struct EventLoop *EventLoopInitEX(const char *name)
     loop->head = loop->tail = NULL; // tasklist的指针
 
     loop->channelMap = ChannelMapInit(128); // 根据fd找channel的map
+
+    int res=socketpair(AF_UNIX , SOCK_STREAM , 0 , loop->socketPairFds);  //初始化socketpair数组
+    //规定：loop->socketPairFds[1]读 ，loop->socketPairFds[0]写 
+    if(res == -1)
+    {
+        perror("EventLoopInitEX error! res == -1\n"); 
+        exit(0);
+    }
+    //将读的文件描述符封装到channel中 ,让dispatcher能够接受到事件，从而唤醒dispatch
+    struct Channel * channel = channelInit(loop->socketPairFds[1],ReadAble,readMsgLocal,NULL,NULL,loop);
+    //将这个channel加入task列表当中
+    res = EventLoopAddTask(loop,channel,ReadAble);
 
     return loop;
 }
@@ -49,6 +81,8 @@ int EventLoopRun(struct EventLoop *loop)
     while (loop->isRunning)
     {
         dispatcher->dispatch(loop, 2);
+        //这里还要添加一个将tasklist中任务挂载到dispatch中的函数
+        EventLoopListProcess(loop);
     }
 
     return 0;
@@ -112,12 +146,73 @@ int EventLoopAddTask(struct EventLoop *loop, struct Channel *channel, int type)
     if (loop->threadID == pthread_self())
     {
         // 当前子线程(基于子线程的角度分析)
+        EventLoopListProcess(loop);
     }
     else
     {
         // 主线程 -- 告诉子线程处理任务队列中的任务
         // 1. 子线程在工作 2. 子线程被阻塞了:select, poll, epoll
+        writeMsgLocal(loop);
     }
 
+    return 0;
+}
+
+int EventLoopListProcess(struct EventLoop *loop)
+{
+    pthread_mutex_lock(&loop->mutexForList);
+    struct Task * task = loop->head;
+    while (task!=NULL)
+    {
+        struct Channel *channel = task->channel;
+        if(task->type == ADD)
+        {
+            //添加Channel的任务
+            EventLoopChannelAdd(channel,loop);
+        }
+        else if(task->type == DELETE)
+        {
+            //删除Channel的任务
+        }
+        else if(task->type == MODIFY)
+        {
+            //修改Channel的任务
+        }
+        struct Task * temp = task;
+        task = task->next;
+        free(temp);
+    }
+    loop->head = loop->tail =NULL;
+    pthread_mutex_unlock(&loop->mutexForList);
+
+    return 0;
+}
+
+int EventLoopChannelAdd(struct Channel *channel, struct EventLoop *loop)
+{
+    int fd= channel->fd;
+    struct ChannelMap * map = loop->channelMap;
+    if(fd >= map->size)
+    {
+        int res = reshapeChannelMap(map,fd);
+        if(res == -1)
+        {
+            perror("EventLoopChannelAdd Error!");
+            exit(0);
+        }
+    }
+    //找到要插入的位置，确定是否有内容
+    if(map->list[fd] != NULL)
+    {
+        //当前位置有内容
+        printf("EventLoopChannelAdd error! 当前位置有内容\n");
+        return -1;
+    }
+    else
+    {
+        //当前位置没有内容
+        map->list[fd] = channel;
+        loop->dispatcher->add(channel , loop);
+    }
     return 0;
 }
