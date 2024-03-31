@@ -274,6 +274,30 @@ SelectDispatcher.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
 .PHONY : SelectDispatcher.c.s
 
+WorkerThread.o: WorkerThread.c.o
+.PHONY : WorkerThread.o
+
+# target to build an object file
+WorkerThread.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.o
+.PHONY : WorkerThread.c.o
+
+WorkerThread.i: WorkerThread.c.i
+.PHONY : WorkerThread.i
+
+# target to preprocess a source file
+WorkerThread.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.i
+.PHONY : WorkerThread.c.i
+
+WorkerThread.s: WorkerThread.c.s
+.PHONY : WorkerThread.s
+
+# target to generate assembly for a file
+WorkerThread.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.s
+.PHONY : WorkerThread.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -325,6 +349,9 @@ help:
 	@echo "... SelectDispatcher.o"
 	@echo "... SelectDispatcher.i"
 	@echo "... SelectDispatcher.s"
+	@echo "... WorkerThread.o"
+	@echo "... WorkerThread.i"
+	@echo "... WorkerThread.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

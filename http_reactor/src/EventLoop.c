@@ -14,21 +14,18 @@ struct EventLoop *EventLoopInit()
 
 int readMsgLocal(void *arg)
 {
-    struct EventLoop *loop = (struct EventLoop *)arg; 
+    struct EventLoop *loop = (struct EventLoop *)arg;
     char buf[256];
-    read(loop->socketPairFds[1],buf,sizeof(buf));
+    read(loop->socketPairFds[1], buf, sizeof(buf));
     return 0;
-
 }
 
-
-int writeMsgLocal(struct EventLoop * loop)
+int writeMsgLocal(struct EventLoop *loop)
 {
     char *msg = "wakeup!";
-    write(loop->socketPairFds[0],msg,strlen(msg));
+    write(loop->socketPairFds[0], msg, strlen(msg));
     return 0;
 }
-
 
 struct EventLoop *EventLoopInitEX(const char *name)
 {
@@ -49,17 +46,17 @@ struct EventLoop *EventLoopInitEX(const char *name)
 
     loop->channelMap = ChannelMapInit(128); // 根据fd找channel的map
 
-    int res=socketpair(AF_UNIX , SOCK_STREAM , 0 , loop->socketPairFds);  //初始化socketpair数组
-    //规定：loop->socketPairFds[1]读 ，loop->socketPairFds[0]写 
-    if(res == -1)
+    int res = socketpair(AF_UNIX, SOCK_STREAM, 0, loop->socketPairFds); // 初始化socketpair数组
+    // 规定：loop->socketPairFds[1]读 ，loop->socketPairFds[0]写
+    if (res == -1)
     {
-        perror("EventLoopInitEX error! res == -1\n"); 
+        perror("EventLoopInitEX error! res == -1\n");
         exit(0);
     }
-    //将读的文件描述符封装到channel中 ,让dispatcher能够接受到事件，从而唤醒dispatch
-    struct Channel * channel = channelInit(loop->socketPairFds[1],ReadAble,readMsgLocal,NULL,NULL,loop);
-    //将这个channel加入task列表当中
-    res = EventLoopAddTask(loop,channel,ReadAble);
+    // 将读的文件描述符封装到channel中 ,让dispatcher能够接受到事件，从而唤醒dispatch
+    struct Channel *channel = channelInit(loop->socketPairFds[1], ReadAble, readMsgLocal, NULL, NULL, loop);
+    // 将这个channel加入task列表当中
+    res = EventLoopAddTask(loop, channel, ReadAble);
 
     return loop;
 }
@@ -81,7 +78,7 @@ int EventLoopRun(struct EventLoop *loop)
     while (loop->isRunning)
     {
         dispatcher->dispatch(loop, 2);
-        //这里还要添加一个将tasklist中任务挂载到dispatch中的函数
+        // 这里还要添加一个将tasklist中任务挂载到dispatch中的函数
         EventLoopListProcess(loop);
     }
 
@@ -161,28 +158,30 @@ int EventLoopAddTask(struct EventLoop *loop, struct Channel *channel, int type)
 int EventLoopListProcess(struct EventLoop *loop)
 {
     pthread_mutex_lock(&loop->mutexForList);
-    struct Task * task = loop->head;
-    while (task!=NULL)
+    struct Task *task = loop->head;
+    while (task != NULL)
     {
         struct Channel *channel = task->channel;
-        if(task->type == ADD)
+        if (task->type == ADD)
         {
-            //添加Channel的任务
-            EventLoopChannelAdd(channel,loop);
+            // 添加Channel的任务
+            EventLoopChannelAdd(channel, loop);
         }
-        else if(task->type == DELETE)
+        else if (task->type == DELETE)
         {
-            //删除Channel的任务
+            // 删除Channel的任务
+            EventLoopChannelRemove(channel, loop);
         }
-        else if(task->type == MODIFY)
+        else if (task->type == MODIFY)
         {
-            //修改Channel的任务
+            // 修改Channel的任务
+            EventLoopChannelModify(channel, loop);
         }
-        struct Task * temp = task;
+        struct Task *temp = task;
         task = task->next;
         free(temp);
     }
-    loop->head = loop->tail =NULL;
+    loop->head = loop->tail = NULL;
     pthread_mutex_unlock(&loop->mutexForList);
 
     return 0;
@@ -190,29 +189,64 @@ int EventLoopListProcess(struct EventLoop *loop)
 
 int EventLoopChannelAdd(struct Channel *channel, struct EventLoop *loop)
 {
-    int fd= channel->fd;
-    struct ChannelMap * map = loop->channelMap;
-    if(fd >= map->size)
+    int fd = channel->fd;
+    struct ChannelMap *map = loop->channelMap;
+    if (fd >= map->size)
     {
-        int res = reshapeChannelMap(map,fd);
-        if(res == -1)
+        int res = reshapeChannelMap(map, fd);
+        if (res == -1)
         {
             perror("EventLoopChannelAdd Error!");
             exit(0);
         }
     }
-    //找到要插入的位置，确定是否有内容
-    if(map->list[fd] != NULL)
+    // 找到要插入的位置，确定是否有内容
+    if (map->list[fd] != NULL)
     {
-        //当前位置有内容
+        // 当前位置有内容
         printf("EventLoopChannelAdd error! 当前位置有内容\n");
         return -1;
     }
     else
     {
-        //当前位置没有内容
+        // 当前位置没有内容
         map->list[fd] = channel;
-        loop->dispatcher->add(channel , loop);
+        loop->dispatcher->add(channel, loop);
     }
+    return 0;
+}
+
+int EventLoopChannelRemove(struct Channel *channel, struct EventLoop *loop)
+{
+    int fd = channel->fd;
+    struct ChannelMap *map = loop->channelMap;
+    if (fd >= map->size) // 文件描述符不在map当中
+    {
+        return -1;
+    }
+    loop->dispatcher->remove(channel, loop);
+    return 0;
+}
+
+int EventLoopChannelModify(struct Channel *channel, struct EventLoop *loop)
+{
+    int fd = channel->fd;
+    struct ChannelMap *map = loop->channelMap;
+    if (loop->channelMap->list[channel->fd] == NULL)
+    {
+        printf("channelmap当中不存在该channel\n");
+        return -1;
+    }
+    loop->dispatcher->modify(channel, loop);
+
+    return 0;
+}
+
+int destroy(struct Channel *channel, struct EventLoop *loop)
+{
+    // 将该channel从channelmap当中除去
+    loop->channelMap->list[channel->fd] = NULL;
+    close(channel->fd);
+    free(channel);
     return 0;
 }

@@ -55,3 +55,6 @@ int activateFD(struct EventLoop* loop , int fd , int event); //fd激活后启动
 int EventLoopAddTask(struct EventLoop *loop , struct Channel *channel , int type);     //向eventloop中添加task任务
 int EventLoopListProcess(struct EventLoop *loop); //处理task任务
 int EventLoopChannelAdd(struct Channel *channel ,struct EventLoop *loop);  //向EventLoop中添加channel
+int EventLoopChannelRemove(struct Channel *channel ,struct EventLoop *loop); //向EventLoop中删除channel
+int EventLoopChannelModify(struct Channel *channel ,struct EventLoop *loop); //向EventLoop中修改channel
+int destroy(struct Channel *channel ,struct EventLoop *loop); //除去channel，释放内存
