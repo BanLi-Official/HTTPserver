@@ -130,6 +130,30 @@ main/fast:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+Buffer.o: Buffer.c.o
+.PHONY : Buffer.o
+
+# target to build an object file
+Buffer.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.o
+.PHONY : Buffer.c.o
+
+Buffer.i: Buffer.c.i
+.PHONY : Buffer.i
+
+# target to preprocess a source file
+Buffer.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.i
+.PHONY : Buffer.c.i
+
+Buffer.s: Buffer.c.s
+.PHONY : Buffer.s
+
+# target to generate assembly for a file
+Buffer.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.s
+.PHONY : Buffer.c.s
+
 Channel.o: Channel.c.o
 .PHONY : Channel.o
 
@@ -274,6 +298,30 @@ SelectDispatcher.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
 .PHONY : SelectDispatcher.c.s
 
+ThreadPool.o: ThreadPool.c.o
+.PHONY : ThreadPool.o
+
+# target to build an object file
+ThreadPool.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.o
+.PHONY : ThreadPool.c.o
+
+ThreadPool.i: ThreadPool.c.i
+.PHONY : ThreadPool.i
+
+# target to preprocess a source file
+ThreadPool.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.i
+.PHONY : ThreadPool.c.i
+
+ThreadPool.s: ThreadPool.c.s
+.PHONY : ThreadPool.s
+
+# target to generate assembly for a file
+ThreadPool.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.s
+.PHONY : ThreadPool.c.s
+
 WorkerThread.o: WorkerThread.c.o
 .PHONY : WorkerThread.o
 
@@ -331,6 +379,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... Buffer.o"
+	@echo "... Buffer.i"
+	@echo "... Buffer.s"
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
@@ -349,6 +400,9 @@ help:
 	@echo "... SelectDispatcher.o"
 	@echo "... SelectDispatcher.i"
 	@echo "... SelectDispatcher.s"
+	@echo "... ThreadPool.o"
+	@echo "... ThreadPool.i"
+	@echo "... ThreadPool.s"
 	@echo "... WorkerThread.o"
 	@echo "... WorkerThread.i"
 	@echo "... WorkerThread.s"

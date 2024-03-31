@@ -1,6 +1,12 @@
 [
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/Buffer.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.c",
+  "output": "src/CMakeFiles/main.dir/Buffer.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
   "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/Channel.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c",
   "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c",
   "output": "src/CMakeFiles/main.dir/Channel.c.o"
@@ -34,6 +40,12 @@
   "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/SelectDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c",
   "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c",
   "output": "src/CMakeFiles/main.dir/SelectDispatcher.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/ThreadPool.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c",
+  "output": "src/CMakeFiles/main.dir/ThreadPool.c.o"
 },
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",

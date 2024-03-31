@@ -10,6 +10,10 @@
         "new": "c",
         "ostream": "c",
         "sstream": "c",
-        "streambuf": "c"
+        "streambuf": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }
