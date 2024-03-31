@@ -18,3 +18,7 @@ struct buffer* bufferInit(int size);
 int bufferExtend(struct buffer* buffer , int size);
 //求解可写区域大小
 int getWriteAbleSize(struct buffer* buffer );
+//写数据到buffer中： 1.正常写  2.socket接收
+int writeMsgIntoBuffer(struct buffer* buffer , const char* msg , int size);
+//socket收
+int writeSocketMsgIntoBuffer(struct buffer* buffer, int fd);
