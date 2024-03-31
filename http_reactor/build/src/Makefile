@@ -298,6 +298,30 @@ SelectDispatcher.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
 .PHONY : SelectDispatcher.c.s
 
+TcpServer.o: TcpServer.c.o
+.PHONY : TcpServer.o
+
+# target to build an object file
+TcpServer.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.o
+.PHONY : TcpServer.c.o
+
+TcpServer.i: TcpServer.c.i
+.PHONY : TcpServer.i
+
+# target to preprocess a source file
+TcpServer.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.i
+.PHONY : TcpServer.c.i
+
+TcpServer.s: TcpServer.c.s
+.PHONY : TcpServer.s
+
+# target to generate assembly for a file
+TcpServer.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.s
+.PHONY : TcpServer.c.s
+
 ThreadPool.o: ThreadPool.c.o
 .PHONY : ThreadPool.o
 
@@ -400,6 +424,9 @@ help:
 	@echo "... SelectDispatcher.o"
 	@echo "... SelectDispatcher.i"
 	@echo "... SelectDispatcher.s"
+	@echo "... TcpServer.o"
+	@echo "... TcpServer.i"
+	@echo "... TcpServer.s"
 	@echo "... ThreadPool.o"
 	@echo "... ThreadPool.i"
 	@echo "... ThreadPool.s"

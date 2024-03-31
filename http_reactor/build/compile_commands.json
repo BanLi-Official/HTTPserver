@@ -43,6 +43,12 @@
 },
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/TcpServer.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c",
+  "output": "src/CMakeFiles/main.dir/TcpServer.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
   "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/ThreadPool.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c",
   "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c",
   "output": "src/CMakeFiles/main.dir/ThreadPool.c.o"
