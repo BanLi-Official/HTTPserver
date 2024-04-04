@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/PollDispatcher.c.o.d"
   "CMakeFiles/main.dir/SelectDispatcher.c.o"
   "CMakeFiles/main.dir/SelectDispatcher.c.o.d"
+  "CMakeFiles/main.dir/TcpConnection.c.o"
+  "CMakeFiles/main.dir/TcpConnection.c.o.d"
   "CMakeFiles/main.dir/TcpServer.c.o"
   "CMakeFiles/main.dir/TcpServer.c.o.d"
   "CMakeFiles/main.dir/ThreadPool.c.o"

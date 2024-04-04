@@ -1,7 +1,7 @@
-src/CMakeFiles/main.dir/TcpServer.c.o: \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c \
+src/CMakeFiles/main.dir/TcpConnection.c.o: \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.h \
  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.h \
  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Dispatcher.h \
  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.h \
@@ -38,13 +38,13 @@ src/CMakeFiles/main.dir/TcpServer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.h \
- /usr/include/arpa/inet.h /usr/include/netinet/in.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/sys/socket.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -54,22 +54,8 @@ src/CMakeFiles/main.dir/TcpServer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
- /usr/include/x86_64-linux-gnu/bits/socket_type.h \
- /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
- /usr/include/x86_64-linux-gnu/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
- /usr/include/asm-generic/posix_types.h \
- /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h \
- /usr/include/x86_64-linux-gnu/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/stdio.h /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
@@ -77,11 +63,4 @@ src/CMakeFiles/main.dir/TcpServer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h

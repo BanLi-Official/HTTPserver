@@ -5,6 +5,7 @@
 #include "Channel.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "TcpConnection.h"
 
 struct tcpServer *tcpServerInit(unsigned short port, int threadNum)
 {
@@ -64,7 +65,9 @@ int acceptConnect(void *arg)
     int cfd=accept(tcpServer->listener->lfd,NULL,NULL);
     //从线程池中取出一个EventLoop去处理这个连接
     struct EventLoop* tempLoop= getEventLoop(tcpServer->pool);
-    //接下来将这个cfd挂入tempLoop当中，完成dispacher的挂载
+    //接下来将这个cfd挂入tempLoop当中，完成dispacher的挂载 
+    //先将这个cfd封装到channel当中，然后再将channel和EventLoop和buffer、http等相关内容封装到TCPConnection当中，之后的数据交流就再TCPConnection进行
+    struct TcpConnection* tcpConn = TcpConnectionInit(cfd,tempLoop);
 
 
 
@@ -83,3 +86,5 @@ int tcpServerRun(struct tcpServer* tcpServer)
     //启动mainEventLoop
     EventLoopRun(tcpServer->mainLoop);
 }
+
+

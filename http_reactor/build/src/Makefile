@@ -298,6 +298,30 @@ SelectDispatcher.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
 .PHONY : SelectDispatcher.c.s
 
+TcpConnection.o: TcpConnection.c.o
+.PHONY : TcpConnection.o
+
+# target to build an object file
+TcpConnection.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.o
+.PHONY : TcpConnection.c.o
+
+TcpConnection.i: TcpConnection.c.i
+.PHONY : TcpConnection.i
+
+# target to preprocess a source file
+TcpConnection.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.i
+.PHONY : TcpConnection.c.i
+
+TcpConnection.s: TcpConnection.c.s
+.PHONY : TcpConnection.s
+
+# target to generate assembly for a file
+TcpConnection.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.s
+.PHONY : TcpConnection.c.s
+
 TcpServer.o: TcpServer.c.o
 .PHONY : TcpServer.o
 
@@ -424,6 +448,9 @@ help:
 	@echo "... SelectDispatcher.o"
 	@echo "... SelectDispatcher.i"
 	@echo "... SelectDispatcher.s"
+	@echo "... TcpConnection.o"
+	@echo "... TcpConnection.i"
+	@echo "... TcpConnection.s"
 	@echo "... TcpServer.o"
 	@echo "... TcpServer.i"
 	@echo "... TcpServer.s"
