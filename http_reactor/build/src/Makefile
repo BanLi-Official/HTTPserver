@@ -250,6 +250,30 @@ EventLoop.c.s:
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
 .PHONY : EventLoop.c.s
 
+HTTPRequest.o: HTTPRequest.c.o
+.PHONY : HTTPRequest.o
+
+# target to build an object file
+HTTPRequest.c.o:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.o
+.PHONY : HTTPRequest.c.o
+
+HTTPRequest.i: HTTPRequest.c.i
+.PHONY : HTTPRequest.i
+
+# target to preprocess a source file
+HTTPRequest.c.i:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.i
+.PHONY : HTTPRequest.c.i
+
+HTTPRequest.s: HTTPRequest.c.s
+.PHONY : HTTPRequest.s
+
+# target to generate assembly for a file
+HTTPRequest.c.s:
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.s
+.PHONY : HTTPRequest.c.s
+
 PollDispatcher.o: PollDispatcher.c.o
 .PHONY : PollDispatcher.o
 
@@ -442,6 +466,9 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... HTTPRequest.o"
+	@echo "... HTTPRequest.i"
+	@echo "... HTTPRequest.s"
 	@echo "... PollDispatcher.o"
 	@echo "... PollDispatcher.i"
 	@echo "... PollDispatcher.s"

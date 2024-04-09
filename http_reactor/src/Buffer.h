@@ -22,3 +22,5 @@ int getWriteAbleSize(struct buffer* buffer );
 int writeMsgIntoBuffer(struct buffer* buffer , const char* msg , int size);
 //socket收
 int writeSocketMsgIntoBuffer(struct buffer* buffer, int fd);
+//查找第一行的结束位置
+char* findFirstLine(struct buffer* buffer);

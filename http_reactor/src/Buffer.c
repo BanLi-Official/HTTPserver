@@ -78,6 +78,13 @@ int writeSocketMsgIntoBuffer(struct buffer *buffer, int fd)
     return 0;
 }
 
+char *findFirstLine(struct buffer *buffer)
+{
+    //char * local=memmem(buffer->data+buffer->readPos,getWriteAbleSize(buffer),"\r\n",2);
+    char * local=strstr(buffer->data+buffer->readPos,"\r\n");
+    return local;
+}
+
 int bufferExtend(struct buffer* buffer , int size)
 {
     //剩余可写大于size

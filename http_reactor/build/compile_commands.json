@@ -31,6 +31,12 @@
 },
 {
   "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
+  "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/HTTPRequest.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c",
+  "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c",
+  "output": "src/CMakeFiles/main.dir/HTTPRequest.c.o"
+},
+{
+  "directory": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src",
   "command": "/usr/bin/gcc   -g -o CMakeFiles/main.dir/PollDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c",
   "file": "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c",
   "output": "src/CMakeFiles/main.dir/PollDispatcher.c.o"

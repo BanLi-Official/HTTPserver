@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c" "src/CMakeFiles/main.dir/ChannelMap.c.o" "gcc" "src/CMakeFiles/main.dir/ChannelMap.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c" "src/CMakeFiles/main.dir/EpollDispatcher.c.o" "gcc" "src/CMakeFiles/main.dir/EpollDispatcher.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c" "src/CMakeFiles/main.dir/EventLoop.c.o" "gcc" "src/CMakeFiles/main.dir/EventLoop.c.o.d"
+  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c" "src/CMakeFiles/main.dir/HTTPRequest.c.o" "gcc" "src/CMakeFiles/main.dir/HTTPRequest.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c" "src/CMakeFiles/main.dir/PollDispatcher.c.o" "gcc" "src/CMakeFiles/main.dir/PollDispatcher.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c" "src/CMakeFiles/main.dir/SelectDispatcher.c.o" "gcc" "src/CMakeFiles/main.dir/SelectDispatcher.c.o.d"
   "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c" "src/CMakeFiles/main.dir/TcpConnection.c.o" "gcc" "src/CMakeFiles/main.dir/TcpConnection.c.o.d"

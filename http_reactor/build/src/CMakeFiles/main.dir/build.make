@@ -139,10 +139,24 @@ src/CMakeFiles/main.dir/EventLoop.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/EventLoop.c.s"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c -o CMakeFiles/main.dir/EventLoop.c.s
 
+src/CMakeFiles/main.dir/HTTPRequest.c.o: src/CMakeFiles/main.dir/flags.make
+src/CMakeFiles/main.dir/HTTPRequest.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c
+src/CMakeFiles/main.dir/HTTPRequest.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/main.dir/HTTPRequest.c.o"
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/HTTPRequest.c.o -MF CMakeFiles/main.dir/HTTPRequest.c.o.d -o CMakeFiles/main.dir/HTTPRequest.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c
+
+src/CMakeFiles/main.dir/HTTPRequest.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/HTTPRequest.c.i"
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c > CMakeFiles/main.dir/HTTPRequest.c.i
+
+src/CMakeFiles/main.dir/HTTPRequest.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/HTTPRequest.c.s"
+	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c -o CMakeFiles/main.dir/HTTPRequest.c.s
+
 src/CMakeFiles/main.dir/PollDispatcher.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/PollDispatcher.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c
 src/CMakeFiles/main.dir/PollDispatcher.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/main.dir/PollDispatcher.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/main.dir/PollDispatcher.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/PollDispatcher.c.o -MF CMakeFiles/main.dir/PollDispatcher.c.o.d -o CMakeFiles/main.dir/PollDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c
 
 src/CMakeFiles/main.dir/PollDispatcher.c.i: cmake_force
@@ -156,7 +170,7 @@ src/CMakeFiles/main.dir/PollDispatcher.c.s: cmake_force
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/main.dir/SelectDispatcher.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/CMakeFiles/main.dir/SelectDispatcher.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/SelectDispatcher.c.o -MF CMakeFiles/main.dir/SelectDispatcher.c.o.d -o CMakeFiles/main.dir/SelectDispatcher.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c
 
 src/CMakeFiles/main.dir/SelectDispatcher.c.i: cmake_force
@@ -170,7 +184,7 @@ src/CMakeFiles/main.dir/SelectDispatcher.c.s: cmake_force
 src/CMakeFiles/main.dir/TcpConnection.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c
 src/CMakeFiles/main.dir/TcpConnection.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/CMakeFiles/main.dir/TcpConnection.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/CMakeFiles/main.dir/TcpConnection.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpConnection.c.o -MF CMakeFiles/main.dir/TcpConnection.c.o.d -o CMakeFiles/main.dir/TcpConnection.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c
 
 src/CMakeFiles/main.dir/TcpConnection.c.i: cmake_force
@@ -184,7 +198,7 @@ src/CMakeFiles/main.dir/TcpConnection.c.s: cmake_force
 src/CMakeFiles/main.dir/TcpServer.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/TcpServer.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c
 src/CMakeFiles/main.dir/TcpServer.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/CMakeFiles/main.dir/TcpServer.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/CMakeFiles/main.dir/TcpServer.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpServer.c.o -MF CMakeFiles/main.dir/TcpServer.c.o.d -o CMakeFiles/main.dir/TcpServer.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c
 
 src/CMakeFiles/main.dir/TcpServer.c.i: cmake_force
@@ -198,7 +212,7 @@ src/CMakeFiles/main.dir/TcpServer.c.s: cmake_force
 src/CMakeFiles/main.dir/ThreadPool.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/ThreadPool.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c
 src/CMakeFiles/main.dir/ThreadPool.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/CMakeFiles/main.dir/ThreadPool.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/CMakeFiles/main.dir/ThreadPool.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/ThreadPool.c.o -MF CMakeFiles/main.dir/ThreadPool.c.o.d -o CMakeFiles/main.dir/ThreadPool.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c
 
 src/CMakeFiles/main.dir/ThreadPool.c.i: cmake_force
@@ -212,7 +226,7 @@ src/CMakeFiles/main.dir/ThreadPool.c.s: cmake_force
 src/CMakeFiles/main.dir/WorkerThread.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/WorkerThread.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.c
 src/CMakeFiles/main.dir/WorkerThread.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/CMakeFiles/main.dir/WorkerThread.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/CMakeFiles/main.dir/WorkerThread.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/WorkerThread.c.o -MF CMakeFiles/main.dir/WorkerThread.c.o.d -o CMakeFiles/main.dir/WorkerThread.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.c
 
 src/CMakeFiles/main.dir/WorkerThread.c.i: cmake_force
@@ -226,7 +240,7 @@ src/CMakeFiles/main.dir/WorkerThread.c.s: cmake_force
 src/CMakeFiles/main.dir/main.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c
 src/CMakeFiles/main.dir/main.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/CMakeFiles/main.dir/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/CMakeFiles/main.dir/main.c.o"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c
 
 src/CMakeFiles/main.dir/main.c.i: cmake_force
@@ -244,6 +258,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/ChannelMap.c.o" \
 "CMakeFiles/main.dir/EpollDispatcher.c.o" \
 "CMakeFiles/main.dir/EventLoop.c.o" \
+"CMakeFiles/main.dir/HTTPRequest.c.o" \
 "CMakeFiles/main.dir/PollDispatcher.c.o" \
 "CMakeFiles/main.dir/SelectDispatcher.c.o" \
 "CMakeFiles/main.dir/TcpConnection.c.o" \
@@ -260,6 +275,7 @@ main_EXTERNAL_OBJECTS =
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/ChannelMap.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/EpollDispatcher.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/EventLoop.c.o
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/HTTPRequest.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/PollDispatcher.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/SelectDispatcher.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/TcpConnection.c.o
@@ -269,7 +285,7 @@ main_EXTERNAL_OBJECTS =
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/main.c.o
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/build.make
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main: src/CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main"
 	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -343,6 +343,67 @@ src/CMakeFiles/main.dir/EventLoop.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/h
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
 
+src/CMakeFiles/main.dir/HTTPRequest.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c \
+  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h \
+  /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HttpRequest.h \
+  /usr/include/alloca.h \
+  /usr/include/endian.h \
+  /usr/include/features.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/select.h \
+  /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
+
 src/CMakeFiles/main.dir/PollDispatcher.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c \
   /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.h \
   /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.h \
@@ -502,6 +563,7 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReact
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
   /usr/include/stdlib.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -518,20 +580,28 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReact
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
@@ -549,6 +619,7 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReact
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
 
@@ -806,252 +877,256 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_r
 
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/main.c:
 
-/usr/include/x86_64-linux-gnu/sys/poll.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/x86_64-linux-gnu/bits/poll.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c:
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/socket.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/arpa/inet.h:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c:
 
-/usr/include/linux/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/x86_64-linux-gnu/asm/sockios.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/include/linux/posix_types.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.h:
 
-/usr/include/asm-generic/sockios.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/include/asm-generic/socket.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+/usr/include/stdio.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+/usr/include/string.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
 
-/usr/include/x86_64-linux-gnu/bits/sched.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c:
 
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/x86_64-linux-gnu/bits/confname.h:
+/usr/include/x86_64-linux-gnu/sys/uio.h:
 
-/usr/include/unistd.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.c:
 
-/usr/include/time.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.h:
+/usr/include/x86_64-linux-gnu/sys/epoll.h:
 
-/usr/include/stdint.h:
+/usr/include/features.h:
 
-/usr/include/sched.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c:
 
-/usr/include/pthread.h:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/assert.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/x86_64-linux-gnu/bits/epoll.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Dispatcher.h:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.c:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/netinet/in.h:
+/usr/include/x86_64-linux-gnu/sys/socket.h:
 
-/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+/usr/include/endian.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
-
-/usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/x86_64-linux-gnu/asm/socket.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
 /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h:
-
-/usr/include/x86_64-linux-gnu/sys/socket.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.c:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ThreadPool.c:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/SelectDispatcher.c:
-
-/usr/include/features.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/in.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.c:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/strings.h:
-
-/usr/include/x86_64-linux-gnu/sys/uio.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EpollDispatcher.c:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.c:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/string.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+/usr/include/asm-generic/bitsperlong.h:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+/usr/include/strings.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
 
-/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpConnection.c:
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/alloca.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.c:
+
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/netinet/in.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Dispatcher.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/x86_64-linux-gnu/bits/epoll.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
+/usr/include/assert.h:
+
+/usr/include/pthread.h:
+
+/usr/include/sched.h:
+
+/usr/include/stdint.h:
+
+/usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/include/endian.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HttpRequest.h:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/include/x86_64-linux-gnu/sys/epoll.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/TcpServer.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/stdc-predef.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/WorkerThread.c:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/arpa/inet.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/HTTPRequest.c:
+
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/PollDispatcher.c:
+
+/usr/include/x86_64-linux-gnu/bits/poll.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/sys/poll.h:

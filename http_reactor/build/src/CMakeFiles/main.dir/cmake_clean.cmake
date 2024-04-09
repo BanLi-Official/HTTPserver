@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/EpollDispatcher.c.o.d"
   "CMakeFiles/main.dir/EventLoop.c.o"
   "CMakeFiles/main.dir/EventLoop.c.o.d"
+  "CMakeFiles/main.dir/HTTPRequest.c.o"
+  "CMakeFiles/main.dir/HTTPRequest.c.o.d"
   "CMakeFiles/main.dir/PollDispatcher.c.o"
   "CMakeFiles/main.dir/PollDispatcher.c.o.d"
   "CMakeFiles/main.dir/SelectDispatcher.c.o"
