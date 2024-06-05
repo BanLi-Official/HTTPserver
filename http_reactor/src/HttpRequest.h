@@ -47,5 +47,9 @@ enum parseState getHttpParseState(struct httpRequest* request);
 int addHttpHeadKeyAndValue(struct httpRequest* request ,const char* key, const char* value);
 //查找请求头键值对
 char* getHttpHeadValue(struct httpRequest* request ,const char* key);
-//解析请求头
+//解析请求行
 bool parseHeadLine(struct httpRequest* request, struct buffer* readBuffer);
+//解析请求头键值对
+bool parseHeader(struct httpRequest* request , struct buffer* readBuffer);
+//解析整个httpRequest
+bool parseHTTPRequest(struct httpRequest* request,struct buffer* readBuffer);

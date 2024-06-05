@@ -190,3 +190,82 @@ bool parseHeadLine(struct httpRequest *request,struct buffer *readBuffer)
 
     return false;
 }
+
+bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
+{
+    //每一行的样子：   key: value
+    //该行的结束位置
+    char* end=findFirstLine(readBuffer);
+    if(end!=NULL)
+    {
+        char* start=readBuffer->data+readBuffer->readPos;
+        int lineLength=end-start;
+        //根据： 分割该行
+        char* splitPosition=strstr(start,": ");
+        //找key
+        char* key = malloc(splitPosition-start+1);
+        strncpy(key,start,splitPosition-start);
+        key[splitPosition-start]='\0';
+        //找value
+        char* value=malloc(end-splitPosition-2+1);
+        strncpy(value,splitPosition+2,end-splitPosition-2);
+        value[end-splitPosition-2]='\0';
+
+        addHttpHeadKeyAndValue(request,key,value);
+
+        //移动读取位置，移动到下一行
+        readBuffer->readPos+=lineLength;
+        readBuffer->readPos+=2;
+
+        return true;
+    }
+    else
+    {
+        //请求头已经被检查完了，跳到下一行
+        readBuffer->readPos+=2;
+        //修改状态(这里默认使用get模式，直接跳过第三部分)
+        request->parseState=parseDone;
+        return true;
+    }
+
+    return false;
+}
+
+bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer)
+{
+    bool flag=true;
+    while(request->parseState!=parseDone)
+    {
+        switch(request->parseState)
+        {
+        case parseLine:
+            flag=parseHeadLine(request,readBuffer);
+            break;
+        case parseHead:
+            flag=parseHeader(request,readBuffer);
+            break;
+        case parseBody:
+            break;
+        default:
+            break;
+        }
+
+        //如果出现错误则返回错误状态
+        if(!flag)
+        {
+            return flag;
+        }
+
+        //如果解析结束，则准备回复的数据
+        if(request->parseState==parseDone)
+        {
+            //1.根据解析出来的数据，对客户端的请求做出处理
+            //2.组织响应数据并发送给客户端
+        }
+    }
+
+    //将request的解析状态还原，保证下一次解析能够正确进行
+    request->parseState=parseLine;
+
+    return flag;
+}

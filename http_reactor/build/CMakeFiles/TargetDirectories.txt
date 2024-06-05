@@ -1,5 +1,5 @@
-/mnt/hgfs/Github/HTTPserver/http_reactor/build/CMakeFiles/edit_cache.dir
-/mnt/hgfs/Github/HTTPserver/http_reactor/build/CMakeFiles/rebuild_cache.dir
-/mnt/hgfs/Github/HTTPserver/http_reactor/build/src/CMakeFiles/main.dir
-/mnt/hgfs/Github/HTTPserver/http_reactor/build/src/CMakeFiles/edit_cache.dir
-/mnt/hgfs/Github/HTTPserver/http_reactor/build/src/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src/CMakeFiles/main.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src/CMakeFiles/edit_cache.dir
+/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src/CMakeFiles/rebuild_cache.dir

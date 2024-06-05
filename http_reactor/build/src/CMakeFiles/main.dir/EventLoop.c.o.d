@@ -1,9 +1,9 @@
 src/CMakeFiles/main.dir/EventLoop.c.o: \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/EventLoop.c \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/EventLoop.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/Dispatcher.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/Channel.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/EventLoop.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Dispatcher.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Channel.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/pthread.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -36,7 +36,7 @@ src/CMakeFiles/main.dir/EventLoop.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/ChannelMap.h \
+ /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/ChannelMap.h \
  /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
