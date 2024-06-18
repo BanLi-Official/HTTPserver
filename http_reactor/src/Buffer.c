@@ -41,6 +41,13 @@ int writeMsgIntoBuffer(struct buffer *buffer, const char *msg, int size)
     return 0;
 }
 
+int writeStringIntoBuffer(struct buffer *buffer, const char *data)
+{
+    int size = strlen(data);
+    writeMsgIntoBuffer(buffer,data,strlen);
+    return 0;
+}
+
 int writeSocketMsgIntoBuffer(struct buffer *buffer, int fd)
 {
     if(buffer==NULL || fd<0)

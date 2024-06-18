@@ -1,5 +1,8 @@
 #pragma once
 #include "Buffer.h"
+#include <stdlib.h>
+#include <stdbool.h>
+
 
 //http回复状态码
 enum httpStateCode
@@ -42,3 +45,9 @@ struct httpResponse
 
 //初始化一个httpResponse
 struct httpResponse* httpResponseInit();
+//销毁一个HTTPResponse
+void destroyHttpResponse(struct httpResponse* response);
+//添加一个键值对到首部字段
+bool addHttpResponseHeader(struct httpResponse* response , const char* key , const char* value);
+//组织http响应数据
+void httpResponsePrepareMsg(struct httpResponse* response , struct buffer* sendBuffer , int socket);

@@ -4,6 +4,7 @@
 #include "Buffer.h"
 #include <stdbool.h>
 #include <string.h>
+#include "HTTPResponse.h"
 
 enum parseState
 {
@@ -52,7 +53,7 @@ bool parseHeadLine(struct httpRequest* request, struct buffer* readBuffer);
 //解析请求头键值对
 bool parseHeader(struct httpRequest* request , struct buffer* readBuffer);
 //解析整个httpRequest
-bool parseHTTPRequest(struct httpRequest* request,struct buffer* readBuffer);
+bool parseHTTPRequest(struct httpRequest* request,struct buffer* readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket);
 //处理httpRequest
 bool processHTTPRequest(struct httpRequest* request);
 //解码包括中文字符在内的编码

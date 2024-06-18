@@ -53,5 +53,7 @@ src/CMakeFiles/main.dir/HTTPRequest.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/x86_64-linux-gnu/sys/stat.h \
+ /usr/include/strings.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/HTTPResponse.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h

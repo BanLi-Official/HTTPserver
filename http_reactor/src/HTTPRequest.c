@@ -232,7 +232,7 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
     return false;
 }
 
-bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer)
+bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket)
 {
     bool flag=true;
     while(request->parseState!=parseDone)
@@ -261,7 +261,9 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer)
         if(request->parseState==parseDone)
         {
             //1.根据解析出来的数据，对客户端的请求做出处理
+            processHTTPRequest(request);
             //2.组织响应数据并发送给客户端
+            httpResponsePrepareMsg(response , sendBuffer , socket);
         }
     }
 

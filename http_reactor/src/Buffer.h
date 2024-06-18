@@ -20,6 +20,7 @@ int bufferExtend(struct buffer* buffer , int size);
 int getWriteAbleSize(struct buffer* buffer );
 //写数据到buffer中： 1.正常写  2.socket接收
 int writeMsgIntoBuffer(struct buffer* buffer , const char* msg , int size);
+int writeStringIntoBuffer(struct buffer* buffer, const char* data);
 //socket收
 int writeSocketMsgIntoBuffer(struct buffer* buffer, int fd);
 //查找第一行的结束位置
