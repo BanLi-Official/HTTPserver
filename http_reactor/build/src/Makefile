@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor
+CMAKE_SOURCE_DIR = /mnt/hgfs/Github/HTTPserver/http_reactor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build
+CMAKE_BINARY_DIR = /mnt/hgfs/Github/HTTPserver/http_reactor/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/src//CMakeFiles/progress.marks
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build/CMakeFiles 0
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/Github/HTTPserver/http_reactor/build/CMakeFiles /mnt/hgfs/Github/HTTPserver/http_reactor/build/src//CMakeFiles/progress.marks
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/Github/HTTPserver/http_reactor/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/rule
 .PHONY : src/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ main: src/CMakeFiles/main.dir/rule
 
 # fast build rule for target.
 main/fast:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
 Buffer.o: Buffer.c.o
@@ -135,7 +135,7 @@ Buffer.o: Buffer.c.o
 
 # target to build an object file
 Buffer.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.o
 .PHONY : Buffer.c.o
 
 Buffer.i: Buffer.c.i
@@ -143,7 +143,7 @@ Buffer.i: Buffer.c.i
 
 # target to preprocess a source file
 Buffer.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.i
 .PHONY : Buffer.c.i
 
 Buffer.s: Buffer.c.s
@@ -151,7 +151,7 @@ Buffer.s: Buffer.c.s
 
 # target to generate assembly for a file
 Buffer.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.s
 .PHONY : Buffer.c.s
 
 Channel.o: Channel.c.o
@@ -159,7 +159,7 @@ Channel.o: Channel.c.o
 
 # target to build an object file
 Channel.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.o
 .PHONY : Channel.c.o
 
 Channel.i: Channel.c.i
@@ -167,7 +167,7 @@ Channel.i: Channel.c.i
 
 # target to preprocess a source file
 Channel.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.i
 .PHONY : Channel.c.i
 
 Channel.s: Channel.c.s
@@ -175,7 +175,7 @@ Channel.s: Channel.c.s
 
 # target to generate assembly for a file
 Channel.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Channel.c.s
 .PHONY : Channel.c.s
 
 ChannelMap.o: ChannelMap.c.o
@@ -183,7 +183,7 @@ ChannelMap.o: ChannelMap.c.o
 
 # target to build an object file
 ChannelMap.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.o
 .PHONY : ChannelMap.c.o
 
 ChannelMap.i: ChannelMap.c.i
@@ -191,7 +191,7 @@ ChannelMap.i: ChannelMap.c.i
 
 # target to preprocess a source file
 ChannelMap.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.i
 .PHONY : ChannelMap.c.i
 
 ChannelMap.s: ChannelMap.c.s
@@ -199,7 +199,7 @@ ChannelMap.s: ChannelMap.c.s
 
 # target to generate assembly for a file
 ChannelMap.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ChannelMap.c.s
 .PHONY : ChannelMap.c.s
 
 EpollDispatcher.o: EpollDispatcher.c.o
@@ -207,7 +207,7 @@ EpollDispatcher.o: EpollDispatcher.c.o
 
 # target to build an object file
 EpollDispatcher.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.o
 .PHONY : EpollDispatcher.c.o
 
 EpollDispatcher.i: EpollDispatcher.c.i
@@ -215,7 +215,7 @@ EpollDispatcher.i: EpollDispatcher.c.i
 
 # target to preprocess a source file
 EpollDispatcher.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.i
 .PHONY : EpollDispatcher.c.i
 
 EpollDispatcher.s: EpollDispatcher.c.s
@@ -223,7 +223,7 @@ EpollDispatcher.s: EpollDispatcher.c.s
 
 # target to generate assembly for a file
 EpollDispatcher.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.c.s
 .PHONY : EpollDispatcher.c.s
 
 EventLoop.o: EventLoop.c.o
@@ -231,7 +231,7 @@ EventLoop.o: EventLoop.c.o
 
 # target to build an object file
 EventLoop.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.o
 .PHONY : EventLoop.c.o
 
 EventLoop.i: EventLoop.c.i
@@ -239,7 +239,7 @@ EventLoop.i: EventLoop.c.i
 
 # target to preprocess a source file
 EventLoop.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.i
 .PHONY : EventLoop.c.i
 
 EventLoop.s: EventLoop.c.s
@@ -247,7 +247,7 @@ EventLoop.s: EventLoop.c.s
 
 # target to generate assembly for a file
 EventLoop.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
 .PHONY : EventLoop.c.s
 
 HTTPRequest.o: HTTPRequest.c.o
@@ -255,7 +255,7 @@ HTTPRequest.o: HTTPRequest.c.o
 
 # target to build an object file
 HTTPRequest.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.o
 .PHONY : HTTPRequest.c.o
 
 HTTPRequest.i: HTTPRequest.c.i
@@ -263,7 +263,7 @@ HTTPRequest.i: HTTPRequest.c.i
 
 # target to preprocess a source file
 HTTPRequest.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.i
 .PHONY : HTTPRequest.c.i
 
 HTTPRequest.s: HTTPRequest.c.s
@@ -271,15 +271,39 @@ HTTPRequest.s: HTTPRequest.c.s
 
 # target to generate assembly for a file
 HTTPRequest.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.s
 .PHONY : HTTPRequest.c.s
+
+HTTPResponse.o: HTTPResponse.c.o
+.PHONY : HTTPResponse.o
+
+# target to build an object file
+HTTPResponse.c.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.o
+.PHONY : HTTPResponse.c.o
+
+HTTPResponse.i: HTTPResponse.c.i
+.PHONY : HTTPResponse.i
+
+# target to preprocess a source file
+HTTPResponse.c.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.i
+.PHONY : HTTPResponse.c.i
+
+HTTPResponse.s: HTTPResponse.c.s
+.PHONY : HTTPResponse.s
+
+# target to generate assembly for a file
+HTTPResponse.c.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.s
+.PHONY : HTTPResponse.c.s
 
 PollDispatcher.o: PollDispatcher.c.o
 .PHONY : PollDispatcher.o
 
 # target to build an object file
 PollDispatcher.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.o
 .PHONY : PollDispatcher.c.o
 
 PollDispatcher.i: PollDispatcher.c.i
@@ -287,7 +311,7 @@ PollDispatcher.i: PollDispatcher.c.i
 
 # target to preprocess a source file
 PollDispatcher.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.i
 .PHONY : PollDispatcher.c.i
 
 PollDispatcher.s: PollDispatcher.c.s
@@ -295,7 +319,7 @@ PollDispatcher.s: PollDispatcher.c.s
 
 # target to generate assembly for a file
 PollDispatcher.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.s
 .PHONY : PollDispatcher.c.s
 
 SelectDispatcher.o: SelectDispatcher.c.o
@@ -303,7 +327,7 @@ SelectDispatcher.o: SelectDispatcher.c.o
 
 # target to build an object file
 SelectDispatcher.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.o
 .PHONY : SelectDispatcher.c.o
 
 SelectDispatcher.i: SelectDispatcher.c.i
@@ -311,7 +335,7 @@ SelectDispatcher.i: SelectDispatcher.c.i
 
 # target to preprocess a source file
 SelectDispatcher.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.i
 .PHONY : SelectDispatcher.c.i
 
 SelectDispatcher.s: SelectDispatcher.c.s
@@ -319,7 +343,7 @@ SelectDispatcher.s: SelectDispatcher.c.s
 
 # target to generate assembly for a file
 SelectDispatcher.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
 .PHONY : SelectDispatcher.c.s
 
 TcpConnection.o: TcpConnection.c.o
@@ -327,7 +351,7 @@ TcpConnection.o: TcpConnection.c.o
 
 # target to build an object file
 TcpConnection.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.o
 .PHONY : TcpConnection.c.o
 
 TcpConnection.i: TcpConnection.c.i
@@ -335,7 +359,7 @@ TcpConnection.i: TcpConnection.c.i
 
 # target to preprocess a source file
 TcpConnection.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.i
 .PHONY : TcpConnection.c.i
 
 TcpConnection.s: TcpConnection.c.s
@@ -343,7 +367,7 @@ TcpConnection.s: TcpConnection.c.s
 
 # target to generate assembly for a file
 TcpConnection.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.s
 .PHONY : TcpConnection.c.s
 
 TcpServer.o: TcpServer.c.o
@@ -351,7 +375,7 @@ TcpServer.o: TcpServer.c.o
 
 # target to build an object file
 TcpServer.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.o
 .PHONY : TcpServer.c.o
 
 TcpServer.i: TcpServer.c.i
@@ -359,7 +383,7 @@ TcpServer.i: TcpServer.c.i
 
 # target to preprocess a source file
 TcpServer.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.i
 .PHONY : TcpServer.c.i
 
 TcpServer.s: TcpServer.c.s
@@ -367,7 +391,7 @@ TcpServer.s: TcpServer.c.s
 
 # target to generate assembly for a file
 TcpServer.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.s
 .PHONY : TcpServer.c.s
 
 ThreadPool.o: ThreadPool.c.o
@@ -375,7 +399,7 @@ ThreadPool.o: ThreadPool.c.o
 
 # target to build an object file
 ThreadPool.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.o
 .PHONY : ThreadPool.c.o
 
 ThreadPool.i: ThreadPool.c.i
@@ -383,7 +407,7 @@ ThreadPool.i: ThreadPool.c.i
 
 # target to preprocess a source file
 ThreadPool.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.i
 .PHONY : ThreadPool.c.i
 
 ThreadPool.s: ThreadPool.c.s
@@ -391,7 +415,7 @@ ThreadPool.s: ThreadPool.c.s
 
 # target to generate assembly for a file
 ThreadPool.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.s
 .PHONY : ThreadPool.c.s
 
 WorkerThread.o: WorkerThread.c.o
@@ -399,7 +423,7 @@ WorkerThread.o: WorkerThread.c.o
 
 # target to build an object file
 WorkerThread.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.o
 .PHONY : WorkerThread.c.o
 
 WorkerThread.i: WorkerThread.c.i
@@ -407,7 +431,7 @@ WorkerThread.i: WorkerThread.c.i
 
 # target to preprocess a source file
 WorkerThread.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.i
 .PHONY : WorkerThread.c.i
 
 WorkerThread.s: WorkerThread.c.s
@@ -415,7 +439,7 @@ WorkerThread.s: WorkerThread.c.s
 
 # target to generate assembly for a file
 WorkerThread.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.s
 .PHONY : WorkerThread.c.s
 
 main.o: main.c.o
@@ -423,7 +447,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -431,7 +455,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.i
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -439,7 +463,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -469,6 +493,9 @@ help:
 	@echo "... HTTPRequest.o"
 	@echo "... HTTPRequest.i"
 	@echo "... HTTPRequest.s"
+	@echo "... HTTPResponse.o"
+	@echo "... HTTPResponse.i"
+	@echo "... HTTPResponse.s"
 	@echo "... PollDispatcher.o"
 	@echo "... PollDispatcher.i"
 	@echo "... PollDispatcher.s"
@@ -501,6 +528,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

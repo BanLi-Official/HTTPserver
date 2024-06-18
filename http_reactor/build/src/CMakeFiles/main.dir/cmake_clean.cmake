@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main"
-  "/mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/output/main.pdb"
+  "/mnt/hgfs/Github/HTTPserver/http_reactor/output/main"
+  "/mnt/hgfs/Github/HTTPserver/http_reactor/output/main.pdb"
   "CMakeFiles/main.dir/Buffer.c.o"
   "CMakeFiles/main.dir/Buffer.c.o.d"
   "CMakeFiles/main.dir/Channel.c.o"
@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/EventLoop.c.o.d"
   "CMakeFiles/main.dir/HTTPRequest.c.o"
   "CMakeFiles/main.dir/HTTPRequest.c.o.d"
+  "CMakeFiles/main.dir/HTTPResponse.c.o"
+  "CMakeFiles/main.dir/HTTPResponse.c.o.d"
   "CMakeFiles/main.dir/PollDispatcher.c.o"
   "CMakeFiles/main.dir/PollDispatcher.c.o.d"
   "CMakeFiles/main.dir/SelectDispatcher.c.o"

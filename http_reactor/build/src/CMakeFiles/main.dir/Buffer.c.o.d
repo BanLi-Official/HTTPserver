@@ -1,7 +1,7 @@
 src/CMakeFiles/main.dir/Buffer.c.o: \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.c \
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/Buffer.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/VMshared/code/c++/HTTPReactor/http_reactor/src/Buffer.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/Buffer.h \
  /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \

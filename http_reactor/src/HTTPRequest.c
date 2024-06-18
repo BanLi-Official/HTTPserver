@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #define headKeySize 12
 struct httpRequest* httpRequestInit()
@@ -268,4 +269,91 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer)
     request->parseState=parseLine;
 
     return flag;
+}
+
+bool processHTTPRequest(struct httpRequest *request)
+{
+    //基于Get的request请求处理函数
+    //解码请求中的所请求的文件路径
+    DecodeMsg(request->URL,request->URL);
+    //printf("type = %s  ,path = %s \n", type, path);
+    char * file=NULL;
+    if (strcasecmp(request->method, "get") == 0) // 判断表头的类型
+    {
+        // get类型
+        // 将地址转化为相对地址
+        if (strcmp(request->URL, "/") == 0)
+        {
+            file = "./";
+        }
+        else
+        {
+            file = request->URL + 1;
+        }
+
+        // 读取这个文件/夹  https://blog.csdn.net/qq_48383456/article/details/136544350?spm=1001.2014.3001.5502
+        struct stat st;
+        int res = stat(file, &st);
+        if (res == -1)
+        {
+            //printf("404 file is not Found!\n");
+            // sendHeadResponse(cfd, 404, "Not Found!", getFileType(".html"), -1);
+            // sendFile(cfd, "404.html");
+            return -1;
+        }
+
+        if (S_ISDIR(st.st_mode))
+        {
+            // 把文件夹的内容发送给客户端；
+            //printf("this path is dir! path=%s\n", file);
+            // sendHeadResponse(cfd, 200, "OK", getFileType(".html"), -1);
+            // sendDir(cfd, file);
+        }
+        else
+        {
+            // 把文件的内容发送给客户端；
+            //printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
+            // sendHeadResponse(cfd, 200, "OK", getFileType(file), st.st_size);
+            // sendFile(cfd, file);
+        }
+    }
+    else
+    {
+        // 其他类型
+        printf("无法处理的http请求类型\n");
+        return -1;
+    }
+
+
+    return false;
+}
+
+int hexToDec(char c)
+{
+    if(c >= '0' && c <= '9')
+        return c-'0';
+    if(c >= 'a' && c <= 'z')
+        return c-'a'+10;
+    if(c >= 'A' && c <= 'Z')
+        return c-'A'+10;
+    return 0;
+}
+
+
+void DecodeMsg(char *from, char *to)
+{
+    for(;from[0] != '\0';from++,to++)
+    {
+        //printf("from[0]=%c\n",from[0]);
+        if(from[0] == '%' && from[1]!='\0' && from[2]!='\0')
+        {
+            to[0]=hexToDec(from[1])*16+hexToDec(from[2]); //检测到%E2%A1这一类的编码则转为中文
+            from=from+2;
+        }
+        else
+        {
+            to[0]=from[0];
+        }
+    }
+    to[0]=from[0];
 }
