@@ -261,7 +261,7 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,stru
         if(request->parseState==parseDone)
         {
             //1.根据解析出来的数据，对客户端的请求做出处理
-            processHTTPRequest(request);
+            processHTTPRequest(request,response);
             //2.组织响应数据并发送给客户端
             httpResponsePrepareMsg(response , sendBuffer , socket);
         }
@@ -273,7 +273,7 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,stru
     return flag;
 }
 
-bool processHTTPRequest(struct httpRequest *request)
+bool processHTTPRequest(struct httpRequest *request,struct httpResponse* response)
 {
     //基于Get的request请求处理函数
     //解码请求中的所请求的文件路径
@@ -301,8 +301,27 @@ bool processHTTPRequest(struct httpRequest *request)
             //printf("404 file is not Found!\n");
             // sendHeadResponse(cfd, 404, "Not Found!", getFileType(".html"), -1);
             // sendFile(cfd, "404.html");
+
+
+            //构建httpResponse
+            //状态行
+            strcpy(response->fileName,"404.html");
+            response->stateCode=NotFound;
+            strcpy(response->statusMsg,"FileNotFound");
+
+            //响应头
+            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+            response->sendDataFunc=sendFile;
+
             return -1;
         }
+
+        //找到了该文件（夹）则发送过去
+        strcpy(response->fileName, file);
+        response->stateCode=OK;
+        strcpy(response->statusMsg, "OK");
+
+
 
         if (S_ISDIR(st.st_mode))
         {
@@ -310,6 +329,12 @@ bool processHTTPRequest(struct httpRequest *request)
             //printf("this path is dir! path=%s\n", file);
             // sendHeadResponse(cfd, 200, "OK", getFileType(".html"), -1);
             // sendDir(cfd, file);
+
+            //添加对应的键值对，响应头
+            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+
+            //设置数据块发送方式
+            response->sendDataFunc=sendDir;
         }
         else
         {
@@ -317,7 +342,19 @@ bool processHTTPRequest(struct httpRequest *request)
             //printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
             // sendHeadResponse(cfd, 200, "OK", getFileType(file), st.st_size);
             // sendFile(cfd, file);
+
+
+            //添加键值对,响应头
+            char temp[1024];
+            sprintf(temp,"%ld",st.st_size);
+            addHttpResponseHeader(response,"Content-Length",temp);
+            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+
+            //设置数据块发送方式
+            response->sendDataFunc=sendFile;
         }
+
+
     }
     else
     {
@@ -359,3 +396,47 @@ void DecodeMsg(char *from, char *to)
     }
     to[0]=from[0];
 }
+
+
+
+const char* getFileType(const char* name)
+{
+    // a.jpg a.mp4 a.html
+    // 自右向左查找‘.’字符, 如不存在返回NULL
+    const char* dot = strrchr(name, '.');
+    if (dot == NULL)
+        return "text/plain; charset=utf-8";	// 纯文本
+    if (strcmp(dot, ".html") == 0 || strcmp(dot, ".htm") == 0)
+        return "text/html; charset=utf-8";
+    if (strcmp(dot, ".jpg") == 0 || strcmp(dot, ".jpeg") == 0)
+        return "image/jpeg";
+    if (strcmp(dot, ".gif") == 0)
+        return "image/gif";
+    if (strcmp(dot, ".png") == 0)
+        return "image/png";
+    if (strcmp(dot, ".css") == 0)
+        return "text/css";
+    if (strcmp(dot, ".au") == 0)
+        return "audio/basic";
+    if (strcmp(dot, ".wav") == 0)
+        return "audio/wav";
+    if (strcmp(dot, ".avi") == 0)
+        return "video/x-msvideo";
+    if (strcmp(dot, ".mov") == 0 || strcmp(dot, ".qt") == 0)
+        return "video/quicktime";
+    if (strcmp(dot, ".mpeg") == 0 || strcmp(dot, ".mpe") == 0)
+        return "video/mpeg";
+    if (strcmp(dot, ".vrml") == 0 || strcmp(dot, ".wrl") == 0)
+        return "model/vrml";
+    if (strcmp(dot, ".midi") == 0 || strcmp(dot, ".mid") == 0)
+        return "audio/midi";
+    if (strcmp(dot, ".mp3") == 0)
+        return "audio/mpeg";
+    if (strcmp(dot, ".ogg") == 0)
+        return "application/ogg";
+    if (strcmp(dot, ".pac") == 0)
+        return "application/x-ns-proxy-autoconfig";
+
+    return "text/plain; charset=utf-8";
+}
+

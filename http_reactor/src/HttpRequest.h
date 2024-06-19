@@ -55,6 +55,9 @@ bool parseHeader(struct httpRequest* request , struct buffer* readBuffer);
 //解析整个httpRequest
 bool parseHTTPRequest(struct httpRequest* request,struct buffer* readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket);
 //处理httpRequest
-bool processHTTPRequest(struct httpRequest* request);
+bool processHTTPRequest(struct httpRequest* request,struct httpResponse* response);
 //解码包括中文字符在内的编码
 void DecodeMsg(char *from, char *to);
+//获取对应文件的类型
+const char* getFileType(const char* name);
+

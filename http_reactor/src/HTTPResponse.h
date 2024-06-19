@@ -51,3 +51,7 @@ void destroyHttpResponse(struct httpResponse* response);
 bool addHttpResponseHeader(struct httpResponse* response , const char* key , const char* value);
 //组织http响应数据
 void httpResponsePrepareMsg(struct httpResponse* response , struct buffer* sendBuffer , int socket);
+//发送文件
+void sendFile(const char* fileName,struct buffer* buffer,int socket);
+//发送文件夹
+void sendDir(const char* Dir,struct buffer* buffer,int socket);
