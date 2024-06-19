@@ -646,6 +646,8 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/Github/HTTPserver/http_reac
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/ChannelMap.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/Dispatcher.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/Github/HTTPserver/http_reactor/src/HTTPResponse.h \
+  /mnt/hgfs/Github/HTTPserver/http_reactor/src/HttpRequest.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/TcpConnection.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
@@ -655,6 +657,8 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/Github/HTTPserver/http_reac
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
@@ -719,6 +723,8 @@ src/CMakeFiles/main.dir/TcpServer.c.o: /mnt/hgfs/Github/HTTPserver/http_reactor/
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/ChannelMap.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/Dispatcher.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/Github/HTTPserver/http_reactor/src/HTTPResponse.h \
+  /mnt/hgfs/Github/HTTPserver/http_reactor/src/HttpRequest.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/TcpConnection.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/TcpServer.h \
   /mnt/hgfs/Github/HTTPserver/http_reactor/src/ThreadPool.h \
@@ -739,6 +745,8 @@ src/CMakeFiles/main.dir/TcpServer.c.o: /mnt/hgfs/Github/HTTPserver/http_reactor/
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/time.h \
   /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
   /usr/include/x86_64-linux-gnu/asm/posix_types.h \

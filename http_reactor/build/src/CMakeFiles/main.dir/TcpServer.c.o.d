@@ -84,4 +84,7 @@ src/CMakeFiles/main.dir/TcpServer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /mnt/hgfs/Github/HTTPserver/http_reactor/src/TcpConnection.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/Buffer.h
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/Buffer.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/HTTPResponse.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor/src/HttpRequest.h \
+ /usr/include/string.h /usr/include/strings.h
