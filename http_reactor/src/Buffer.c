@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/uio.h>
+#include <unistd.h>
 
 
 struct buffer *bufferInit(int size)
@@ -26,6 +27,12 @@ int getWriteAbleSize(struct buffer* buffer )
     return buffer->capacity-buffer->writePos;
 }
 
+int getReadableSize(struct buffer *buffer)
+{
+    return buffer->writePos - buffer->readPos;
+    return 0;
+}
+
 int writeMsgIntoBuffer(struct buffer *buffer, const char *msg, int size)
 {
     if(buffer==NULL || msg==NULL || size<0)
@@ -37,6 +44,8 @@ int writeMsgIntoBuffer(struct buffer *buffer, const char *msg, int size)
     bufferExtend(buffer , size);
     //写数据
     memcpy(buffer->data+buffer->writePos , msg ,size);
+
+
     buffer->writePos += size;
     return 0;
 }
@@ -44,7 +53,7 @@ int writeMsgIntoBuffer(struct buffer *buffer, const char *msg, int size)
 int writeStringIntoBuffer(struct buffer *buffer, const char *data)
 {
     int size = strlen(data);
-    writeMsgIntoBuffer(buffer,data,strlen);
+    writeMsgIntoBuffer(buffer,data,size);
     return 0;
 }
 
@@ -90,6 +99,23 @@ char *findFirstLine(struct buffer *buffer)
     //char * local=memmem(buffer->data+buffer->readPos,getWriteAbleSize(buffer),"\r\n",2);
     char * local=strstr(buffer->data+buffer->readPos,"\r\n");
     return local;
+}
+
+int bufferSendData(struct buffer *buffer, int socket)
+{
+    //判断有无数据
+    int readableCount=getWriteAbleSize(buffer);
+    if(readableCount>0)
+    {
+        int count = send(socket,buffer->data+buffer->readPos,readableCount,MSG_NOSIGNAL);
+        if(count>0)
+        {
+            buffer->readPos+=count;
+            usleep(1);
+        }
+        return count;
+    }
+    return 0;
 }
 
 int bufferExtend(struct buffer* buffer , int size)

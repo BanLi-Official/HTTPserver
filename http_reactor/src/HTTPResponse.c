@@ -76,6 +76,9 @@ void httpResponsePrepareMsg(struct httpResponse *response, struct buffer *sendBu
 
     //空行
     writeStringIntoBuffer(sendBuffer,"\r\n");
+#ifndef MSG_SENG_AUTO
+    bufferSendData(sendBuffer,socket);
+#endif
 
     //数据块
     response->sendDataFunc(response->fileName,sendBuffer,socket);
@@ -101,6 +104,9 @@ void sendFile(const char* fileName,struct buffer* buffer,int socket)
         // send(cfd,buf,sizeof buf ,0);
         //将数据传到buffer中
         writeMsgIntoBuffer(buffer,buf,len);
+#ifndef MSG_SENG_AUTO
+        bufferSendData(buffer,socket);
+#endif
         memset(buf , 0 , sizeof buf); //将缓冲池中的数据清零
         len=read(fd , buf ,sizeof buf);
     }
@@ -173,6 +179,11 @@ void sendDir(const char* Dir,struct buffer* buffer,int socket) // 发送的是�
             // 文件内容
             sprintf(html + strlen(html), "<tr><td><a href=\"%s\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
         }
+        writeStringIntoBuffer(buffer,html);
+#ifndef MSG_SENG_AUTO
+        bufferSendData(buffer,socket);
+#endif
+        memset(html , 0 , sizeof html); //将缓冲池中的数据清零
         free(namelist[i]);
     }
     // 补充html文件剩下的内容
@@ -180,6 +191,10 @@ void sendDir(const char* Dir,struct buffer* buffer,int socket) // 发送的是�
     //send(cfd, html, strlen(html), 0);
     //将buf中的内容传递到待发送区域Buffer中
     writeStringIntoBuffer(buffer,html);
+#ifndef MSG_SENG_AUTO
+    bufferSendData(buffer,socket);
+#endif
+    memset(html , 0 , sizeof html); //将缓冲池中的数据清零
     free(namelist);
 
 }

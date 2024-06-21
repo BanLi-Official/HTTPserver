@@ -1,7 +1,7 @@
 src/CMakeFiles/main.dir/Channel.c.o: \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/Channel.c \
+ /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor/src/Channel.h \
+ /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
