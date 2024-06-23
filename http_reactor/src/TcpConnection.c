@@ -1,6 +1,7 @@
 #include "TcpConnection.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "Log.h"
 
 // #define MSG_SENG_AUTO
 
@@ -11,6 +12,8 @@ int readCallBackFunc(void *arg)
     struct TcpConnection* tcpConn=(struct TcpConnection*)arg;
     //读数据
     int count=writeSocketMsgIntoBuffer(tcpConn->readBuffer,tcpConn->channel->fd);
+
+    Debug("接收到的http请求数据: %s", tcpConn->readBuffer->data + tcpConn->readBuffer->readPos);
     //解析数据，做出读到了数据后的反应
     if(count>0)
     {
@@ -40,6 +43,7 @@ int readCallBackFunc(void *arg)
 //在数据写入缓冲区之后发送数据到客户端
 int writeCallBackFunc(void *arg)
 {
+    Debug("开始发送数据了(基于写事件发送)....");
     struct TcpConnection* tcpConn=(struct TcpConnection*)arg;
     //发送数据
     int count=bufferSendData(tcpConn->writeBuffer,tcpConn->channel->fd);
@@ -61,6 +65,29 @@ int writeCallBackFunc(void *arg)
 
 }
 
+
+int TcpConnectionDestroy(void *arg)
+{
+    struct TcpConnection* tcpConn = (struct TcpConnection*)arg;
+    if(tcpConn)
+    {
+        if(tcpConn->readBuffer && getReadableSize(tcpConn->readBuffer)==0 && 
+        tcpConn->writeBuffer && getWriteAbleSize(tcpConn->writeBuffer)==0)
+        {
+            //按照顺序销毁内存
+            destroyChannel(tcpConn->channel,tcpConn->eventloop);
+            bufferDestroy(tcpConn->readBuffer);
+            bufferDestroy(tcpConn->writeBuffer);
+            destroyHttpRequest(tcpConn->request);
+            destroyHttpResponse(tcpConn->response);
+            free(tcpConn);
+
+        }
+    }
+    Debug("连接断开, 释放资源, gameover, connName: %s", tcpConn->name);
+    return 0;
+}
+
 struct TcpConnection *TcpConnectionInit(int fd,struct EventLoop *eventloop)
 {
     struct TcpConnection* tcpConn=(struct TcpConnection *)malloc(sizeof(struct TcpConnection));
@@ -73,9 +100,12 @@ struct TcpConnection *TcpConnectionInit(int fd,struct EventLoop *eventloop)
     tcpConn->response = httpResponseInit();
 
 
-    tcpConn->channel=channelInit(fd,ReadAble,readCallBackFunc,writeCallBackFunc,NULL,tcpConn);
+    tcpConn->channel=channelInit(fd,ReadAble,readCallBackFunc,writeCallBackFunc,TcpConnectionDestroy,tcpConn);
 
     EventLoopAddTask(eventloop, tcpConn->channel, ADD);
-
+    Debug("和客户端建立连接, threadName: %s, threadID:%ld, connName: %s",
+        eventloop->threadName, eventloop->threadID, tcpConn->name);
     return tcpConn;
 }
+
+

@@ -20,3 +20,5 @@ struct TcpConnection
 };
 
 struct TcpConnection* TcpConnectionInit(int fd,struct EventLoop* eventloop);
+//销毁内存
+int TcpConnectionDestroy(void *arg);

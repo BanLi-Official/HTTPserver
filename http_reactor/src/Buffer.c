@@ -118,6 +118,20 @@ int bufferSendData(struct buffer *buffer, int socket)
     return 0;
 }
 
+bool bufferDestroy(struct buffer *buffer)
+{
+    if(buffer)
+    {
+        if(buffer->data)
+        {
+            free(buffer->data);
+        }
+        free(buffer);
+        return true;
+    }
+    return false;
+}
+
 int bufferExtend(struct buffer* buffer , int size)
 {
     //剩余可写大于size

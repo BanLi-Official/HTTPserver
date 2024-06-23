@@ -101,6 +101,9 @@ static int PollRemove(struct Channel *channel, struct EventLoop *eventloop)
             return 0;
         }
     }
+    //通过channel释放对应的tcpConection资源
+    channel->destroyCallBack(channel->arg);
+
     return -1;
 }
 // 修改注册事件

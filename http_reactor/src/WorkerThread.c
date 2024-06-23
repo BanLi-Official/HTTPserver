@@ -1,11 +1,12 @@
 #include "WorkerThread.h"
 #include <stdio.h>
+#include "Log.h"
 
 int workerThreadInit(struct WorkerThread *workerThread,int index)
 {
+    workerThread->loop=NULL;
     workerThread->threadId=0;
     sprintf(workerThread->threadName,"thread-%d",index);
-    workerThread->loop=NULL;
     pthread_mutex_init(&workerThread->mutex,NULL);
     pthread_cond_init(& workerThread->condition,NULL);
     return 0;

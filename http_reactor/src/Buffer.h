@@ -1,5 +1,6 @@
 #pragma once 
 #include <sys/socket.h>
+#include <stdbool.h>
 
 
 //缓冲区用来存储tcp发送的和接受的内容
@@ -29,3 +30,5 @@ int writeSocketMsgIntoBuffer(struct buffer* buffer, int fd);
 char* findFirstLine(struct buffer* buffer);
 //发送buffer中的数据发送出去
 int bufferSendData(struct buffer* buffer,int socket);
+//销毁buffer
+bool bufferDestroy(struct buffer* buffer);

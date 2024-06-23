@@ -8,6 +8,7 @@ struct Channel *channelInit(int fd, int event, handleFunc readFunc, handleFunc w
     channel->event=event;
     channel->readCallBack=readFunc;
     channel->writeCallBack=writeFunc;
+    channel->destroyCallBack=destroyCallBack;
     channel->arg=arg;
     return channel;
 }

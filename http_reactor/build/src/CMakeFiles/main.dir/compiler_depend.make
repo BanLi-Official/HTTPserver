@@ -84,6 +84,7 @@ src/CMakeFiles/main.dir/Buffer.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_react
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/sys/uio.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
 
 src/CMakeFiles/main.dir/Channel.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c \
@@ -273,6 +274,7 @@ src/CMakeFiles/main.dir/EventLoop.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_re
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Dispatcher.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/posix_types.h \
@@ -705,6 +707,7 @@ src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/GitHub项目/HTTPserver/htt
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HttpRequest.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -799,6 +802,7 @@ src/CMakeFiles/main.dir/TcpServer.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_re
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HttpRequest.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.h \
@@ -897,6 +901,7 @@ src/CMakeFiles/main.dir/ThreadPool.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_r
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Dispatcher.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.h \
   /usr/include/alloca.h \
@@ -971,6 +976,7 @@ src/CMakeFiles/main.dir/WorkerThread.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Dispatcher.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
   /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.h \
   /usr/include/features.h \
   /usr/include/pthread.h \
@@ -1022,15 +1028,27 @@ src/CMakeFiles/main.dir/WorkerThread.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
 
 src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Dispatcher.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.h \
+  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.h \
   /usr/include/alloca.h \
   /usr/include/endian.h \
   /usr/include/features.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/time.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/byteswap.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -1043,7 +1061,9 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
@@ -1051,6 +1071,7 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -1058,14 +1079,19 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -1080,6 +1106,7 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h
 
 
@@ -1103,6 +1130,8 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
 
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
 
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
 /usr/include/netinet/in.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
@@ -1124,6 +1153,8 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
 /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c:
 
 /usr/include/stdio.h:
+
+/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -1283,6 +1314,12 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
 
 /usr/include/x86_64-linux-gnu/sys/uio.h:
 
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
+/usr/include/linux/errno.h:
+
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
@@ -1290,12 +1327,6 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
 /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c:
 
 /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c:
-
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
-
-/usr/include/linux/errno.h:
 
 /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.h:
 
@@ -1376,5 +1407,3 @@ src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor
 /usr/include/fcntl.h:
 
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:

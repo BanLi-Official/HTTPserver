@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include "TcpServer.h"
+#include "Log.h"
 
 int main(int argc, char *argv[])
 {
      //主程序运行区
+
     if (argc < 3)
     {
         printf("short of various!\n");
@@ -23,5 +26,10 @@ int main(int argc, char *argv[])
         perror("获取当前路径失败");
         return EXIT_FAILURE;
     }
+
+    struct tcpServer* server= tcpServerInit(port,4);
+    tcpServerRun(server);
+
+
     return 0;
 }

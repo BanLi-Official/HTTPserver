@@ -8,7 +8,7 @@ struct ThreadPool
     int threadNum;
     int index;
     struct EventLoop* mainEventLoop;
-    struct WorkerThread** threads;
+    struct WorkerThread* threads;
 };
 
 //初始化线程池

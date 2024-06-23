@@ -87,4 +87,5 @@ src/CMakeFiles/main.dir/TcpServer.c.o: \
  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.h \
  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.h \
  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HttpRequest.h \
- /usr/include/string.h /usr/include/strings.h
+ /usr/include/string.h /usr/include/strings.h \
+ /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h

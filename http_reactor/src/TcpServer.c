@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "TcpConnection.h"
+#include "Log.h"
 
 struct tcpServer *tcpServerInit(unsigned short port, int threadNum)
 {
@@ -15,9 +16,10 @@ struct tcpServer *tcpServerInit(unsigned short port, int threadNum)
         printf("tcpServerInit Error!tcpServer == NULL\n");
         exit(0);
     }
-    tcpServer->threadNum = threadNum;
-    tcpServer->mainLoop = EventLoopInit();
+
     tcpServer->listener = listenerInit(port);
+    tcpServer->mainLoop = EventLoopInit();
+    tcpServer->threadNum = threadNum;
     tcpServer->pool = threadPoolInit(tcpServer->mainLoop , threadNum);
     return tcpServer;
 }
@@ -80,11 +82,14 @@ int tcpServerRun(struct tcpServer* tcpServer)
 {
     //启动线程池
     threadPoolRun(tcpServer->pool);
+
     //将lfd添加到主loop当中
     struct Channel *channel = channelInit(tcpServer->listener->lfd,ReadAble,acceptConnect,NULL,NULL,tcpServer);
     EventLoopAddTask(tcpServer->mainLoop,channel,ADD);
     //启动mainEventLoop
     EventLoopRun(tcpServer->mainLoop);
+    Debug("服务器程序已经启动了....");
+
 }
 
 

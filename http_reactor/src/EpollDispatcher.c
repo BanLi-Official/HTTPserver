@@ -111,6 +111,7 @@ static int Epollremove(struct Channel *channel, struct EventLoop *eventloop)
 
     //清除channel中对应的data数据
     channel->destroyCallBack(channel->arg);
+
     return 0;
      
     

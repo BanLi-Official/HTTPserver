@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <sys/socket.h>
 #include <unistd.h>
+#include "Log.h"
 
 struct EventLoop *EventLoopInit()
 {
@@ -34,7 +35,7 @@ struct EventLoop *EventLoopInitEX(const char *name)
 
     // 几个基础的属性变量
     loop->threadID = pthread_self();                              // EventLoop的线程号
-    loop->isRunning = false;                                      // 运行状态
+    loop->isRunning = true;                                      // 运行状态
     strcpy(loop->threadName, name == NULL ? "MainThread" : name); // EventLoop名称
     pthread_mutex_init(&loop->mutexForList, NULL);                // TaskList的mutex
     // pthread_cond_init(&loop->condition,&loop->mutexForList);   //TaskList的条件变量
@@ -77,6 +78,7 @@ int EventLoopRun(struct EventLoop *loop)
 
     while (loop->isRunning)
     {
+        //Debug("进入循环，开始running");
         dispatcher->dispatch(loop, 2);
         // 这里还要添加一个将tasklist中任务挂载到dispatch中的函数
         EventLoopListProcess(loop);
@@ -242,7 +244,7 @@ int EventLoopChannelModify(struct Channel *channel, struct EventLoop *loop)
     return 0;
 }
 
-int destroy(struct Channel *channel, struct EventLoop *loop)
+int destroyChannel(struct Channel *channel, struct EventLoop *loop)
 {
     // 将该channel从channelmap当中除去
     loop->channelMap->list[channel->fd] = NULL;

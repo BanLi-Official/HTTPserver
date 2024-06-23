@@ -28,7 +28,7 @@ struct Task
 
 struct EventLoop
 {
-    int threadID;   //EventLoop的线程号
+    pthread_t threadID;   //EventLoop的线程号
     bool isRunning;
     char threadName[32];  //线程名称
     pthread_mutex_t mutexForList; //任务队列的互斥锁
@@ -57,4 +57,4 @@ int EventLoopListProcess(struct EventLoop *loop); //处理task任务
 int EventLoopChannelAdd(struct Channel *channel ,struct EventLoop *loop);  //向EventLoop中添加channel
 int EventLoopChannelRemove(struct Channel *channel ,struct EventLoop *loop); //向EventLoop中删除channel
 int EventLoopChannelModify(struct Channel *channel ,struct EventLoop *loop); //向EventLoop中修改channel
-int destroy(struct Channel *channel ,struct EventLoop *loop); //除去channel，释放内存
+int destroyChannel(struct Channel *channel ,struct EventLoop *loop); //除去channel，释放内存
