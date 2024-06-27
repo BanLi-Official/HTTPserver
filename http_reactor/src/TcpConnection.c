@@ -13,7 +13,8 @@ int readCallBackFunc(void *arg)
     //读数据
     int count=writeSocketMsgIntoBuffer(tcpConn->readBuffer,tcpConn->channel->fd);
 
-    Debug("接收到的http请求数据: %s", tcpConn->readBuffer->data + tcpConn->readBuffer->readPos);
+    Debug("接收到的http请求数据: %s ,count=%d", tcpConn->readBuffer->data + tcpConn->readBuffer->readPos,count);
+
     //解析数据，做出读到了数据后的反应
     if(count>0)
     {
@@ -23,7 +24,11 @@ int readCallBackFunc(void *arg)
         setWriteable(tcpConn->channel,true);
         EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,MODIFY);
 #endif
+        
         bool flag=parseHTTPRequest(tcpConn->request,tcpConn->readBuffer,tcpConn->response,tcpConn->writeBuffer,socket);
+        Debug("数据解析结束.....");
+        printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",tcpConn->request->method,tcpConn->request->URL,
+                                                    tcpConn->request->httpVersion,tcpConn->request->headKeyNum,tcpConn->request->parseState);
         if(!flag)  //解析错误
         {
             char *error="HTTP/1.1 400 BadRequest\r\n\r\n";

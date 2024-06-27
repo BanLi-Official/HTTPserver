@@ -1,9 +1,12 @@
+#define _GNU_SOURCE 
 #include "Buffer.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 #include <sys/uio.h>
 #include <unistd.h>
+
 
 
 struct buffer *bufferInit(int size)
@@ -24,6 +27,7 @@ struct buffer *bufferInit(int size)
 
 int getWriteAbleSize(struct buffer* buffer )
 {
+
     return buffer->capacity-buffer->writePos;
 }
 
@@ -57,8 +61,12 @@ int writeStringIntoBuffer(struct buffer *buffer, const char *data)
     return 0;
 }
 
+
+
 int writeSocketMsgIntoBuffer(struct buffer *buffer, int fd)
 {
+
+
     if(buffer==NULL || fd<0)
     {
         printf("writeSocketMsgIntoBuffer Error! buffer==NULL || fd<0\n");
@@ -70,7 +78,7 @@ int writeSocketMsgIntoBuffer(struct buffer *buffer, int fd)
     iovecs[0].iov_base=buffer->data+buffer->writePos;
     iovecs[0].iov_len=writeAbleSize;
     char *temp = (char *)malloc(40960); //堆的长度为40K
-    iovecs[1].iov_base=temp;
+    iovecs[1].iov_base=buffer->data+buffer->writePos;
     iovecs[1].iov_len=40960;
 
     //从fd中读取数据
@@ -86,17 +94,20 @@ int writeSocketMsgIntoBuffer(struct buffer *buffer, int fd)
     }
     else    //此时还有一部分数据在堆中
     {
-        bufferExtend(buffer,result - writeAbleSize);
-        memcpy(buffer->data+buffer->writePos , temp , result - writeAbleSize);
-        buffer->writePos+=result;
+        // bufferExtend(buffer,result - writeAbleSize);
+        // memcpy(buffer->data+buffer->writePos , temp , result - writeAbleSize);
+        // buffer->writePos+=result;
+        buffer->writePos = buffer->capacity;
+        writeMsgIntoBuffer(buffer, temp, result - writeAbleSize);
     }
     free(temp);
-    return 0;
+    return 1;
 }
 
 char *findFirstLine(struct buffer *buffer)
 {
     //char * local=memmem(buffer->data+buffer->readPos,getWriteAbleSize(buffer),"\r\n",2);
+    // char* ptr = memmem(buffer->data + buffer->readPos, getWriteAbleSize(buffer), "\r\n", 2);
     char * local=strstr(buffer->data+buffer->readPos,"\r\n");
     return local;
 }
@@ -104,13 +115,16 @@ char *findFirstLine(struct buffer *buffer)
 int bufferSendData(struct buffer *buffer, int socket)
 {
     //判断有无数据
-    int readableCount=getWriteAbleSize(buffer);
+    int readableCount=getReadableSize(buffer);
     if(readableCount>0)
     {
+        //printf("发送完毕！\n内容如下：\n%s",buffer->data+buffer->readPos);
         int count = send(socket,buffer->data+buffer->readPos,readableCount,MSG_NOSIGNAL);
+        
         if(count>0)
         {
             buffer->readPos+=count;
+            
             usleep(1);
         }
         return count;

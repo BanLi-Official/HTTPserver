@@ -21,7 +21,7 @@ void threadPoolRun(struct ThreadPool *threadPool)
     assert(threadPool->isStart == false && threadPool);
     if (threadPool->mainEventLoop->threadID != pthread_self())
     {
-        printf("threadPoolRun Error! threadPool->mainEventLoop->threadID=%d, pthread_self() = %ld\n",threadPool->mainEventLoop->threadID,pthread_self());
+        printf("threadPoolRun Error! threadPool->mainEventLoop->threadID=%ld, pthread_self() = %ld\n",threadPool->mainEventLoop->threadID,pthread_self());
         exit(0);
     }
 
@@ -42,7 +42,7 @@ void threadPoolRun(struct ThreadPool *threadPool)
 
 struct EventLoop *getEventLoop(struct ThreadPool *threadPool)
 {
-    assert(!threadPool && threadPool->isStart == true);
+    assert(threadPool && threadPool->isStart == true);
     if (threadPool->index >= threadPool->threadNum)
     {
         printf("getEventLoop Error ! index is wrong \n");

@@ -72,4 +72,11 @@ src/CMakeFiles/main.dir/HTTPRequest.c.o: \
  /usr/include/strings.h \
  /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
- /usr/include/x86_64-linux-gnu/bits/stat.h
+ /usr/include/x86_64-linux-gnu/bits/stat.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Log.h

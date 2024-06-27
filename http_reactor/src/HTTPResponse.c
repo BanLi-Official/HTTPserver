@@ -72,6 +72,7 @@ void httpResponsePrepareMsg(struct httpResponse *response, struct buffer *sendBu
     {
         sprintf(temp,"%s:%s\r\n",response->headers[i].key,response->headers[i].value);
         writeStringIntoBuffer(sendBuffer,temp);
+
     }
 
     //空行
@@ -157,6 +158,7 @@ int compare(const struct dirent **a, const struct dirent **b)
 void sendDir(const char* Dir,struct buffer* buffer,int socket) // 发送的是一个html文件的内容
 {
     char html[4096] = {0};
+    printf("开始发送文件夹！\n");
     sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir);
 
     struct dirent **namelist;
@@ -179,7 +181,9 @@ void sendDir(const char* Dir,struct buffer* buffer,int socket) // 发送的是�
             // 文件内容
             sprintf(html + strlen(html), "<tr><td><a href=\"%s\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
         }
+        //printf("html=%s\n",html);
         writeStringIntoBuffer(buffer,html);
+        
 #ifndef MSG_SENG_AUTO
         bufferSendData(buffer,socket);
 #endif

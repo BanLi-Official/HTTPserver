@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
+#include <unistd.h>
+#include "Log.h"
 
 #define headKeySize 12
 struct httpRequest* httpRequestInit()
@@ -17,7 +19,7 @@ struct httpRequest* httpRequestInit()
     
     resetHttp(request);
     request->headKeys = (struct headKey*)malloc(sizeof(struct headKey)*headKeySize);
-    request->headKeyNum = headKeySize;
+    request->headKeyNum = 0;
 
     return request;
 }
@@ -29,7 +31,7 @@ int resetHttp(struct httpRequest* request)
     request->method = NULL;
     request->URL    = NULL;
     request->httpVersion=NULL;
-    request->parseState = paresStop;
+    request->parseState = parseLine;
     request->headKeyNum = 0;
     return 0;
 }
@@ -118,7 +120,7 @@ char* splitHeadLine(char* start , char* end , const char* substr , char** ptr)
             printf("splitHeadLine Error! space == NULL\n");
         }
     }
-    int containtLength = end-subLocation;    //计算分割的内容的长度
+    int containtLength = subLocation-start;    //计算分割的内容的长度
     char* temp=(char *)malloc(containtLength+1);
     strncpy(temp,start,containtLength);     //将内容暂时存储到一个临时变量中
     temp[containtLength]='\0';
@@ -131,6 +133,9 @@ bool parseHeadLine(struct httpRequest *request,struct buffer *readBuffer)
 {
     //   get /xxxxx/xxxx http/1.1
     //先找到第一行的结束位置
+
+    //Debug("parseHeadLine里面的readBuffer数据: %s ", readBuffer->data + readBuffer->readPos);
+
     char *end = findFirstLine(readBuffer);
     char *start=readBuffer->data+readBuffer->readPos;
     int headLineSize = end - start;
@@ -196,6 +201,7 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
 {
     //每一行的样子：   key: value
     //该行的结束位置
+    //Debug("readBuffer=%s",readBuffer->data+readBuffer->readPos);
     char* end=findFirstLine(readBuffer);
     if(end!=NULL)
     {
@@ -203,6 +209,15 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
         int lineLength=end-start;
         //根据： 分割该行
         char* splitPosition=strstr(start,": ");
+        if(splitPosition==NULL)
+        {
+            //请求头已经被检查完了，跳到下一行
+            readBuffer->readPos+=2;
+            //修改状态(这里默认使用get模式，直接跳过第三部分)
+            request->parseState=parseDone;
+            Debug("请求头已经被检查完了，跳到下一行");
+            return true;
+        }
         //找key
         char* key = malloc(splitPosition-start+1);
         strncpy(key,start,splitPosition-start);
@@ -226,6 +241,7 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
         readBuffer->readPos+=2;
         //修改状态(这里默认使用get模式，直接跳过第三部分)
         request->parseState=parseDone;
+        Debug("请求头已经被检查完了，跳到下一行");
         return true;
     }
 
@@ -234,6 +250,7 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
 
 bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket)
 {
+    
     bool flag=true;
     while(request->parseState!=parseDone)
     {
@@ -258,6 +275,11 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,stru
         }
 
         //如果解析结束，则准备回复的数据
+        
+        
+        //printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",request->method,request->URL,request->httpVersion,request->headKeyNum,request->parseState);
+        usleep(50);
+
         if(request->parseState==parseDone)
         {
             //1.根据解析出来的数据，对客户端的请求做出处理
@@ -292,6 +314,7 @@ bool processHTTPRequest(struct httpRequest *request,struct httpResponse* respons
         {
             file = request->URL + 1;
         }
+        
 
         // 读取这个文件/夹  https://blog.csdn.net/qq_48383456/article/details/136544350?spm=1001.2014.3001.5502
         struct stat st;
@@ -321,12 +344,12 @@ bool processHTTPRequest(struct httpRequest *request,struct httpResponse* respons
         response->stateCode=OK;
         strcpy(response->statusMsg, "OK");
 
-
+        
 
         if (S_ISDIR(st.st_mode))
         {
             // 把文件夹的内容发送给客户端；
-            //printf("this path is dir! path=%s\n", file);
+            printf("this path is dir! path=%s\n", file);
             // sendHeadResponse(cfd, 200, "OK", getFileType(".html"), -1);
             // sendDir(cfd, file);
 
@@ -339,7 +362,7 @@ bool processHTTPRequest(struct httpRequest *request,struct httpResponse* respons
         else
         {
             // 把文件的内容发送给客户端；
-            //printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
+            printf("this path is file! path=%s  st_size = %d\n  ", file,(int)st.st_size);
             // sendHeadResponse(cfd, 200, "OK", getFileType(file), st.st_size);
             // sendFile(cfd, file);
 

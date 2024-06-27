@@ -16,6 +16,8 @@
         "initializer_list": "c",
         "utility": "c",
         "functional": "c",
-        "dispatcher.h": "c"
+        "dispatcher.h": "c",
+        "uio.h": "c",
+        "buffer.h": "c"
     }
 }
