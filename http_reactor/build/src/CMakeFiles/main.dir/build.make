@@ -73,197 +73,197 @@ src/CMakeFiles/main.dir/Buffer.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/Buffer.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c
 src/CMakeFiles/main.dir/Buffer.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/main.dir/Buffer.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/Buffer.c.o -MF CMakeFiles/main.dir/Buffer.c.o.d -o CMakeFiles/main.dir/Buffer.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/Buffer.c.o -MF CMakeFiles/main.dir/Buffer.c.o.d -o CMakeFiles/main.dir/Buffer.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c
 
 src/CMakeFiles/main.dir/Buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/Buffer.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c > CMakeFiles/main.dir/Buffer.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c > CMakeFiles/main.dir/Buffer.c.i
 
 src/CMakeFiles/main.dir/Buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/Buffer.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c -o CMakeFiles/main.dir/Buffer.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Buffer.c -o CMakeFiles/main.dir/Buffer.c.s
 
 src/CMakeFiles/main.dir/Channel.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/Channel.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c
 src/CMakeFiles/main.dir/Channel.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/main.dir/Channel.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/Channel.c.o -MF CMakeFiles/main.dir/Channel.c.o.d -o CMakeFiles/main.dir/Channel.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/Channel.c.o -MF CMakeFiles/main.dir/Channel.c.o.d -o CMakeFiles/main.dir/Channel.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c
 
 src/CMakeFiles/main.dir/Channel.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/Channel.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c > CMakeFiles/main.dir/Channel.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c > CMakeFiles/main.dir/Channel.c.i
 
 src/CMakeFiles/main.dir/Channel.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/Channel.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c -o CMakeFiles/main.dir/Channel.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/Channel.c -o CMakeFiles/main.dir/Channel.c.s
 
 src/CMakeFiles/main.dir/ChannelMap.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/ChannelMap.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c
 src/CMakeFiles/main.dir/ChannelMap.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/main.dir/ChannelMap.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/ChannelMap.c.o -MF CMakeFiles/main.dir/ChannelMap.c.o.d -o CMakeFiles/main.dir/ChannelMap.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/ChannelMap.c.o -MF CMakeFiles/main.dir/ChannelMap.c.o.d -o CMakeFiles/main.dir/ChannelMap.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c
 
 src/CMakeFiles/main.dir/ChannelMap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/ChannelMap.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c > CMakeFiles/main.dir/ChannelMap.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c > CMakeFiles/main.dir/ChannelMap.c.i
 
 src/CMakeFiles/main.dir/ChannelMap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/ChannelMap.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c -o CMakeFiles/main.dir/ChannelMap.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ChannelMap.c -o CMakeFiles/main.dir/ChannelMap.c.s
 
 src/CMakeFiles/main.dir/EpollDispatcher.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/EpollDispatcher.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c
 src/CMakeFiles/main.dir/EpollDispatcher.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/main.dir/EpollDispatcher.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/EpollDispatcher.c.o -MF CMakeFiles/main.dir/EpollDispatcher.c.o.d -o CMakeFiles/main.dir/EpollDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/EpollDispatcher.c.o -MF CMakeFiles/main.dir/EpollDispatcher.c.o.d -o CMakeFiles/main.dir/EpollDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c
 
 src/CMakeFiles/main.dir/EpollDispatcher.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/EpollDispatcher.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c > CMakeFiles/main.dir/EpollDispatcher.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c > CMakeFiles/main.dir/EpollDispatcher.c.i
 
 src/CMakeFiles/main.dir/EpollDispatcher.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/EpollDispatcher.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c -o CMakeFiles/main.dir/EpollDispatcher.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EpollDispatcher.c -o CMakeFiles/main.dir/EpollDispatcher.c.s
 
 src/CMakeFiles/main.dir/EventLoop.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/EventLoop.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c
 src/CMakeFiles/main.dir/EventLoop.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/main.dir/EventLoop.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/EventLoop.c.o -MF CMakeFiles/main.dir/EventLoop.c.o.d -o CMakeFiles/main.dir/EventLoop.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/EventLoop.c.o -MF CMakeFiles/main.dir/EventLoop.c.o.d -o CMakeFiles/main.dir/EventLoop.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c
 
 src/CMakeFiles/main.dir/EventLoop.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/EventLoop.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c > CMakeFiles/main.dir/EventLoop.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c > CMakeFiles/main.dir/EventLoop.c.i
 
 src/CMakeFiles/main.dir/EventLoop.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/EventLoop.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c -o CMakeFiles/main.dir/EventLoop.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/EventLoop.c -o CMakeFiles/main.dir/EventLoop.c.s
 
 src/CMakeFiles/main.dir/HTTPRequest.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/HTTPRequest.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c
 src/CMakeFiles/main.dir/HTTPRequest.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/main.dir/HTTPRequest.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/HTTPRequest.c.o -MF CMakeFiles/main.dir/HTTPRequest.c.o.d -o CMakeFiles/main.dir/HTTPRequest.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/HTTPRequest.c.o -MF CMakeFiles/main.dir/HTTPRequest.c.o.d -o CMakeFiles/main.dir/HTTPRequest.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c
 
 src/CMakeFiles/main.dir/HTTPRequest.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/HTTPRequest.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c > CMakeFiles/main.dir/HTTPRequest.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c > CMakeFiles/main.dir/HTTPRequest.c.i
 
 src/CMakeFiles/main.dir/HTTPRequest.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/HTTPRequest.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c -o CMakeFiles/main.dir/HTTPRequest.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPRequest.c -o CMakeFiles/main.dir/HTTPRequest.c.s
 
 src/CMakeFiles/main.dir/HTTPResponse.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/HTTPResponse.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c
 src/CMakeFiles/main.dir/HTTPResponse.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/main.dir/HTTPResponse.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/HTTPResponse.c.o -MF CMakeFiles/main.dir/HTTPResponse.c.o.d -o CMakeFiles/main.dir/HTTPResponse.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/HTTPResponse.c.o -MF CMakeFiles/main.dir/HTTPResponse.c.o.d -o CMakeFiles/main.dir/HTTPResponse.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c
 
 src/CMakeFiles/main.dir/HTTPResponse.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/HTTPResponse.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c > CMakeFiles/main.dir/HTTPResponse.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c > CMakeFiles/main.dir/HTTPResponse.c.i
 
 src/CMakeFiles/main.dir/HTTPResponse.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/HTTPResponse.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c -o CMakeFiles/main.dir/HTTPResponse.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/HTTPResponse.c -o CMakeFiles/main.dir/HTTPResponse.c.s
 
 src/CMakeFiles/main.dir/PollDispatcher.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/PollDispatcher.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c
 src/CMakeFiles/main.dir/PollDispatcher.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/CMakeFiles/main.dir/PollDispatcher.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/PollDispatcher.c.o -MF CMakeFiles/main.dir/PollDispatcher.c.o.d -o CMakeFiles/main.dir/PollDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/PollDispatcher.c.o -MF CMakeFiles/main.dir/PollDispatcher.c.o.d -o CMakeFiles/main.dir/PollDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c
 
 src/CMakeFiles/main.dir/PollDispatcher.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/PollDispatcher.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c > CMakeFiles/main.dir/PollDispatcher.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c > CMakeFiles/main.dir/PollDispatcher.c.i
 
 src/CMakeFiles/main.dir/PollDispatcher.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/PollDispatcher.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c -o CMakeFiles/main.dir/PollDispatcher.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/PollDispatcher.c -o CMakeFiles/main.dir/PollDispatcher.c.s
 
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c
 src/CMakeFiles/main.dir/SelectDispatcher.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/CMakeFiles/main.dir/SelectDispatcher.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/SelectDispatcher.c.o -MF CMakeFiles/main.dir/SelectDispatcher.c.o.d -o CMakeFiles/main.dir/SelectDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/SelectDispatcher.c.o -MF CMakeFiles/main.dir/SelectDispatcher.c.o.d -o CMakeFiles/main.dir/SelectDispatcher.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c
 
 src/CMakeFiles/main.dir/SelectDispatcher.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/SelectDispatcher.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c > CMakeFiles/main.dir/SelectDispatcher.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c > CMakeFiles/main.dir/SelectDispatcher.c.i
 
 src/CMakeFiles/main.dir/SelectDispatcher.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/SelectDispatcher.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c -o CMakeFiles/main.dir/SelectDispatcher.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/SelectDispatcher.c -o CMakeFiles/main.dir/SelectDispatcher.c.s
 
 src/CMakeFiles/main.dir/TcpConnection.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/TcpConnection.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c
 src/CMakeFiles/main.dir/TcpConnection.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/CMakeFiles/main.dir/TcpConnection.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpConnection.c.o -MF CMakeFiles/main.dir/TcpConnection.c.o.d -o CMakeFiles/main.dir/TcpConnection.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpConnection.c.o -MF CMakeFiles/main.dir/TcpConnection.c.o.d -o CMakeFiles/main.dir/TcpConnection.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c
 
 src/CMakeFiles/main.dir/TcpConnection.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/TcpConnection.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c > CMakeFiles/main.dir/TcpConnection.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c > CMakeFiles/main.dir/TcpConnection.c.i
 
 src/CMakeFiles/main.dir/TcpConnection.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/TcpConnection.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c -o CMakeFiles/main.dir/TcpConnection.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpConnection.c -o CMakeFiles/main.dir/TcpConnection.c.s
 
 src/CMakeFiles/main.dir/TcpServer.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/TcpServer.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c
 src/CMakeFiles/main.dir/TcpServer.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/CMakeFiles/main.dir/TcpServer.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpServer.c.o -MF CMakeFiles/main.dir/TcpServer.c.o.d -o CMakeFiles/main.dir/TcpServer.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/TcpServer.c.o -MF CMakeFiles/main.dir/TcpServer.c.o.d -o CMakeFiles/main.dir/TcpServer.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c
 
 src/CMakeFiles/main.dir/TcpServer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/TcpServer.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c > CMakeFiles/main.dir/TcpServer.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c > CMakeFiles/main.dir/TcpServer.c.i
 
 src/CMakeFiles/main.dir/TcpServer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/TcpServer.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c -o CMakeFiles/main.dir/TcpServer.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/TcpServer.c -o CMakeFiles/main.dir/TcpServer.c.s
 
 src/CMakeFiles/main.dir/ThreadPool.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/ThreadPool.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c
 src/CMakeFiles/main.dir/ThreadPool.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/CMakeFiles/main.dir/ThreadPool.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/ThreadPool.c.o -MF CMakeFiles/main.dir/ThreadPool.c.o.d -o CMakeFiles/main.dir/ThreadPool.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/ThreadPool.c.o -MF CMakeFiles/main.dir/ThreadPool.c.o.d -o CMakeFiles/main.dir/ThreadPool.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c
 
 src/CMakeFiles/main.dir/ThreadPool.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/ThreadPool.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c > CMakeFiles/main.dir/ThreadPool.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c > CMakeFiles/main.dir/ThreadPool.c.i
 
 src/CMakeFiles/main.dir/ThreadPool.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/ThreadPool.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c -o CMakeFiles/main.dir/ThreadPool.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/ThreadPool.c -o CMakeFiles/main.dir/ThreadPool.c.s
 
 src/CMakeFiles/main.dir/WorkerThread.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/WorkerThread.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c
 src/CMakeFiles/main.dir/WorkerThread.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/CMakeFiles/main.dir/WorkerThread.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/WorkerThread.c.o -MF CMakeFiles/main.dir/WorkerThread.c.o.d -o CMakeFiles/main.dir/WorkerThread.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/WorkerThread.c.o -MF CMakeFiles/main.dir/WorkerThread.c.o.d -o CMakeFiles/main.dir/WorkerThread.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c
 
 src/CMakeFiles/main.dir/WorkerThread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/WorkerThread.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c > CMakeFiles/main.dir/WorkerThread.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c > CMakeFiles/main.dir/WorkerThread.c.i
 
 src/CMakeFiles/main.dir/WorkerThread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/WorkerThread.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c -o CMakeFiles/main.dir/WorkerThread.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/WorkerThread.c -o CMakeFiles/main.dir/WorkerThread.c.s
 
 src/CMakeFiles/main.dir/main.c.o: src/CMakeFiles/main.dir/flags.make
 src/CMakeFiles/main.dir/main.c.o: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c
 src/CMakeFiles/main.dir/main.c.o: src/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/CMakeFiles/main.dir/main.c.o"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c
 
 src/CMakeFiles/main.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c > CMakeFiles/main.dir/main.c.i
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c > CMakeFiles/main.dir/main.c.i
 
 src/CMakeFiles/main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c -o CMakeFiles/main.dir/main.c.s
+	cd /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/hgfs/GitHub项目/HTTPserver/http_reactor/src/main.c -o CMakeFiles/main.dir/main.c.s
 
 # Object files for target main
 main_OBJECTS = \

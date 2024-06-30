@@ -278,7 +278,7 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,stru
         
         
         //printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",request->method,request->URL,request->httpVersion,request->headKeyNum,request->parseState);
-        usleep(50);
+
 
         if(request->parseState==parseDone)
         {
@@ -371,7 +371,7 @@ bool processHTTPRequest(struct httpRequest *request,struct httpResponse* respons
             char temp[1024];
             sprintf(temp,"%ld",st.st_size);
             addHttpResponseHeader(response,"Content-Length",temp);
-            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+            addHttpResponseHeader(response , "Content-type",getFileType(file));
 
             //设置数据块发送方式
             response->sendDataFunc=sendFile;

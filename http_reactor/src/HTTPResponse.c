@@ -101,7 +101,7 @@ void sendFile(const char* fileName,struct buffer* buffer,int socket)
     while (len > 0)
     {
         
-        usleep(10);  //中间空出点时间，掌握好发送节奏
+        //usleep(10);  //中间空出点时间，掌握好发送节奏
         // send(cfd,buf,sizeof buf ,0);
         //将数据传到buffer中
         writeMsgIntoBuffer(buffer,buf,len);

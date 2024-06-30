@@ -40,7 +40,9 @@ struct EventLoop *EventLoopInitEX(const char *name)
     pthread_mutex_init(&loop->mutexForList, NULL);                // TaskList的mutex
     // pthread_cond_init(&loop->condition,&loop->mutexForList);   //TaskList的条件变量
 
-    loop->dispatcher = &EpollDispatch;               // 分发器
+    //loop->dispatcher = &EpollDispatch;               // 分发器
+    loop->dispatcher=&pollDispatcher;
+    //loop->dispatcher=&selectDispatcher;
     loop->DispatcherData = loop->dispatcher->init(); // 初始化数据区（分发器要用的东西）
 
     loop->head = loop->tail = NULL; // tasklist的指针
