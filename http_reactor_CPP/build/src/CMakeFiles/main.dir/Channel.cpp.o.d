@@ -1,7 +1,7 @@
 src/CMakeFiles/main.dir/Channel.cpp.o: \
- /mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src/Channel.cpp \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.cpp \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src/Channel.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.h \
  /usr/include/c++/9/stdlib.h /usr/include/c++/9/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \

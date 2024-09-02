@@ -7,11 +7,11 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/CMakeLists.txt"
+  "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/CMakeLists.txt"
   "CMakeFiles/3.28.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.2/CMakeSystem.cmake"
-  "/mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src/CMakeLists.txt"
+  "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/CMakeLists.txt"
   "/usr/local/share/cmake-3.28/Modules/CMakeCInformation.cmake"
   "/usr/local/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
   "/usr/local/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"

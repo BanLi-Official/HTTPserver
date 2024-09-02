@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src
+# Install script for directory: /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,7 +1,7 @@
 src/CMakeFiles/main.dir/Buffer.c.o: \
- /mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src/Buffer.c \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.c \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/GitHub项目/HTTPserver/http_reactor_CPP/src/Buffer.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

@@ -25,7 +25,7 @@ public:
     //设置channel
     inline void setChannel(Channel* channel){m_channel=channel;}
     
-private:
+protected:
     Channel* m_channel;
     EventLoop* m_eventloop; 
     string m_name=string();
