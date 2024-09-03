@@ -7,6 +7,10 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include "Log.h"
+#include "SelectDispatcher.h"
+#include "PollDispatcher.h"
+#include "EpollDispatcher.h"
+#include "Channel.h"
 
 struct EventLoop *EventLoopInit()
 {
@@ -30,38 +34,7 @@ int writeMsgLocal(struct EventLoop *loop)
 
 struct EventLoop *EventLoopInitEX(const char *name)
 {
-    // 初始化空间
-    struct EventLoop *loop = (struct EventLoop *)malloc(sizeof(struct EventLoop));
-
-    // 几个基础的属性变量
-    loop->threadID = pthread_self();                              // EventLoop的线程号
-    loop->isRunning = true;                                      // 运行状态
-    strcpy(loop->threadName, name == NULL ? "MainThread" : name); // EventLoop名称
-    pthread_mutex_init(&loop->mutexForList, NULL);                // TaskList的mutex
-    // pthread_cond_init(&loop->condition,&loop->mutexForList);   //TaskList的条件变量
-
-    //loop->dispatcher = &EpollDispatch;               // 分发器
-    loop->dispatcher=&pollDispatcher;
-    //loop->dispatcher=&selectDispatcher;
-    loop->DispatcherData = loop->dispatcher->init(); // 初始化数据区（分发器要用的东西）
-
-    loop->head = loop->tail = NULL; // tasklist的指针
-
-    loop->channelMap = ChannelMapInit(128); // 根据fd找channel的map
-
-    int res = socketpair(AF_UNIX, SOCK_STREAM, 0, loop->socketPairFds); // 初始化socketpair数组
-    // 规定：loop->socketPairFds[1]读 ，loop->socketPairFds[0]写
-    if (res == -1)
-    {
-        perror("EventLoopInitEX error! res == -1\n");
-        exit(0);
-    }
-    // 将读的文件描述符封装到channel中 ,让dispatcher能够接受到事件，从而唤醒dispatch
-    struct Channel *channel = channelInit(loop->socketPairFds[1], ReadAble, readMsgLocal, NULL, NULL, loop);
-    // 将这个channel加入task列表当中
-    res = EventLoopAddTask(loop, channel, ReadAble);
-
-    return loop;
+    
 }
 
 int EventLoopRun(struct EventLoop *loop)
@@ -253,4 +226,39 @@ int destroyChannel(struct Channel *channel, struct EventLoop *loop)
     close(channel->fd);
     free(channel);
     return 0;
+}
+
+EventLoop::EventLoop() : EventLoop(string())  //委托构造函数，委托形参有字符串的构造函数进行构造
+{
+}
+
+EventLoop::EventLoop(const string ThreadName)
+{
+
+    // 几个基础的属性变量
+    m_threadID = this_thread::get_id();                              // EventLoop的线程号
+    m_isRunning = false;                                      // 运行状态
+    m_threadName= ThreadName == string() ? "MainThread" : ThreadName; // EventLoop名称
+
+    //loop->dispatcher = &EpollDispatch;               // 分发器
+    m_dispatcher=new PollDispatcher(this);
+    //loop->dispatcher=&selectDispatcher;
+
+    m_channelMap.clear();
+
+    int res = socketpair(AF_UNIX, SOCK_STREAM, 0, m_socketPairFds); // 初始化socketpair数组
+    // 规定：loop->socketPairFds[1]读 ，loop->socketPairFds[0]写
+    if (res == -1)
+    {
+        perror("EventLoopInitEX error! res == -1\n");
+        exit(0);
+    }
+    // 将读的文件描述符封装到channel中 ,让dispatcher能够接受到事件，从而唤醒dispatch
+    struct Channel *channel =new Channel(m_socketPairFds[1], FDevent::ReadAble, readMsgLocal, NULL, NULL, this);
+    // 将这个channel加入task列表当中
+    res = AddTask( channel,(int)FDevent::ReadAble);
+}
+
+EventLoop::~EventLoop()
+{
 }

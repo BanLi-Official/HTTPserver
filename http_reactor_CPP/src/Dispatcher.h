@@ -6,7 +6,7 @@
 using namespace std;
 
 
-struct EventLoop;  //前向声明的作用是在类型还没有完全定义的情况下引入类型的存在
+class EventLoop;  //前向声明的作用是在类型还没有完全定义的情况下引入类型的存在
 //定义一个Dispatcher的模板，后面用select、poll、epoll来实现
 class Dispatcher  
 {

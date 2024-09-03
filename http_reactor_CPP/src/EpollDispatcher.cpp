@@ -22,6 +22,7 @@ EpollDispatcher::EpollDispatcher(EventLoop *eventLoop) : Dispatcher(eventLoop)
     {
         printf("EpollInit error! data->events is NULL!\n");
     }
+    m_name="Epoll";
 
 }
 

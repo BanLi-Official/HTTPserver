@@ -20,7 +20,7 @@ class Channel
 {
 public:
     //构造函数,初始化函数
-    Channel(int fd , int event ,handleFunc readFunc ,handleFunc writeFunc ,handleFunc destroyCallBack,void *arg);
+    Channel(int fd , FDevent event ,handleFunc readFunc ,handleFunc writeFunc ,handleFunc destroyCallBack,void *arg);
     //读函数
     handleFunc readCallBack;
     //写函数
