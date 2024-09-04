@@ -130,29 +130,29 @@ main/fast:
 	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-Buffer.o: Buffer.c.o
+Buffer.o: Buffer.cpp.o
 .PHONY : Buffer.o
 
 # target to build an object file
-Buffer.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.o
-.PHONY : Buffer.c.o
+Buffer.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.cpp.o
+.PHONY : Buffer.cpp.o
 
-Buffer.i: Buffer.c.i
+Buffer.i: Buffer.cpp.i
 .PHONY : Buffer.i
 
 # target to preprocess a source file
-Buffer.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.i
-.PHONY : Buffer.c.i
+Buffer.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.cpp.i
+.PHONY : Buffer.cpp.i
 
-Buffer.s: Buffer.c.s
+Buffer.s: Buffer.cpp.s
 .PHONY : Buffer.s
 
 # target to generate assembly for a file
-Buffer.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.c.s
-.PHONY : Buffer.c.s
+Buffer.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/Buffer.cpp.s
+.PHONY : Buffer.cpp.s
 
 Channel.o: Channel.cpp.o
 .PHONY : Channel.o
@@ -226,245 +226,245 @@ EpollDispatcher.cpp.s:
 	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EpollDispatcher.cpp.s
 .PHONY : EpollDispatcher.cpp.s
 
-EventLoop.o: EventLoop.c.o
+EventLoop.o: EventLoop.cpp.o
 .PHONY : EventLoop.o
 
 # target to build an object file
-EventLoop.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.o
-.PHONY : EventLoop.c.o
+EventLoop.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.cpp.o
+.PHONY : EventLoop.cpp.o
 
-EventLoop.i: EventLoop.c.i
+EventLoop.i: EventLoop.cpp.i
 .PHONY : EventLoop.i
 
 # target to preprocess a source file
-EventLoop.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.i
-.PHONY : EventLoop.c.i
+EventLoop.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.cpp.i
+.PHONY : EventLoop.cpp.i
 
-EventLoop.s: EventLoop.c.s
+EventLoop.s: EventLoop.cpp.s
 .PHONY : EventLoop.s
 
 # target to generate assembly for a file
-EventLoop.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.c.s
-.PHONY : EventLoop.c.s
+EventLoop.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/EventLoop.cpp.s
+.PHONY : EventLoop.cpp.s
 
-HTTPRequest.o: HTTPRequest.c.o
+HTTPRequest.o: HTTPRequest.cpp.o
 .PHONY : HTTPRequest.o
 
 # target to build an object file
-HTTPRequest.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.o
-.PHONY : HTTPRequest.c.o
+HTTPRequest.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.cpp.o
+.PHONY : HTTPRequest.cpp.o
 
-HTTPRequest.i: HTTPRequest.c.i
+HTTPRequest.i: HTTPRequest.cpp.i
 .PHONY : HTTPRequest.i
 
 # target to preprocess a source file
-HTTPRequest.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.i
-.PHONY : HTTPRequest.c.i
+HTTPRequest.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.cpp.i
+.PHONY : HTTPRequest.cpp.i
 
-HTTPRequest.s: HTTPRequest.c.s
+HTTPRequest.s: HTTPRequest.cpp.s
 .PHONY : HTTPRequest.s
 
 # target to generate assembly for a file
-HTTPRequest.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.c.s
-.PHONY : HTTPRequest.c.s
+HTTPRequest.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPRequest.cpp.s
+.PHONY : HTTPRequest.cpp.s
 
-HTTPResponse.o: HTTPResponse.c.o
+HTTPResponse.o: HTTPResponse.cpp.o
 .PHONY : HTTPResponse.o
 
 # target to build an object file
-HTTPResponse.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.o
-.PHONY : HTTPResponse.c.o
+HTTPResponse.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.cpp.o
+.PHONY : HTTPResponse.cpp.o
 
-HTTPResponse.i: HTTPResponse.c.i
+HTTPResponse.i: HTTPResponse.cpp.i
 .PHONY : HTTPResponse.i
 
 # target to preprocess a source file
-HTTPResponse.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.i
-.PHONY : HTTPResponse.c.i
+HTTPResponse.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.cpp.i
+.PHONY : HTTPResponse.cpp.i
 
-HTTPResponse.s: HTTPResponse.c.s
+HTTPResponse.s: HTTPResponse.cpp.s
 .PHONY : HTTPResponse.s
 
 # target to generate assembly for a file
-HTTPResponse.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.c.s
-.PHONY : HTTPResponse.c.s
+HTTPResponse.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/HTTPResponse.cpp.s
+.PHONY : HTTPResponse.cpp.s
 
-PollDispatcher.o: PollDispatcher.c.o
+PollDispatcher.o: PollDispatcher.cpp.o
 .PHONY : PollDispatcher.o
 
 # target to build an object file
-PollDispatcher.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.o
-.PHONY : PollDispatcher.c.o
+PollDispatcher.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.cpp.o
+.PHONY : PollDispatcher.cpp.o
 
-PollDispatcher.i: PollDispatcher.c.i
+PollDispatcher.i: PollDispatcher.cpp.i
 .PHONY : PollDispatcher.i
 
 # target to preprocess a source file
-PollDispatcher.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.i
-.PHONY : PollDispatcher.c.i
+PollDispatcher.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.cpp.i
+.PHONY : PollDispatcher.cpp.i
 
-PollDispatcher.s: PollDispatcher.c.s
+PollDispatcher.s: PollDispatcher.cpp.s
 .PHONY : PollDispatcher.s
 
 # target to generate assembly for a file
-PollDispatcher.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.c.s
-.PHONY : PollDispatcher.c.s
+PollDispatcher.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/PollDispatcher.cpp.s
+.PHONY : PollDispatcher.cpp.s
 
-SelectDispatcher.o: SelectDispatcher.c.o
+SelectDispatcher.o: SelectDispatcher.cpp.o
 .PHONY : SelectDispatcher.o
 
 # target to build an object file
-SelectDispatcher.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.o
-.PHONY : SelectDispatcher.c.o
+SelectDispatcher.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.cpp.o
+.PHONY : SelectDispatcher.cpp.o
 
-SelectDispatcher.i: SelectDispatcher.c.i
+SelectDispatcher.i: SelectDispatcher.cpp.i
 .PHONY : SelectDispatcher.i
 
 # target to preprocess a source file
-SelectDispatcher.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.i
-.PHONY : SelectDispatcher.c.i
+SelectDispatcher.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.cpp.i
+.PHONY : SelectDispatcher.cpp.i
 
-SelectDispatcher.s: SelectDispatcher.c.s
+SelectDispatcher.s: SelectDispatcher.cpp.s
 .PHONY : SelectDispatcher.s
 
 # target to generate assembly for a file
-SelectDispatcher.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.c.s
-.PHONY : SelectDispatcher.c.s
+SelectDispatcher.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/SelectDispatcher.cpp.s
+.PHONY : SelectDispatcher.cpp.s
 
-TcpConnection.o: TcpConnection.c.o
+TcpConnection.o: TcpConnection.cpp.o
 .PHONY : TcpConnection.o
 
 # target to build an object file
-TcpConnection.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.o
-.PHONY : TcpConnection.c.o
+TcpConnection.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.cpp.o
+.PHONY : TcpConnection.cpp.o
 
-TcpConnection.i: TcpConnection.c.i
+TcpConnection.i: TcpConnection.cpp.i
 .PHONY : TcpConnection.i
 
 # target to preprocess a source file
-TcpConnection.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.i
-.PHONY : TcpConnection.c.i
+TcpConnection.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.cpp.i
+.PHONY : TcpConnection.cpp.i
 
-TcpConnection.s: TcpConnection.c.s
+TcpConnection.s: TcpConnection.cpp.s
 .PHONY : TcpConnection.s
 
 # target to generate assembly for a file
-TcpConnection.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.c.s
-.PHONY : TcpConnection.c.s
+TcpConnection.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpConnection.cpp.s
+.PHONY : TcpConnection.cpp.s
 
-TcpServer.o: TcpServer.c.o
+TcpServer.o: TcpServer.cpp.o
 .PHONY : TcpServer.o
 
 # target to build an object file
-TcpServer.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.o
-.PHONY : TcpServer.c.o
+TcpServer.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.cpp.o
+.PHONY : TcpServer.cpp.o
 
-TcpServer.i: TcpServer.c.i
+TcpServer.i: TcpServer.cpp.i
 .PHONY : TcpServer.i
 
 # target to preprocess a source file
-TcpServer.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.i
-.PHONY : TcpServer.c.i
+TcpServer.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.cpp.i
+.PHONY : TcpServer.cpp.i
 
-TcpServer.s: TcpServer.c.s
+TcpServer.s: TcpServer.cpp.s
 .PHONY : TcpServer.s
 
 # target to generate assembly for a file
-TcpServer.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.c.s
-.PHONY : TcpServer.c.s
+TcpServer.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/TcpServer.cpp.s
+.PHONY : TcpServer.cpp.s
 
-ThreadPool.o: ThreadPool.c.o
+ThreadPool.o: ThreadPool.cpp.o
 .PHONY : ThreadPool.o
 
 # target to build an object file
-ThreadPool.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.o
-.PHONY : ThreadPool.c.o
+ThreadPool.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.cpp.o
+.PHONY : ThreadPool.cpp.o
 
-ThreadPool.i: ThreadPool.c.i
+ThreadPool.i: ThreadPool.cpp.i
 .PHONY : ThreadPool.i
 
 # target to preprocess a source file
-ThreadPool.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.i
-.PHONY : ThreadPool.c.i
+ThreadPool.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.cpp.i
+.PHONY : ThreadPool.cpp.i
 
-ThreadPool.s: ThreadPool.c.s
+ThreadPool.s: ThreadPool.cpp.s
 .PHONY : ThreadPool.s
 
 # target to generate assembly for a file
-ThreadPool.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.c.s
-.PHONY : ThreadPool.c.s
+ThreadPool.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/ThreadPool.cpp.s
+.PHONY : ThreadPool.cpp.s
 
-WorkerThread.o: WorkerThread.c.o
+WorkerThread.o: WorkerThread.cpp.o
 .PHONY : WorkerThread.o
 
 # target to build an object file
-WorkerThread.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.o
-.PHONY : WorkerThread.c.o
+WorkerThread.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.cpp.o
+.PHONY : WorkerThread.cpp.o
 
-WorkerThread.i: WorkerThread.c.i
+WorkerThread.i: WorkerThread.cpp.i
 .PHONY : WorkerThread.i
 
 # target to preprocess a source file
-WorkerThread.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.i
-.PHONY : WorkerThread.c.i
+WorkerThread.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.cpp.i
+.PHONY : WorkerThread.cpp.i
 
-WorkerThread.s: WorkerThread.c.s
+WorkerThread.s: WorkerThread.cpp.s
 .PHONY : WorkerThread.s
 
 # target to generate assembly for a file
-WorkerThread.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.c.s
-.PHONY : WorkerThread.c.s
+WorkerThread.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/WorkerThread.cpp.s
+.PHONY : WorkerThread.cpp.s
 
-main.o: main.c.o
+main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
-main.c.o:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.o
-.PHONY : main.c.o
+main.cpp.o:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-main.i: main.c.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	cd /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:

@@ -139,12 +139,12 @@ int EpollDispatcher::dispatch(int Timeout)
         if(event & EPOLLIN)
         {
             //读事件
-            activateFD(eventloop,fd,ReadAble);
+            m_eventloop->activateFD(fd,(int)FDevent::ReadAble);
         }
         if(event & EPOLLOUT)
         {
             //写事件
-            activateFD(eventloop,fd,WriteAble);
+            m_eventloop->activateFD(fd,(int)FDevent::WriteAble);
         }
 
     }

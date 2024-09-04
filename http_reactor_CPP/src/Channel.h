@@ -1,9 +1,12 @@
 #pragma once
+#include <functional>
+
+using namespace std;
 
 
 //定义函数指针 handleFunc 是一个指针类型，它可以指向一个接受 void* 类型的参数并返回 int 类型的函数。在C++11之后的标准里，推荐使用using关键字来定义别名
 //typedef int (*handleFunc)(void *arg);
-using handleFunc = int(*)(void*);
+//using handleFunc = int(*)(void*);
 
 
 //不使用"class"关键字创建的枚举类只能在全局作用域内使用，枚举值会被隐式转换为整数类型，存在一定的类型安全隐患。
@@ -15,10 +18,17 @@ enum class FDevent
     ReadAble=0x04
 };
 
+
+
+
+
+
 //封装fd与其回调函数到Channel中
 class Channel  
 {
 public:
+    //可调用对象包装器打包的东西： 1.函数指针   2.可调用对象
+    using handleFunc=function<int(void*)>;  //为可调用对象包装器起个别名
     //构造函数,初始化函数
     Channel(int fd , FDevent event ,handleFunc readFunc ,handleFunc writeFunc ,handleFunc destroyCallBack,void *arg);
     //读函数

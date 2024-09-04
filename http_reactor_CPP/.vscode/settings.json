@@ -2,6 +2,8 @@
     "files.associations": {
         "string": "cpp",
         "typeinfo": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "functional": "cpp",
+        "mutex": "cpp"
     }
 }

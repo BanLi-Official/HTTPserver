@@ -1,8 +1,11 @@
 #include "SelectDispatcher.h"
 #include <sys/select.h>
+#include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+
+using namespace std;
 
 
 // 初始化select、poll、epoll所需的数据块
@@ -139,6 +142,7 @@ int SelectDispatcher::dispatch(int Timeout)
      if (m_eventloop == NULL)
     {
         printf("selectDispatch Error! eventloop == NULL\n");
+        cout<<endl;
         return -1;
     }
 
@@ -158,11 +162,11 @@ int SelectDispatcher::dispatch(int Timeout)
     {
         if(FD_ISSET(i , readTemp)) //读数组当中有内容
         {
-            activateFD(eventloop,i,ReadAble);
+            m_eventloop->activateFD(i,(int)FDevent::ReadAble);
         }
         if(FD_ISSET(i , writeTemp)) //写数组当中有内容
         {
-            activateFD(eventloop,i,WriteAble);
+            m_eventloop->activateFD(i,(int)FDevent::WriteAble);
         }
 
     }

@@ -142,12 +142,12 @@ int PollDispatcher::dispatch(int Timeout)
             if (fds[i].revents & POLLIN)
             {
                 //读事件
-                activateFD(eventloop,fds[i].fd,ReadAble);
+                m_eventloop->activateFD(fds[i].fd,(int)FDevent::ReadAble);
             }
             if(fds[i].revents & POLLOUT)
             {
                 //写事件
-                activateFD(eventloop,fds[i].fd,WriteAble);
+                m_eventloop->activateFD(fds[i].fd,(int)FDevent::WriteAble);
             } 
         }
         

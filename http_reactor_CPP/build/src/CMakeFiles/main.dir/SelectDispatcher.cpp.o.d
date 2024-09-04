@@ -1,8 +1,9 @@
-src/CMakeFiles/main.dir/EpollDispatcher.cpp.o: \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.cpp \
+src/CMakeFiles/main.dir/SelectDispatcher.cpp.o: \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/SelectDispatcher.cpp \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/SelectDispatcher.h \
  /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EventLoop.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.h \
  /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.h \
  /usr/include/c++/9/functional \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -160,13 +161,20 @@ src/CMakeFiles/main.dir/EpollDispatcher.cpp.o: \
  /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_queue.h \
  /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
- /usr/include/c++/9/bits/erase_if.h \
- /usr/include/x86_64-linux-gnu/sys/epoll.h \
- /usr/include/x86_64-linux-gnu/bits/epoll.h /usr/include/c++/9/stdlib.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/assert.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.h
+ /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/iostream \
+ /usr/include/c++/9/ostream /usr/include/c++/9/ios \
+ /usr/include/c++/9/bits/ios_base.h \
+ /usr/include/c++/9/bits/locale_classes.h \
+ /usr/include/c++/9/bits/locale_classes.tcc /usr/include/c++/9/streambuf \
+ /usr/include/c++/9/bits/streambuf.tcc \
+ /usr/include/c++/9/bits/basic_ios.h \
+ /usr/include/c++/9/bits/locale_facets.h /usr/include/c++/9/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_base.h \
+ /usr/include/c++/9/bits/streambuf_iterator.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_inline.h \
+ /usr/include/c++/9/bits/locale_facets.tcc \
+ /usr/include/c++/9/bits/basic_ios.tcc \
+ /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/stdlib.h \
+ /usr/include/assert.h

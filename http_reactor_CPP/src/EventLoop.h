@@ -36,12 +36,18 @@ public:
 
     int Run(); //eventloop开始运行
     int activateFD(int fd , int event); //fd激活后启动对应的回调函数
-    int AddTask(Channel *channel , int type);     //向eventloop中添加task任务
+    int AddTask(Channel *channel , Elemtype type);     //向eventloop中添加task任务
     int EventLoopListProcess(); //处理task任务
     int Add(Channel *channel );  //向EventLoop中添加channel
     int Remove(Channel *channel ); //向EventLoop中删除channel
     int Modify(Channel *channel ); //向EventLoop中修改channel
     int destroyChannel(Channel *channel ); //除去channel，释放内存
+
+    static int readMsgLocal(void *arg);
+    int readMsg();
+
+private:
+    int writeMsgLocal();
 
 private:
     thread::id m_threadID;   //EventLoop的线程号

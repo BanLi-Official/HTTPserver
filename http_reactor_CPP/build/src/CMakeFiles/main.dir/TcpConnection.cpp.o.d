@@ -1,8 +1,9 @@
-src/CMakeFiles/main.dir/EpollDispatcher.cpp.o: \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.cpp \
+src/CMakeFiles/main.dir/TcpConnection.cpp.o: \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpConnection.cpp \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpConnection.h \
  /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EventLoop.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.h \
  /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.h \
  /usr/include/c++/9/functional \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -161,12 +162,25 @@ src/CMakeFiles/main.dir/EpollDispatcher.cpp.o: \
  /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h \
- /usr/include/x86_64-linux-gnu/sys/epoll.h \
- /usr/include/x86_64-linux-gnu/bits/epoll.h /usr/include/c++/9/stdlib.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/assert.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.h
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+ /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+ /usr/include/x86_64-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+ /usr/include/asm-generic/posix_types.h \
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h \
+ /usr/include/x86_64-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.h \
+ /usr/include/c++/9/stdlib.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HttpRequest.h \
+ /usr/include/string.h /usr/include/strings.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Log.h
