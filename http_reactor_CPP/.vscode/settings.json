@@ -4,6 +4,8 @@
         "typeinfo": "cpp",
         "thread": "cpp",
         "functional": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "condition_variable": "cpp",
+        "new": "cpp"
     }
 }

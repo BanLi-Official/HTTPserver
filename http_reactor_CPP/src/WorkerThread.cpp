@@ -2,38 +2,44 @@
 #include <stdio.h>
 #include "Log.h"
 
-int workerThreadInit(struct WorkerThread *workerThread,int index)
+WorkerThread::WorkerThread(int index)
 {
-    workerThread->loop=NULL;
-    workerThread->threadId=0;
-    sprintf(workerThread->threadName,"thread-%d",index);
-    pthread_mutex_init(&workerThread->mutex,NULL);
-    pthread_cond_init(& workerThread->condition,NULL);
-    return 0;
+    m_loop=nullptr;
+    m_thread=nullptr;
+    m_threadId=thread::id();  //先赋值一个无效的id
+    m_threadName="thread-"+to_string(index);
+
 }
 
-void * createEventLoopRunning(void * arg)
+WorkerThread::~WorkerThread()
 {
-    struct WorkerThread *workerThread = (struct WorkerThread *) arg;
-    pthread_mutex_lock(&workerThread->mutex);
-    workerThread->loop=EventLoopInitEX(workerThread->threadName);
-    pthread_mutex_unlock(&workerThread->mutex);
-    pthread_cond_signal(&workerThread->condition);
-    EventLoopRun(workerThread->loop);
-    return NULL;
+    if(m_loop!=nullptr)
+    {
+        delete m_loop;
+    }
 }
 
-int workerThreadRun(struct WorkerThread * workerThread)
+int WorkerThread::run()
 {
     //创建一个线程运行EventLoop
-    pthread_create(&(workerThread->threadId),NULL,createEventLoopRunning,workerThread);
+    m_thread=new thread(&WorkerThread::createEventLoopRunning,this);
     //等待EventLoop创建完毕
-    pthread_mutex_lock(&workerThread->mutex);
-    while (workerThread->loop == NULL)
+    unique_lock<mutex> locker(m_mutex);
+    while (m_loop == NULL)
     { 
-        pthread_cond_wait(&workerThread->condition,&workerThread->mutex);
+        condition.wait(locker);
     }
-    pthread_mutex_unlock(&workerThread->mutex);  
-    
+  
+
     return 0;
+}
+
+void WorkerThread::createEventLoopRunning()
+{
+    m_mutex.lock();
+    m_loop=new EventLoop(m_threadName);
+    m_mutex.unlock();
+    condition.notify_one();
+    m_loop->Run();
+
 }

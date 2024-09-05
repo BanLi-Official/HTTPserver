@@ -1,0 +1,86 @@
+[
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/Buffer.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.cpp",
+  "output": "src/CMakeFiles/main.dir/Buffer.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/Channel.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Channel.cpp",
+  "output": "src/CMakeFiles/main.dir/Channel.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/Dispatcher.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Dispatcher.cpp",
+  "output": "src/CMakeFiles/main.dir/Dispatcher.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/EpollDispatcher.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EpollDispatcher.cpp",
+  "output": "src/CMakeFiles/main.dir/EpollDispatcher.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/EventLoop.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EventLoop.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/EventLoop.cpp",
+  "output": "src/CMakeFiles/main.dir/EventLoop.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/HTTPRequest.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPRequest.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPRequest.cpp",
+  "output": "src/CMakeFiles/main.dir/HTTPRequest.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/HTTPResponse.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.cpp",
+  "output": "src/CMakeFiles/main.dir/HTTPResponse.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/PollDispatcher.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/PollDispatcher.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/PollDispatcher.cpp",
+  "output": "src/CMakeFiles/main.dir/PollDispatcher.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/SelectDispatcher.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/SelectDispatcher.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/SelectDispatcher.cpp",
+  "output": "src/CMakeFiles/main.dir/SelectDispatcher.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/TcpConnection.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpConnection.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpConnection.cpp",
+  "output": "src/CMakeFiles/main.dir/TcpConnection.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/TcpServer.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpServer.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/TcpServer.cpp",
+  "output": "src/CMakeFiles/main.dir/TcpServer.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/ThreadPool.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/ThreadPool.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/ThreadPool.cpp",
+  "output": "src/CMakeFiles/main.dir/ThreadPool.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/WorkerThread.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/WorkerThread.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/WorkerThread.cpp",
+  "output": "src/CMakeFiles/main.dir/WorkerThread.cpp.o"
+},
+{
+  "directory": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/build/src",
+  "command": "/usr/bin/g++    -std=c++11 -g -std=gnu++11 -o CMakeFiles/main.dir/main.cpp.o -c /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/main.cpp",
+  "file": "/mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/main.cpp",
+  "output": "src/CMakeFiles/main.dir/main.cpp.o"
+}
+]

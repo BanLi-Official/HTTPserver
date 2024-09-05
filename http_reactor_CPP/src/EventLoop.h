@@ -46,6 +46,8 @@ public:
     static int readMsgLocal(void *arg);
     int readMsg();
 
+    inline thread::id getThreadID(){return this->m_threadID;};
+
 private:
     int writeMsgLocal();
 

@@ -4,58 +4,64 @@
 #include <stdio.h>
 #include "Log.h"
 
-struct ThreadPool *threadPoolInit(struct EventLoop *mainEventLoop, int threadNum)
+ThreadPool::ThreadPool(EventLoop* mainLoop,int threadNum)
 {
-    struct ThreadPool *pool = (struct ThreadPool *)malloc(sizeof(struct ThreadPool));
-    pool->isStart = false;
-    pool->threadNum = threadNum;
-    pool->index = 0;
-    pool->mainEventLoop = mainEventLoop;
-    pool->threads = (struct WorkerThread *)malloc(threadNum * sizeof(struct WorkerThread));
-    return pool;
+    m_isStart = false;
+    m_threadNum = threadNum;
+    m_index = 0;
+    m_mainEventLoop = mainLoop;
+    m_threads.clear();
+
 }
 
-void threadPoolRun(struct ThreadPool *threadPool)
+ThreadPool::~ThreadPool()
 {
-
-    assert(threadPool->isStart == false && threadPool);
-    if (threadPool->mainEventLoop->threadID != pthread_self())
+    for(auto item:m_threads)
     {
-        printf("threadPoolRun Error! threadPool->mainEventLoop->threadID=%ld, pthread_self() = %ld\n",threadPool->mainEventLoop->threadID,pthread_self());
+        delete item;
+    }
+}
+
+void ThreadPool::threadPoolRun()
+{
+    assert(m_isStart == false );
+    if (m_mainEventLoop->getThreadID() != this_thread::get_id())
+    {
+        printf("threadPoolRun Error! threadPool->mainEventLoop->threadID=%ld, pthread_self() = %ld\n",m_mainEventLoop->getThreadID(),this_thread::get_id());
         exit(0);
     }
 
     // 打开开关
-    threadPool->isStart = true;
+    m_isStart = true;
     // 初始化threads当中的工作线程
-    if (threadPool->threadNum)
+    if (m_threadNum>0)
     {
-        for (int i = 0; i < threadPool->threadNum; i++)
+        for (int i = 0; i < m_threadNum; i++)
         {
-            //printf("threadPool->threads[i]=%d",threadPool->threads[i]);              
-            workerThreadInit(&threadPool->threads[i], i);
-            workerThreadRun(&threadPool->threads[i]);
+            WorkerThread* workerThread=new WorkerThread(i);
+            m_threads.push_back(workerThread);
+            workerThread->run();
+
         }
     }
-
 }
 
-struct EventLoop *getEventLoop(struct ThreadPool *threadPool)
+EventLoop *ThreadPool::getEventLoop()
 {
-    assert(threadPool && threadPool->isStart == true);
-    if (threadPool->index >= threadPool->threadNum)
+    assert( m_isStart == true);
+    if (m_index >= m_threadNum)
     {
         printf("getEventLoop Error ! index is wrong \n");
         exit(0);
     }
      
-    struct EventLoop *loop = threadPool->mainEventLoop;
-    if (threadPool->threadNum > 0 )
+    EventLoop *loop = m_mainEventLoop;
+    if (m_threadNum > 0 )
     {
         // 取出需要的EventLoop
-        loop = threadPool->threads[threadPool->index].loop;
+        loop = m_threads[m_index]->getEventLoop();
         // 更新指向的index
-        threadPool->index = ++threadPool->index % threadPool->threadNum;
+        m_index = ++m_index % m_threadNum;
     }
     else
     {

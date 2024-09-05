@@ -1,20 +1,29 @@
 #pragma once
 #include "EventLoop.h"
-#include <pthread.h>
+#include <thread>
+#include <condition_variable>
+
+using namespace std;
 
 //工作线程，一个工作线程中一个EventLoop
-struct WorkerThread
+class WorkerThread
 {
-    pthread_t threadId;
-    char threadName[24];
-    struct EventLoop *loop ;
-    pthread_mutex_t mutex;
-    pthread_cond_t condition;  
+public:
+    WorkerThread(int index);
+    ~WorkerThread();
+
+    int run();
+    inline EventLoop* getEventLoop(){return m_loop;}
+
+private:
+    void createEventLoopRunning();
+private:
+    thread* m_thread;
+    thread::id m_threadId;
+    string m_threadName;
+    EventLoop *m_loop ;
+    mutex m_mutex;
+    condition_variable condition;  
 };
 
-//初始化一个工作线程
-int workerThreadInit(struct WorkerThread * workerThread,int index);
-
-//启动工作线程
-int workerThreadRun(struct WorkerThread * workerThread);
 
