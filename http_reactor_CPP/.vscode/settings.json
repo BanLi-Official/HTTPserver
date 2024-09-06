@@ -6,6 +6,9 @@
         "functional": "cpp",
         "mutex": "cpp",
         "condition_variable": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "vector": "cpp"
     }
 }

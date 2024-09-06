@@ -5,8 +5,11 @@
 #include <stdbool.h>
 #include <string.h>
 #include "HTTPResponse.h"
+#include <string>
 
-enum parseState
+using namespace std;
+
+enum class parseState : char
 {
     paresStop,
     parseLine,
@@ -15,49 +18,44 @@ enum parseState
     parseDone
 };
 
-//请求头的键值对
-struct headKey
-{
-    char* key;
-    char* value;
-};
 
 //http请求
-struct httpRequest  
+class httpRequest  
 {
-    char* method;
-    char* URL;
-    char* httpVersion;
-    struct headKey* headKeys;
-    int headKeyNum;
-    enum parseState parseState;
+public:
+    //初始化http请求
+    httpRequest();
+    ~httpRequest();
+    //重置http请求内容 ,将请求头和解析状态重置
+    int reset();
+    //包含释放内存的重置
+    int freeAndResetHttp();
+    //获取http解析状态
+    parseState getHttpParseState();
+    //添加请求头键值对
+    int addHttpHead(const string key, const string value);
+    //查找请求头键值对
+    string getHeadValue(const string key);
+    //解析请求行
+    bool parseHeadLine(buffer* readBuffer);
+    //解析请求头键值对
+    bool parseHeader(buffer* readBuffer);
+    //解析整个httpRequest
+    bool parseHTTPRequest(buffer* readBuffer,httpResponse* response ,buffer* sendBuffer , int socket);
+    //处理httpRequest
+    bool processHTTPRequest(httpResponse* response);
+    //解码包括中文字符在内的编码
+    string DecodeMsg(string from);
+    //获取对应文件的类型
+    string getFileType(string name);
+
+private:
+    char* m_method;
+    char* m_URL;
+    char* m_httpVersion;
+    struct headKey* m_headKeys;
+    int m_headKeyNum;
+    enum parseState m_parseState;
 };
 
-
-//初始化http请求
-struct httpRequest* httpRequestInit();
-//重置http请求内容 ,将请求头和解析状态重置
-int resetHttp(struct httpRequest* request);
-//包含释放内存的重置
-int freeAndResetHttp(struct httpRequest* request);
-//销毁http请求
-int destroyHttpRequest(struct httpRequest* request);
-//获取http解析状态
-enum parseState getHttpParseState(struct httpRequest* request);
-//添加请求头键值对
-int addHttpHeadKeyAndValue(struct httpRequest* request ,const char* key, const char* value);
-//查找请求头键值对
-char* getHttpHeadValue(struct httpRequest* request ,const char* key);
-//解析请求行
-bool parseHeadLine(struct httpRequest* request, struct buffer* readBuffer);
-//解析请求头键值对
-bool parseHeader(struct httpRequest* request , struct buffer* readBuffer);
-//解析整个httpRequest
-bool parseHTTPRequest(struct httpRequest* request,struct buffer* readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket);
-//处理httpRequest
-bool processHTTPRequest(struct httpRequest* request,struct httpResponse* response);
-//解码包括中文字符在内的编码
-void DecodeMsg(char *from, char *to);
-//获取对应文件的类型
-const char* getFileType(const char* name);
 

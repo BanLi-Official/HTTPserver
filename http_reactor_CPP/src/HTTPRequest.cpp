@@ -219,11 +219,11 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
             return true;
         }
         //找key
-        char* key = malloc(splitPosition-start+1);
+        char* key = (char *)malloc(splitPosition-start+1);
         strncpy(key,start,splitPosition-start);
         key[splitPosition-start]='\0';
         //找value
-        char* value=malloc(end-splitPosition-2+1);
+        char* value=(char *)malloc(end-splitPosition-2+1);
         strncpy(value,splitPosition+2,end-splitPosition-2);
         value[end-splitPosition-2]='\0';
 
