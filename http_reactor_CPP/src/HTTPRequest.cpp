@@ -6,110 +6,88 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "Log.h"
+#include <asm-generic/fcntl.h>
+#include <fcntl.h>
+#include <cassert>
 
 #define headKeySize 12
-struct httpRequest* httpRequestInit()
+
+
+
+
+int hexToDec(char c)
 {
-    struct httpRequest* request = (struct httpRequest*)malloc(sizeof(struct httpRequest));
-    if (request==NULL)
+    if(c >= '0' && c <= '9')
+        return c-'0';
+    if(c >= 'a' && c <= 'z')
+        return c-'a'+10;
+    if(c >= 'A' && c <= 'Z')
+        return c-'A'+10;
+    return 0;
+}
+
+
+
+const char* getFileType(const char* name)
+{
+    
+}
+
+
+
+
+httpRequest::httpRequest()
+{
+    reset();
+    return;
+}
+
+httpRequest::~httpRequest()
+{
+
+}
+
+int httpRequest::reset()
+{
+    m_method = string();
+    m_URL    = string();
+    m_httpVersion=string();
+    m_parseState = parseState::parseLine;
+    m_httpHeads.clear();
+    return 0;
+}
+
+int httpRequest::freeAndResetHttp()
+{
+    reset();
+    return 0;
+}
+
+parseState httpRequest::getHttpParseState()
+{
+    return this->m_parseState;
+}
+
+int httpRequest::addHttpHead(const string key, const string value)
+{
+    m_httpHeads.insert(make_pair(key,value));
+    return 0;
+}
+
+string httpRequest::getHeadValue(const string key)
+{
+    auto iter=m_httpHeads.find(key);
+    if(iter==m_httpHeads.end())
     {
-        printf("httpRequestInit Error! malloc is NULL\n");
-        exit(0);
+        return string();
     }
     
-    resetHttp(request);
-    request->headKeys = (struct headKey*)malloc(sizeof(struct headKey)*headKeySize);
-    request->headKeyNum = 0;
-
-    return request;
+    return m_httpHeads[key];
 }
 
-
-
-int resetHttp(struct httpRequest* request)
-{
-    request->method = NULL;
-    request->URL    = NULL;
-    request->httpVersion=NULL;
-    request->parseState = parseLine;
-    request->headKeyNum = 0;
-    return 0;
-}
-
-
-int freeAndResetHttp(struct httpRequest* request)
-{
-    free(request->method);
-    free(request->URL);
-    free(request->httpVersion);
-    //释放键值对的内存
-    if(request->headKeys!=NULL)
-    {
-        for(int i=0;i<request->headKeyNum;i++)
-        {
-            free(request->headKeys[i].key);
-            free(request->headKeys[i].value);
-        }
-        //free(request->headKeys);
-    }
-    resetHttp(request);
-}
-
-int destroyHttpRequest(struct httpRequest *request)
-{
-    if(request!=NULL)
-    {
-        freeAndResetHttp(request);
-        if(request->headKeys!=NULL)
-        {
-            free(request->headKeys);
-        }
-    }
-    free(request);
-    return 0;
-}
-
-
-enum parseState getHttpParseState(struct httpRequest* request)
-{
-    return request->parseState;
-}
-
-int addHttpHeadKeyAndValue(struct httpRequest* request ,const char* key, const char* value)
-{
-    if(request->headKeyNum < headKeySize)
-    {
-        request->headKeys[request->headKeyNum].key = (char *)key;
-        request->headKeys[request->headKeyNum].value = (char *)value;
-        request->headKeyNum++;
-    }
-    else
-    {
-        printf("addHttpHeadKeyAndValue Error! headKeyNum IS NOT smaller than headKeySize!\n");
-        return -1;
-    }
-    return 0;
-}
-
-char* getHttpHeadValue(struct httpRequest* request ,const char* key)
-{
-    if(request->headKeys ==NULL)
-    {
-        printf("getHttpHeadValue Error! headKeys is NULL\n");
-        return NULL;
-    }
-    for(int i=0; i<request->headKeyNum;i++)
-    {
-        if(strncasecmp(request->headKeys[i].key , key ,strlen(key)) == 0)
-        {
-            return request->headKeys[i].value;
-        }
-    }
-    return NULL;
-}
 
 //编写一个函数，功能要求：以某一个字符串分割headline中的元素，分别将元素存储在request结构体的对应位置，并返回一次分割后的剩余内容起始位置
-char* splitHeadLine(char* start , char* end , const char* substr , char** ptr)
+char* httpRequest::splitHeadLine(char* start , char* end , const char* substr , function<void(string)> callback)
 {
     char* subLocation=end;
     if(substr != NULL)
@@ -121,126 +99,83 @@ char* splitHeadLine(char* start , char* end , const char* substr , char** ptr)
         }
     }
     int containtLength = subLocation-start;    //计算分割的内容的长度
-    char* temp=(char *)malloc(containtLength+1);
-    strncpy(temp,start,containtLength);     //将内容暂时存储到一个临时变量中
-    temp[containtLength]='\0';
-    start = subLocation+1;
-    *ptr=temp;                              //将被分割的内容赋值到对应的目标位置，这里的ptr是一个二级指针
-    return start;
-} 
+    callback(string(start,containtLength));
+                                //将被分割的内容赋值到对应的目标位置，这里的ptr是一个二级指针
+    return subLocation+1;
+}
 
-bool parseHeadLine(struct httpRequest *request,struct buffer *readBuffer)
+
+bool httpRequest::parseHeadLine(buffer *readBuffer)
 {
-    //   get /xxxxx/xxxx http/1.1
+        //   get /xxxxx/xxxx http/1.1
     //先找到第一行的结束位置
 
     //Debug("parseHeadLine里面的readBuffer数据: %s ", readBuffer->data + readBuffer->readPos);
 
-    char *end = findFirstLine(readBuffer);
-    char *start=readBuffer->data+readBuffer->readPos;
+    char *end = readBuffer->findFirstLine();
+    char *start=readBuffer->getReadPosition();
     int headLineSize = end - start;
 
     //代码优化版本
     if(headLineSize)
     {
-        start = splitHeadLine(start,end," ",&request->method);    //解析方法
-        start = splitHeadLine(start,end," ",&request->URL);       //解析文件地址
-        splitHeadLine(start,end,NULL,&request->httpVersion);      //解析http版本
+        auto methodFunc=bind(&httpRequest::setMethod,this,placeholders::_1);
+        start = splitHeadLine(start,end," ",methodFunc);    //解析方法
+        auto urlFunc=bind(&httpRequest::setURL,this,placeholders::_1);
+        start = splitHeadLine(start,end," ",urlFunc);       //解析文件地址
+        auto httpVersionFunc=bind(&httpRequest::sethttpVersion,this,placeholders::_1);
+        splitHeadLine(start,end,NULL,httpVersionFunc);      //解析http版本
 
         //为后面解析请求头做准备
-        request->parseState = parseHead;
-        readBuffer->readPos += headLineSize;
-        readBuffer->readPos += 2;
-
+        setstate((char*)parseState::parseHead);
+        readBuffer->setReadPosition(headLineSize+2);
         return true;
     }
-
-
-#if 0
-    //粗略版本
-
-    if(headLineSize) //开始解析第一行
-    {
-        //先查找空格出现的位置定位method的位置，然后使用strncpy复制到对应位置
-        //char* index = memmem(start,headLineSize," ",1);
-        char * index = strstr(start," ");
-        int methodSize = index - start;
-        request->method = (char *)malloc(methodSize + 1);
-        strncpy(request->method , start,methodSize);
-        request->method[methodSize] = '\0';
-
-        //解析请求的资源
-        start = index +1;
-        //char* urlIndex = memmem(start , end-start ," ",1);
-        char* urlIndex = strstr(start, " ");
-        int urlSize = urlIndex - start;
-        request->URL = (char *)malloc(urlSize+1);
-        strncpy(request->URL , start , urlSize);
-        request->URL[urlSize]= '\0';
-
-        //解析html版本
-        start = urlIndex+1;
-        int httpSize = end - start;
-        request->httpVersion = (char *)malloc(httpSize+1);
-        strncpy(request->httpVersion,start,httpSize);
-        request->httpVersion[httpSize] = '\0';
-
-        //为后面解析请求头做准备
-        request->parseState = parseHead;
-        readBuffer->readPos += headLineSize;
-        readBuffer->readPos += 2;
-
-        return true;
-    }
-#endif
-
     return false;
 }
 
-bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
+bool httpRequest::parseHeader(buffer *readBuffer)
 {
     //每一行的样子：   key: value
     //该行的结束位置
     //Debug("readBuffer=%s",readBuffer->data+readBuffer->readPos);
-    char* end=findFirstLine(readBuffer);
+    char* end=readBuffer->findFirstLine();
     if(end!=NULL)
     {
-        char* start=readBuffer->data+readBuffer->readPos;
+        char* start=readBuffer->getReadPosition();
         int lineLength=end-start;
         //根据： 分割该行
         char* splitPosition=strstr(start,": ");
         if(splitPosition==NULL)
         {
             //请求头已经被检查完了，跳到下一行
-            readBuffer->readPos+=2;
+            readBuffer->setReadPosition(2);
             //修改状态(这里默认使用get模式，直接跳过第三部分)
-            request->parseState=parseDone;
+            setstate((char*)parseState::parseDone);
             Debug("请求头已经被检查完了，跳到下一行");
             return true;
         }
         //找key
-        char* key = (char *)malloc(splitPosition-start+1);
-        strncpy(key,start,splitPosition-start);
-        key[splitPosition-start]='\0';
-        //找value
-        char* value=(char *)malloc(end-splitPosition-2+1);
-        strncpy(value,splitPosition+2,end-splitPosition-2);
-        value[end-splitPosition-2]='\0';
-
-        addHttpHeadKeyAndValue(request,key,value);
+        int keyLen=splitPosition-start;
+        int valueLen=end-splitPosition-2;
+        if(keyLen>0 && valueLen>0)
+        {
+            string key(start,keyLen);
+            string value(splitPosition,valueLen);
+            addHttpHead(key,value);
+        }
 
         //移动读取位置，移动到下一行
-        readBuffer->readPos+=lineLength;
-        readBuffer->readPos+=2;
+        readBuffer->setReadPosition(lineLength+2);
 
         return true;
     }
     else
     {
         //请求头已经被检查完了，跳到下一行
-        readBuffer->readPos+=2;
+        readBuffer->setReadPosition(2);
         //修改状态(这里默认使用get模式，直接跳过第三部分)
-        request->parseState=parseDone;
+        setstate((char*)parseState::parseDone);
         Debug("请求头已经被检查完了，跳到下一行");
         return true;
     }
@@ -248,21 +183,22 @@ bool parseHeader(struct httpRequest *request, struct buffer *readBuffer)
     return false;
 }
 
-bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,struct httpResponse* response , struct buffer* sendBuffer , int socket)
+bool httpRequest::parseHTTPRequest(buffer *readBuffer, httpResponse *response, buffer *sendBuffer, int socket)
 {
     
+    
     bool flag=true;
-    while(request->parseState!=parseDone)
+    while(m_parseState!=parseState::parseDone)
     {
-        switch(request->parseState)
+        switch(m_parseState)
         {
-        case parseLine:
-            flag=parseHeadLine(request,readBuffer);
+        case parseState::parseLine:
+            flag=parseHeadLine(readBuffer);
             break;
-        case parseHead:
-            flag=parseHeader(request,readBuffer);
+        case parseState::parseHead:
+            flag=parseHeader(readBuffer);
             break;
-        case parseBody:
+        case parseState::parseBody:
             break;
         default:
             break;
@@ -280,39 +216,39 @@ bool parseHTTPRequest(struct httpRequest *request,struct buffer *readBuffer,stru
         //printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",request->method,request->URL,request->httpVersion,request->headKeyNum,request->parseState);
 
 
-        if(request->parseState==parseDone)
+        if(m_parseState==parseState::parseDone)
         {
             //1.根据解析出来的数据，对客户端的请求做出处理
-            processHTTPRequest(request,response);
+            processHTTPRequest(response);
             //2.组织响应数据并发送给客户端
             httpResponsePrepareMsg(response , sendBuffer , socket);
         }
     }
 
     //将request的解析状态还原，保证下一次解析能够正确进行
-    request->parseState=parseLine;
+    setstate((char*)parseState::parseLine);
 
     return flag;
 }
 
-bool processHTTPRequest(struct httpRequest *request,struct httpResponse* response)
+bool httpRequest::processHTTPRequest(httpResponse *response)
 {
     //基于Get的request请求处理函数
     //解码请求中的所请求的文件路径
-    DecodeMsg(request->URL,request->URL);
+    m_URL=DecodeMsg(m_URL);
     //printf("type = %s  ,path = %s \n", type, path);
-    char * file=NULL;
-    if (strcasecmp(request->method, "get") == 0) // 判断表头的类型
+    const char * file=NULL;
+    if (strcasecmp(m_method.data(), "get") == 0) // 判断表头的类型
     {
         // get类型
         // 将地址转化为相对地址
-        if (strcmp(request->URL, "/") == 0)
+        if (strcmp(m_URL.data(), "/") == 0)
         {
             file = "./";
         }
         else
         {
-            file = request->URL + 1;
+            file = m_URL.data() + 1;
         }
         
 
@@ -390,43 +326,32 @@ bool processHTTPRequest(struct httpRequest *request,struct httpResponse* respons
     return false;
 }
 
-int hexToDec(char c)
+string httpRequest::DecodeMsg(string name)
 {
-    if(c >= '0' && c <= '9')
-        return c-'0';
-    if(c >= 'a' && c <= 'z')
-        return c-'a'+10;
-    if(c >= 'A' && c <= 'Z')
-        return c-'A'+10;
-    return 0;
-}
-
-
-void DecodeMsg(char *from, char *to)
-{
-    for(;from[0] != '\0';from++,to++)
+    const char* from=name.data();
+    string res;
+    for(;from[0] != '\0';from++)
     {
         //printf("from[0]=%c\n",from[0]);
         if(from[0] == '%' && from[1]!='\0' && from[2]!='\0')
         {
-            to[0]=hexToDec(from[1])*16+hexToDec(from[2]); //检测到%E2%A1这一类的编码则转为中文
+            res.append(1,hexToDec(from[1])*16+hexToDec(from[2]));
             from=from+2;
         }
         else
         {
-            to[0]=from[0];
+            res.append(1,from[0]);
         }
     }
-    to[0]=from[0];
+    res.append(1,'\0');
+    return res;
 }
 
-
-
-const char* getFileType(const char* name)
+const string httpRequest::getFileType(string name)
 {
     // a.jpg a.mp4 a.html
     // 自右向左查找‘.’字符, 如不存在返回NULL
-    const char* dot = strrchr(name, '.');
+    const char* dot = strrchr(name.data(), '.');
     if (dot == NULL)
         return "text/plain; charset=utf-8";	// 纯文本
     if (strcmp(dot, ".html") == 0 || strcmp(dot, ".htm") == 0)
@@ -461,5 +386,126 @@ const char* getFileType(const char* name)
         return "application/x-ns-proxy-autoconfig";
 
     return "text/plain; charset=utf-8";
+}
+
+
+
+
+
+int compare(const struct dirent **a, const struct dirent **b)
+{
+    return strcoll(((struct dirent **)a)[0]->d_name, ((struct dirent **)b)[0]->d_name);
+}
+
+
+void httpRequest::sendDir(const char *Dir, buffer *buffer, int socket)
+{
+     char html[4096] = {0};
+    printf("开始发送文件夹！\n");
+    sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir);
+
+    struct dirent **namelist;
+    int num = scandir(Dir, &namelist, NULL, compare); // 设置C编译器标准为GNU C11
+
+    for (int i = 0; i < num; i++) // 遍历所有内容
+    {
+        char *name = namelist[i]->d_name; // 获取子文件名称
+        struct stat st;
+        char subDir[1024] = {0};
+        sprintf(subDir, "%s/%s", Dir, name); // 补充文件地址，用于判断对应的子文件属性
+        int res = stat(subDir, &st);
+        if (S_ISDIR(st.st_mode))
+        {
+            // 文件夹内容
+            sprintf(html + strlen(html), "<tr><td><a href=\"%s/\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
+        }
+        else
+        {
+            // 文件内容
+            sprintf(html + strlen(html), "<tr><td><a href=\"%s\">%s</a></td><td>%ld</td></tr>", name, name, st.st_size);
+        }
+        //printf("html=%s\n",html);
+        //writeStringIntoBuffer(buffer,html);
+        buffer->writeStringIntoBuffer(html);
+        
+#ifndef MSG_SENG_AUTO
+        //bufferSendData(buffer,socket);
+        buffer->bufferSendData(socket);
+#endif
+        memset(html , 0 , sizeof html); //将缓冲池中的数据清零
+        free(namelist[i]);
+    }
+    // 补充html文件剩下的内容
+    sprintf(html + strlen(html), "</table></body></html>");
+    //send(cfd, html, strlen(html), 0);
+    //将buf中的内容传递到待发送区域Buffer中
+    //writeStringIntoBuffer(buffer,html);
+    buffer->writeStringIntoBuffer(html);
+#ifndef MSG_SENG_AUTO
+    //bufferSendData(buffer,socket);
+    buffer->bufferSendData(socket);
+#endif
+    memset(html , 0 , sizeof html); //将缓冲池中的数据清零
+    free(namelist);
+}
+
+void httpRequest::sendFile(const char *fileName, buffer *buffer, int socket)
+{
+    
+    int fd = open(fileName, O_RDONLY);
+    assert(fd > 0); // 加个断言，判断文件成功打开
+
+#if 1
+    //常规方法
+    char buf[1024] = { 0 };
+    int len=read(fd , buf ,sizeof buf);
+    while (len > 0)
+    {
+        
+        //usleep(10);  //中间空出点时间，掌握好发送节奏
+        // send(cfd,buf,sizeof buf ,0);
+        //将数据传到buffer中
+        //writeMsgIntoBuffer(buffer,buf,len);
+        buffer->writeStringIntoBuffer(buf,len);
+#ifndef MSG_SENG_AUTO
+        buffer->bufferSendData(socket);
+#endif
+        memset(buf , 0 , sizeof buf); //将缓冲池中的数据清零
+        len=read(fd , buf ,sizeof buf);
+    }
+    if (len == 0)
+    {
+        printf("file is READ END\n\n");
+    }
+    else
+    {
+        printf("READ ERROR!\n\n");
+
+    }
+
+#else
+    // 简单的调函数sendFile（）；
+    int fileSize = lseek(fd, 0, SEEK_END); // 此时文件的指针已经指向了末尾，所以需要将指针重新移动回到前面
+    lseek(fd, 0, SEEK_SET);
+    off_t offset = 0;
+    while (offset < fileSize)
+    {
+        int res = sendfile(cfd, fd, &offset, fileSize - offset); // 这个函数的发送缓冲区也只有200k不到，所以依然需要不断循环发送，发送完成之后会修改offset的值
+        if (res == -1 && errno ==EAGAIN)
+        {
+            //perror("file error:");
+        }
+        else if(res == -1)
+        {
+            perror("file error:");
+        }
+        else
+        {
+            //printf("sendfile发送了一次... offset = %d\n", (int)offset);
+        }
+    }
+    
+#endif
+    close(fd);
 }
 

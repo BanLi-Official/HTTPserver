@@ -54,7 +54,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -std=c++11 -g -std=gnu++11"
+					"fragment" : " -std=c++11 -std=gnu++11"
 				}
 			],
 			"language" : "CXX",
@@ -91,7 +91,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-std=c++11 -g",
+				"fragment" : "-std=c++11",
 				"role" : "flags"
 			},
 			{

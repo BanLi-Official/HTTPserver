@@ -26,6 +26,10 @@ public:
     char* findFirstLine();
     //发送buffer中的数据发送出去
     int bufferSendData(int socket);
+    //获取开始读的位置
+    inline char* getReadPosition(){return m_data+m_readPos;}; 
+    //设置read位置
+    inline void setReadPosition(int num){m_readPos+=num;};
 
 private:
     char *m_data;
