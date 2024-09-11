@@ -59,9 +59,9 @@ public:
     //编写一个函数，功能要求：以某一个字符串分割headline中的元素，分别将元素存储在request结构体的对应位置，并返回一次分割后的剩余内容起始位置
     char* splitHeadLine(char* start , char* end , const char* substr , function<void(string)> callback);
     //// 发送的是一个html文件的内容
-    void sendDir(const char* Dir,struct buffer* buffer,int socket);
+    static void sendDir(const string Dir,buffer* buffer,int socket);
     //发送文件
-    void sendFile(const char* fileName,struct buffer* buffer,int socket);
+    static void sendFile(const string fileName,buffer* buffer,int socket);
 
 
 

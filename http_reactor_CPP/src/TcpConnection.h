@@ -5,20 +5,28 @@
 #include "HTTPResponse.h"
 #include "HttpRequest.h"
 
-struct TcpConnection
+class TcpConnection
 {
-    char name[24];
-    struct Channel * channel;
-    struct buffer* readBuffer;
-    struct buffer* writeBuffer;
-    struct EventLoop* eventloop;
+public:
+    TcpConnection(int fd,EventLoop* eventloop);
+    ~TcpConnection();
+
+    static int TcpConnectionDestroy(void *arg);
+    static int writeCallBackFunc(void *arg);
+    static int readCallBackFunc(void *arg);
+
+    //获取私有数据
+    inline Channel* getChannel(){return channel;}
+private:
+    string name;
+    Channel * channel;
+    buffer* readBuffer;
+    buffer* writeBuffer;
+    EventLoop* eventloop;
 
     //http协议
-    struct httpRequest* request;
-    struct httpResponse* response;
+    httpRequest* request;
+    httpResponse* response;
 
 };
 
-struct TcpConnection* TcpConnectionInit(int fd,struct EventLoop* eventloop);
-//销毁内存
-int TcpConnectionDestroy(void *arg);

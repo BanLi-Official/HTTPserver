@@ -6,39 +6,52 @@
 // #define MSG_SENG_AUTO
 
 
+int TcpConnection::TcpConnectionDestroy(void *arg)
+{
+    TcpConnection* conn = static_cast<TcpConnection*>(arg);
+    if (conn != nullptr)
+    {
+        delete conn;
+    }
+    return 0;
+}
+
+
 //接收客户端发来的数据，存入读缓冲区
-int readCallBackFunc(void *arg)
+int TcpConnection::readCallBackFunc(void *arg)
 {
     struct TcpConnection* tcpConn=(struct TcpConnection*)arg;
     //读数据
-    int count=writeSocketMsgIntoBuffer(tcpConn->readBuffer,tcpConn->channel->fd);
+    int count=tcpConn->readBuffer->writeSocketMsgIntoBuffer(tcpConn->getChannel()->getFD());
 
-    Debug("接收到的http请求数据: %s ,count=%d", tcpConn->readBuffer->data + tcpConn->readBuffer->readPos,count);
+    Debug("接收到的http请求数据: %s", tcpConn->readBuffer->getReadPosition());
 
     //解析数据，做出读到了数据后的反应
     if(count>0)
     {
         //接到了来自http的请求
-        int socket=tcpConn->channel->fd;
+        int socket=tcpConn->getChannel()->getFD();
 #ifdef MSG_SENG_AUTO
-        setWriteable(tcpConn->channel,true);
-        EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,MODIFY);
+        //setWriteable(tcpConn->channel,true);
+        tcpConn->channel->setWriteable(true);
+        //EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,MODIFY);
+        tcpConn->eventloop->AddTask(tcpConn->channel,Elemtype::DELETE);
 #endif
         
-        bool flag=parseHTTPRequest(tcpConn->request,tcpConn->readBuffer,tcpConn->response,tcpConn->writeBuffer,socket);
+        bool flag=tcpConn->request->parseHTTPRequest(tcpConn->readBuffer,tcpConn->response,tcpConn->writeBuffer,socket);
         Debug("数据解析结束.....");
-        printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",tcpConn->request->method,tcpConn->request->URL,
-                                                    tcpConn->request->httpVersion,tcpConn->request->headKeyNum,tcpConn->request->parseState);
+        //printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",tcpConn->request->method,tcpConn->request->URL,
+                                                    //tcpConn->request->httpVersion,tcpConn->request->headKeyNum,tcpConn->request->parseState);
         if(!flag)  //解析错误
         {
             char *error="HTTP/1.1 400 BadRequest\r\n\r\n";
-            writeStringIntoBuffer(tcpConn->writeBuffer,error);
+            tcpConn->writeBuffer->writeStringIntoBuffer(error);
         }
     }
 
     //断开连接
 #ifndef MSG_SENG_AUTO
-    EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,DELETE);
+    tcpConn->eventloop->AddTask(tcpConn->channel,Elemtype::DELETE);
 #endif
  
     return 0;
@@ -46,23 +59,23 @@ int readCallBackFunc(void *arg)
 
 
 //在数据写入缓冲区之后发送数据到客户端
-int writeCallBackFunc(void *arg)
+int TcpConnection::writeCallBackFunc(void *arg)
 {
     Debug("开始发送数据了(基于写事件发送)....");
     struct TcpConnection* tcpConn=(struct TcpConnection*)arg;
     //发送数据
-    int count=bufferSendData(tcpConn->writeBuffer,tcpConn->channel->fd);
+    int count=tcpConn->writeBuffer->bufferSendData(tcpConn->channel->getFD());
     if(count>0)
     {
         //判断数据是否全部发送出去了
-        if(getReadableSize(tcpConn->writeBuffer)==0)
+        if(tcpConn->writeBuffer->getReadableSize()==0)
         {
             //不再检测写事件，修改channel中的保存的事件
-            setWriteable(tcpConn->channel,false);
+            tcpConn->channel->setWriteable(false);
             //修改dispatch检测的集合，添加任务结点
-            EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,MODIFY);
+            tcpConn->eventloop->AddTask(tcpConn->channel,Elemtype::MODIFY);
             //删除这个结点
-            EventLoopAddTask(tcpConn->eventloop,tcpConn->channel,DELETE);
+            tcpConn->eventloop->AddTask(tcpConn->channel,Elemtype::DELETE);
         }
     }
 
@@ -71,46 +84,35 @@ int writeCallBackFunc(void *arg)
 }
 
 
-int TcpConnectionDestroy(void *arg)
+TcpConnection::TcpConnection(int fd, EventLoop *eventloop)
 {
-    struct TcpConnection* tcpConn = (struct TcpConnection*)arg;
-    if(tcpConn)
-    {
-        if(tcpConn->readBuffer && getReadableSize(tcpConn->readBuffer)==0 && 
-        tcpConn->writeBuffer && getWriteAbleSize(tcpConn->writeBuffer)==0)
-        {
-            //按照顺序销毁内存
-            destroyChannel(tcpConn->channel,tcpConn->eventloop);
-            bufferDestroy(tcpConn->readBuffer);
-            bufferDestroy(tcpConn->writeBuffer);
-            destroyHttpRequest(tcpConn->request);
-            destroyHttpResponse(tcpConn->response);
-            free(tcpConn);
-
-        }
-    }
-    Debug("连接断开, 释放资源, gameover, connName: %s", tcpConn->name);
-    return 0;
-}
-
-struct TcpConnection *TcpConnectionInit(int fd,struct EventLoop *eventloop)
-{
-    struct TcpConnection* tcpConn=(struct TcpConnection *)malloc(sizeof(struct TcpConnection));
-    sprintf(tcpConn->name,"TcpConnection-%d",fd);
+    name="TcpConnection-"+to_string(fd);
     //此时读回调函数readCallBackFunc还未实现，具体该函数是用来接收客户端发来的http请求
-    tcpConn->readBuffer=bufferInit(10240);
-    tcpConn->writeBuffer=bufferInit(10240);
-    tcpConn->eventloop = eventloop;
-    tcpConn->request = httpRequestInit();
-    tcpConn->response = httpResponseInit();
+    readBuffer=new buffer(10240);
+    writeBuffer=new buffer(10240);
+    eventloop = eventloop;
+    request = new httpRequest();
+    response = new httpResponse();
 
 
-    tcpConn->channel=channelInit(fd,ReadAble,readCallBackFunc,writeCallBackFunc,TcpConnectionDestroy,tcpConn);
+    channel=new Channel(fd,FDevent::ReadAble,readCallBackFunc,writeCallBackFunc,TcpConnectionDestroy,this);
 
-    EventLoopAddTask(eventloop, tcpConn->channel, ADD);
+    eventloop->AddTask(channel,Elemtype::ADD);
     Debug("和客户端建立连接, threadName: %s, threadID:%ld, connName: %s",
-        eventloop->threadName, eventloop->threadID, tcpConn->name);
-    return tcpConn;
+        eventloop->getThreadName(), eventloop->getThreadID(), name);
+
 }
 
-
+TcpConnection::~TcpConnection()
+{
+   if(readBuffer && readBuffer->getReadableSize()==0 &&
+        writeBuffer && writeBuffer->getReadableSize()==0)
+        {
+            delete readBuffer;
+            delete writeBuffer;
+            delete request;
+            delete response;
+            eventloop->destroyChannel(channel);
+        } 
+    Debug("连接断开, 释放资源, gameover, connName: %s", name);
+}

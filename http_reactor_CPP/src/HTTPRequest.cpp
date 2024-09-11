@@ -6,7 +6,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "Log.h"
-#include <asm-generic/fcntl.h>
+//#include <asm-generic/fcntl.h>
 #include <fcntl.h>
 #include <cassert>
 
@@ -28,10 +28,6 @@ int hexToDec(char c)
 
 
 
-const char* getFileType(const char* name)
-{
-    
-}
 
 
 
@@ -221,7 +217,8 @@ bool httpRequest::parseHTTPRequest(buffer *readBuffer, httpResponse *response, b
             //1.根据解析出来的数据，对客户端的请求做出处理
             processHTTPRequest(response);
             //2.组织响应数据并发送给客户端
-            httpResponsePrepareMsg(response , sendBuffer , socket);
+
+            response->httpResponsePrepareMsg(sendBuffer,socket);
         }
     }
 
@@ -264,21 +261,20 @@ bool httpRequest::processHTTPRequest(httpResponse *response)
 
             //构建httpResponse
             //状态行
-            strcpy(response->fileName,"404.html");
-            response->stateCode=NotFound;
-            strcpy(response->statusMsg,"FileNotFound");
+            response->setFilename("404.html");
+            response->setStateCode(httpStateCode::NotFound);
+
 
             //响应头
-            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+            response->addHttpResponseHeader("Content-type",getFileType(".html"));
             response->sendDataFunc=sendFile;
 
             return -1;
         }
 
         //找到了该文件（夹）则发送过去
-        strcpy(response->fileName, file);
-        response->stateCode=OK;
-        strcpy(response->statusMsg, "OK");
+        response->setFilename(file);
+        response->setStateCode(httpStateCode::OK);
 
         
 
@@ -290,7 +286,7 @@ bool httpRequest::processHTTPRequest(httpResponse *response)
             // sendDir(cfd, file);
 
             //添加对应的键值对，响应头
-            addHttpResponseHeader(response , "Content-type",getFileType(".html"));
+            response->addHttpResponseHeader("Content-type",getFileType(".html"));
 
             //设置数据块发送方式
             response->sendDataFunc=sendDir;
@@ -306,8 +302,8 @@ bool httpRequest::processHTTPRequest(httpResponse *response)
             //添加键值对,响应头
             char temp[1024];
             sprintf(temp,"%ld",st.st_size);
-            addHttpResponseHeader(response,"Content-Length",temp);
-            addHttpResponseHeader(response , "Content-type",getFileType(file));
+            response->addHttpResponseHeader("Content-Length",temp);
+            response->addHttpResponseHeader("Content-type",getFileType(file));
 
             //设置数据块发送方式
             response->sendDataFunc=sendFile;
@@ -398,14 +394,14 @@ int compare(const struct dirent **a, const struct dirent **b)
 }
 
 
-void httpRequest::sendDir(const char *Dir, buffer *buffer, int socket)
+void httpRequest::sendDir(const string Dir, buffer *buffer, int socket)
 {
      char html[4096] = {0};
     printf("开始发送文件夹！\n");
     sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir);
 
     struct dirent **namelist;
-    int num = scandir(Dir, &namelist, NULL, compare); // 设置C编译器标准为GNU C11
+    int num = scandir(Dir.data(), &namelist, NULL, compare); // 设置C编译器标准为GNU C11
 
     for (int i = 0; i < num; i++) // 遍历所有内容
     {
@@ -449,10 +445,10 @@ void httpRequest::sendDir(const char *Dir, buffer *buffer, int socket)
     free(namelist);
 }
 
-void httpRequest::sendFile(const char *fileName, buffer *buffer, int socket)
+void httpRequest::sendFile(const string fileName, buffer *buffer, int socket)
 {
     
-    int fd = open(fileName, O_RDONLY);
+    int fd = open(fileName.data(), O_RDONLY);
     assert(fd > 0); // 加个断言，判断文件成功打开
 
 #if 1

@@ -2,10 +2,15 @@
 #include "Buffer.h"
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
+#include <map>
+#include <functional>
 
+
+using namespace std;
 
 //http回复状态码
-enum httpStateCode
+enum class httpStateCode
 {
     Unknown,
     OK = 200,                   //成功返回
@@ -17,41 +22,44 @@ enum httpStateCode
     InternalServerError = 500    //服务器错误
 };
 
-struct httpHeader
-{
-    char key[32];
-    char value[128];
-};
-
-//定义一个函数指针，用于处理回复给客户端浏览器的数据块
-typedef void (*respondeBody)(const char* fileName,struct buffer* buffer,int socket);
 
 
 //http回复内容
-struct httpResponse
+class httpResponse
 {
-    //状态码
-    enum httpStateCode stateCode;
-    char statusMsg[128];
-    char fileName[128];
-    //键值对
-    struct httpHeader* headers;
-    int headersNum;
+public:
+    //构造函数
+    httpResponse();
+    ~httpResponse();
+    //添加一个键值对到首部字段
+    bool addHttpResponseHeader( const string key , const string value);
+    //组织http响应数据
+    void httpResponsePrepareMsg(buffer* sendBuffer , int socket);
+
     //回调函数处理回复报文的主体内容
-    respondeBody sendDataFunc;
+    function<void(const string ,buffer* ,int )> sendDataFunc;
+    //设置私有属性的操作接口
+    inline void setStateCode(httpStateCode code){m_stateCode=code;}
+    inline void setFilename(string name){m_fileName=name;}
+private:
+    //状态码
+    httpStateCode m_stateCode;
+    string m_fileName;
+    //键值对
+    map<string,string> m_headers;
+    //状态信息
+    map<int,string> m_info={
+        {200,"OK"},
+        {204,"NoContent"},
+        {301,"MovedPermanently"},
+        {302,"MovedTemporarily"},
+        {400,"BadRequest"},
+        {404,"NotFound"},
+        {500,"InternalServerError"}
+    };
+
 
 
 };
 
-//初始化一个httpResponse
-struct httpResponse* httpResponseInit();
-//销毁一个HTTPResponse
-void destroyHttpResponse(struct httpResponse* response);
-//添加一个键值对到首部字段
-bool addHttpResponseHeader(struct httpResponse* response , const char* key , const char* value);
-//组织http响应数据
-void httpResponsePrepareMsg(struct httpResponse* response , struct buffer* sendBuffer , int socket);
-//发送文件
-void sendFile(const char* fileName,struct buffer* buffer,int socket);
-//发送文件夹
-void sendDir(const char* Dir,struct buffer* buffer,int socket);
+

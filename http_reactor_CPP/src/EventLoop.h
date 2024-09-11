@@ -47,6 +47,7 @@ public:
     int readMsg();
 
     inline thread::id getThreadID(){return this->m_threadID;};
+    inline string getThreadName(){return this->m_threadName;}
 
 private:
     int writeMsgLocal();

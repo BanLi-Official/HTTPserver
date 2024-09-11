@@ -19,7 +19,8 @@ int tcpServer::acceptConnect(void *arg)
     EventLoop* tempLoop= TcpServer->m_pool->getEventLoop();
     //接下来将这个cfd挂入tempLoop当中，完成dispacher的挂载 
     //先将这个cfd封装到channel当中，然后再将channel和EventLoop和buffer、http等相关内容封装到TCPConnection当中，之后的数据交流就再TCPConnection进行
-    TcpConnection* tcpConn = TcpConnectionInit(cfd,tempLoop);
+
+    TcpConnection* tcpConn = new TcpConnection(cfd,tempLoop);
 
     return 0;
 }

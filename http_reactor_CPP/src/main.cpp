@@ -27,8 +27,11 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 
-    struct tcpServer* server= tcpServerInit(port,4);
-    tcpServerRun(server);
+    //struct tcpServer* server= tcpServerInit(port,4);
+    //tcpServerRun(server);
+
+    tcpServer* server=new tcpServer(port,4);
+    server->Run();
 
 
     return 0;

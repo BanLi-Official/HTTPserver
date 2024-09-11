@@ -1,40 +1,22 @@
-src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPRequest.cpp \
+src/CMakeFiles/main.dir/HTTPResponse.cpp.o: \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.cpp \
  /usr/include/stdc-predef.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HttpRequest.h \
- /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.h \
+ /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/c++/9/stdlib.h /usr/include/c++/9/cstdlib \
- /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
@@ -54,13 +36,7 @@ src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/9/bits/std_abs.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Buffer.h \
- /usr/include/x86_64-linux-gnu/sys/socket.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
  /usr/include/x86_64-linux-gnu/asm/socket.h \
@@ -74,10 +50,23 @@ src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/sockios.h \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h /usr/include/string.h \
- /usr/include/strings.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/HTTPResponse.h \
- /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
+ /usr/include/c++/9/stdlib.h /usr/include/c++/9/cstdlib \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/c++/9/bits/std_abs.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/c++/9/map \
+ /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/bits/stl_algobase.h \
  /usr/include/c++/9/bits/functexcept.h \
  /usr/include/c++/9/bits/exception_defines.h \
@@ -113,9 +102,13 @@ src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
  /usr/include/c++/9/bits/stringfwd.h \
  /usr/include/c++/9/bits/char_traits.h /usr/include/c++/9/bits/postypes.h \
  /usr/include/c++/9/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/c++/9/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -142,6 +135,12 @@ src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
  /usr/include/c++/9/ext/string_conversions.h /usr/include/c++/9/cstdio \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/c++/9/cerrno /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/x86_64-linux-gnu/asm/errno.h \
@@ -153,28 +152,25 @@ src/CMakeFiles/main.dir/HTTPRequest.cpp.o: \
  /usr/include/c++/9/bits/invoke.h /usr/include/c++/9/bits/stl_multimap.h \
  /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/functional \
  /usr/include/c++/9/bits/refwrap.h /usr/include/c++/9/bits/std_function.h \
- /usr/include/x86_64-linux-gnu/sys/sendfile.h /usr/include/dirent.h \
- /usr/include/x86_64-linux-gnu/bits/dirent.h \
+ /usr/include/fcntl.h /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/linux/falloc.h /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/dirent.h /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
- /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/statx.h /usr/include/linux/stat.h \
  /usr/include/linux/types.h /usr/include/x86_64-linux-gnu/asm/types.h \
  /usr/include/asm-generic/types.h /usr/include/asm-generic/int-ll64.h \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
+ /usr/include/x86_64-linux-gnu/sys/sendfile.h /usr/include/assert.h \
  /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /mnt/hgfs/Github/HTTPserver/http_reactor_CPP/src/Log.h \
- /usr/include/fcntl.h /usr/include/x86_64-linux-gnu/bits/fcntl.h \
- /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
- /usr/include/linux/falloc.h /usr/include/c++/9/cassert \
- /usr/include/assert.h
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h

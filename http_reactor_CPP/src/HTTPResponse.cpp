@@ -15,78 +15,54 @@
 #define maxHeadersNum 16
 
 
-struct httpResponse *httpResponseInit()
+
+httpResponse::httpResponse()
 {
-    struct httpResponse* response = (struct httpResponse*)malloc(sizeof(struct httpResponse));
-
     //状态行
-    response->stateCode=Unknown;
-    bzero(response->statusMsg,sizeof(response->statusMsg));
-    bzero(response->fileName,sizeof(response->fileName));
-
-    //键值对行
-    response->headers=(struct httpHeader *)malloc(sizeof(struct httpHeader )*maxHeadersNum);
-    response->headersNum=0;
-    bzero(response->headers,sizeof(struct httpHeader )*maxHeadersNum);
+    m_stateCode=httpStateCode::Unknown;
+    m_fileName=string();
+    m_headers.clear();
 
     //回调函数
-    response->sendDataFunc=NULL;
-
-    return response;
+    sendDataFunc=nullptr;
 }
 
-void destroyHttpResponse(struct httpResponse *response)
+httpResponse::~httpResponse()
 {
-    if(response!=NULL)
-    {
-        free(response->headers);
-        free(response);
-    }
 }
 
-bool addHttpResponseHeader(struct httpResponse *response, const char *key, const char *value)
+bool httpResponse::addHttpResponseHeader(const string key, const string value)
 {
-    if(response==NULL || key==NULL || value==NULL)
-    {
+    if(key.empty()||value.empty())
         return false;
-    }
-
-    strcpy(response->headers[response->headersNum].key , key);
-    strcpy(response->headers[response->headersNum].value , value);
-    response->headersNum++;
-
-
+    
+    m_headers.insert(make_pair(key,value));
     return true;
 }
 
-void httpResponsePrepareMsg(struct httpResponse *response, struct buffer *sendBuffer, int socket)
+void httpResponse::httpResponsePrepareMsg(buffer *sendBuffer, int socket)
 {
     //声明一个临时的数组用于存放组织的内容
     char temp[2048]={0};
     //状态行
-    sprintf(temp,"HTTP %d %s\r\n",response->stateCode,response->statusMsg);
-    writeStringIntoBuffer(sendBuffer,temp);
+    int code=static_cast<int>(m_stateCode);
+    sprintf(temp,"HTTP %d %s\r\n",m_stateCode,m_info.at(code).data());
+    sendBuffer->writeStringIntoBuffer(temp);
 
     //键值对头
-    for(int i=0;i<response->headersNum;i++)
+    for(auto it=m_headers.begin();it!=m_headers.end();it++)
     {
-        sprintf(temp,"%s:%s\r\n",response->headers[i].key,response->headers[i].value);
-        writeStringIntoBuffer(sendBuffer,temp);
+        sprintf(temp,"%s:%s\r\n",it->first,it->second);
+        sendBuffer->writeStringIntoBuffer(temp);
 
     }
 
     //空行
-    writeStringIntoBuffer(sendBuffer,"\r\n");
+    sendBuffer->writeStringIntoBuffer("\r\n");
 #ifndef MSG_SENG_AUTO
-    bufferSendData(sendBuffer,socket);
+    sendBuffer->bufferSendData(socket);
 #endif
 
     //数据块
-    response->sendDataFunc(response->fileName,sendBuffer,socket);
+    sendDataFunc(m_fileName,sendBuffer,socket);
 }
-
-
-
-
-
-
