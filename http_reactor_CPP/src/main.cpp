@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     if (getcwd(buffer, sizeof(buffer)) != NULL)
     {
         printf("当前程序运行的文件空间：%s\n", buffer);
+        
     }
     else
     {
@@ -29,6 +30,7 @@ int main(int argc, char *argv[])
 
     //struct tcpServer* server= tcpServerInit(port,4);
     //tcpServerRun(server);
+
 
     tcpServer* server=new tcpServer(port,4);
     server->Run();

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "Log.h"
+#include <unistd.h>
 
 ThreadPool::ThreadPool(EventLoop* mainLoop,int threadNum)
 {
@@ -39,8 +40,10 @@ void ThreadPool::threadPoolRun()
         for (int i = 0; i < m_threadNum; i++)
         {
             WorkerThread* workerThread=new WorkerThread(i);
+
             m_threads.push_back(workerThread);
             workerThread->run();
+                                
 
         }
     }

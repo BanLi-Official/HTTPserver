@@ -181,8 +181,8 @@ bool httpRequest::parseHeader(buffer *readBuffer)
 
 bool httpRequest::parseHTTPRequest(buffer *readBuffer, httpResponse *response, buffer *sendBuffer, int socket)
 {
-    
-    
+    printf("parese start!\n");
+    在这个下面出错了！！！！！
     bool flag=true;
     while(m_parseState!=parseState::parseDone)
     {
@@ -209,16 +209,18 @@ bool httpRequest::parseHTTPRequest(buffer *readBuffer, httpResponse *response, b
         //如果解析结束，则准备回复的数据
         
         
-        //printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",request->method,request->URL,request->httpVersion,request->headKeyNum,request->parseState);
+        printf("request.method=%s,  request.URL=%s,   request.httpVersion=%s,    headKeyNums=%d,   parseState=%d\n",m_method,m_URL,m_httpVersion,m_httpHeads.size(),m_parseState);
 
 
         if(m_parseState==parseState::parseDone)
         {
             //1.根据解析出来的数据，对客户端的请求做出处理
             processHTTPRequest(response);
+            printf("processHTTPRequest end\n");
             //2.组织响应数据并发送给客户端
 
             response->httpResponsePrepareMsg(sendBuffer,socket);
+            printf("httpResponsePrepareMsg end\n");
         }
     }
 
@@ -398,7 +400,7 @@ void httpRequest::sendDir(const string Dir, buffer *buffer, int socket)
 {
      char html[4096] = {0};
     printf("开始发送文件夹！\n");
-    sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir);
+    sprintf(html, "<!DOCTYPE html><html lang=\"en\"><head><title>%s</title></head><body><table>", Dir.data());
 
     struct dirent **namelist;
     int num = scandir(Dir.data(), &namelist, NULL, compare); // 设置C编译器标准为GNU C11
@@ -408,7 +410,7 @@ void httpRequest::sendDir(const string Dir, buffer *buffer, int socket)
         char *name = namelist[i]->d_name; // 获取子文件名称
         struct stat st;
         char subDir[1024] = {0};
-        sprintf(subDir, "%s/%s", Dir, name); // 补充文件地址，用于判断对应的子文件属性
+        sprintf(subDir, "%s/%s", Dir.data(), name); // 补充文件地址，用于判断对应的子文件属性
         int res = stat(subDir, &st);
         if (S_ISDIR(st.st_mode))
         {

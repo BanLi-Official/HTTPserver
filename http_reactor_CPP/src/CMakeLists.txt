@@ -9,5 +9,5 @@ aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} source)
 
 find_package(Threads REQUIRED)
 
-add_executable(main ${source})
-target_link_libraries(main Threads::Threads)
+add_executable(main2 ${source})
+target_link_libraries(main2 Threads::Threads)

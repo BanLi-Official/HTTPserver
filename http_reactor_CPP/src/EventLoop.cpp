@@ -51,7 +51,8 @@ EventLoop::EventLoop(const string ThreadName)
     m_threadName= ThreadName == string() ? "MainThread" : ThreadName; // EventLoop名称
 
     //loop->dispatcher = &EpollDispatch;               // 分发器
-    m_dispatcher=new PollDispatcher(this);
+    //m_dispatcher=new PollDispatcher(this);
+    m_dispatcher=new EpollDispatcher(this);
     //loop->dispatcher=&selectDispatcher;
 
     m_channelMap.clear();
@@ -91,20 +92,22 @@ EventLoop::~EventLoop()
 
 int EventLoop::Run()
 {
-
     Dispatcher *dispatcher = m_dispatcher;
     if (dispatcher == NULL)
     {
         printf("EventLoopRun Error!dispatcher == NULL\n");
     }
-
     while (m_isRunning)
     {
         //Debug("进入循环，开始running");
+        
         dispatcher->dispatch();
+        
         // 这里还要添加一个将tasklist中任务挂载到dispatch中的函数
         EventLoopListProcess();
+        //printf("EventLoopListProcess end\n");sleep(1);
     }
+   
 
     return 0;
 }
@@ -169,9 +172,11 @@ int EventLoop::AddTask(Channel *channel, Elemtype type)
 
 int EventLoop::EventLoopListProcess()
 {
-    m_mutexForList.lock();
+    
+    
     while (!m_taskQ.empty())
     {
+        m_mutexForList.lock();
         //把task队列最前面的东西弄出来
         Task *task = m_taskQ.front();
         m_taskQ.pop();
@@ -192,9 +197,11 @@ int EventLoop::EventLoopListProcess()
             // 修改Channel的任务
             Modify(channel);
         }
+        
 
         delete task ;
     }
+
     return 0;
 }
 

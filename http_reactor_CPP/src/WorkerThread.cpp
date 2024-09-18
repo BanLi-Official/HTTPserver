@@ -1,6 +1,7 @@
 #include "WorkerThread.h"
 #include <stdio.h>
 #include "Log.h"
+#include <unistd.h>
 
 WorkerThread::WorkerThread(int index)
 {
@@ -29,6 +30,8 @@ int WorkerThread::run()
     { 
         condition.wait(locker);
     }
+
+    
   
 
     return 0;

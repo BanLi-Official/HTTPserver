@@ -10,8 +10,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)  #设置编译器必须支持C++
 #include_directories(/usr/include/x86_64-linux-gnu/c++/9)
 
 
-
-
 set(output ${CMAKE_CURRENT_SOURCE_DIR}/output)
 set(lib ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 

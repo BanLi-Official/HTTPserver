@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include "TcpConnection.h"
 #include "Log.h"
+#include <unistd.h>
 
 
  
@@ -29,10 +30,13 @@ int tcpServer::acceptConnect(void *arg)
 
 tcpServer::tcpServer(unsigned short port, int threadNum)
 {
+
     listenerInit(port);
+
     m_mainLoop = new EventLoop();
     m_threadNum = threadNum;
     m_pool = new ThreadPool(m_mainLoop,m_threadNum);
+
 }
 
 void tcpServer::listenerInit(unsigned short port)
@@ -77,6 +81,7 @@ int tcpServer::Run()
     //将lfd添加到主loop当中
     Channel *channel = new Channel(m_lfd,FDevent::ReadAble,acceptConnect,NULL,NULL,this);
     m_mainLoop->AddTask(channel,Elemtype::ADD);
+
     //启动mainEventLoop
     m_mainLoop->Run();
     Debug("服务器程序已经启动了....");
